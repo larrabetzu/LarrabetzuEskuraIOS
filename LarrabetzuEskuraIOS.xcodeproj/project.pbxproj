@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FB3528419631BED00099645 /* Berriak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3528319631BED00099645 /* Berriak.swift */; };
 		9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */; };
 		9FDBB59D195AE4D4003EFA9E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */; };
 		9FDBB59F195AE4D4003EFA9E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59E195AE4D4003EFA9E /* SecondViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9FB3528319631BED00099645 /* Berriak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Berriak.swift; sourceTree = "<group>"; };
 		9FDBB595195AE4D4003EFA9E /* LarrabetzuEskuraIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarrabetzuEskuraIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB599195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		9FDBB597195AE4D4003EFA9E /* LarrabetzuEskuraIOS */ = {
 			isa = PBXGroup;
 			children = (
+				9FB3528319631BED00099645 /* Berriak.swift */,
 				9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */,
 				9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */,
 				9FDBB59E195AE4D4003EFA9E /* SecondViewController.swift */,
@@ -173,7 +176,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 9FDBB58C195AE4D3003EFA9E;
@@ -211,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB3528419631BED00099645 /* Berriak.swift in Sources */,
 				9FDBB59F195AE4D4003EFA9E /* SecondViewController.swift in Sources */,
 				9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */,
 				9FDBB59D195AE4D4003EFA9E /* FirstViewController.swift in Sources */,
@@ -281,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -318,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -332,6 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -343,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -403,6 +408,7 @@
 				9FDBB5B5195AE4D4003EFA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FDBB5B6195AE4D4003EFA9E /* Build configuration list for PBXNativeTarget "LarrabetzuEskuraIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +417,7 @@
 				9FDBB5B8195AE4D4003EFA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
