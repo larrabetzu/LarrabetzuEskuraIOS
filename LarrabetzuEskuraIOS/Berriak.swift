@@ -9,6 +9,9 @@
 import Foundation
 
 class Berriak{
+    var blogenTituloa: String[] = []
+    var blogenLink: String[] = []
+    var blogenPubDate: String[] = []
     
     let urlPath: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://larrabetzutik.org/feed/"
     
@@ -29,10 +32,10 @@ class Berriak{
                 if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
                     for var idex = 0; idex<dictionaryEntries.count; ++idex{
                         if let una : AnyObject = dictionaryEntries[idex]{
-                            var title = una["title"]
-                            var link = una["link"]
-                            var Date = una["publishedDate"]
-                            println("index is ->\(idex) title ->\(title)  link->\(link)  Date->\(Date)")
+                            blogenTituloa += una["title"].description
+                            blogenLink += una["link"].description
+                            blogenPubDate += una["publishedDate"].description
+
                         }else{
                             println("Ez deu 'dictionaryEntries' idex betegaz topetan")
                         }
@@ -47,8 +50,6 @@ class Berriak{
         } else {
             println("Ez deu 'responseData' topatu")
         }
-        
-        
     }
     
 }
