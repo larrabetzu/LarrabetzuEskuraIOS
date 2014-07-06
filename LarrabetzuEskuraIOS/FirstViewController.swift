@@ -16,6 +16,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("viewDidLoad")
         var berriakParseatu = Berriak()
         berriakParseatu.getLarrabetzutik()
         blogenTituloa = berriakParseatu.blogenTituloa

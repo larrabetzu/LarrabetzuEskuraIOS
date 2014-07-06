@@ -12,8 +12,9 @@ class Berriak{
     var blogenTituloa: String[] = []
     var blogenLink: String[] = []
     var blogenPubDate: String[] = []
+    let urlBlog: String[] = ["http://www.larrabetzutik.org/feed/","http://www.horibai.org/feed/", "http://www.larrabetzukoeskola.org/feed/"]
     
-    let urlPath: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://larrabetzutik.org/feed/"
+    let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q="
     
     func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest))
@@ -26,30 +27,30 @@ class Berriak{
     }
     
     func getLarrabetzutik(){
-        var parsedJSON = parseJSON(getJSON(urlPath))
-        if let dictionaryResponseData : AnyObject = parsedJSON["responseData"]{
-            if let dictionaryFeed : AnyObject = dictionaryResponseData["feed"]{
-                if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
-                    for var idex = 0; idex<dictionaryEntries.count; ++idex{
-                        if let una : AnyObject = dictionaryEntries[idex]{
-                            blogenTituloa += una["title"].description
-                            blogenLink += una["link"].description
-                            blogenPubDate += una["publishedDate"].description
-
-                        }else{
-                            println("Ez deu 'dictionaryEntries' idex betegaz topetan")
+        let countUrleBlog = urlBlog.count
+        for var idex = 0; idex < countUrleBlog; ++idex{
+            var parsedJSON = parseJSON(getJSON(googleApi+urlBlog[idex]))
+            if let dictionaryResponseData : AnyObject = parsedJSON["responseData"]{
+                if let dictionaryFeed : AnyObject = dictionaryResponseData["feed"]{
+                    if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
+                        for var idex = 0; idex<dictionaryEntries.count; ++idex{
+                            if let una : AnyObject = dictionaryEntries[idex]{
+                                blogenTituloa += una["title"].description
+                                blogenLink += una["link"].description
+                                blogenPubDate += una["publishedDate"].description
+                            }else{
+                                println("Ez deu 'dictionaryEntries' idex betegaz topetan")
+                            }
                         }
+                    } else {
+                        println("Ez deu 'entries' topatu")
                     }
                 } else {
-                    println("Ez deu 'entries' topatu")
+                    println("Ez deu 'feed' topatu")
                 }
-                
             } else {
-                println("Ez deu 'feed' topatu")
+                println("Ez deu 'responseData' topatu")
             }
-        } else {
-            println("Ez deu 'responseData' topatu")
         }
     }
-    
 }
