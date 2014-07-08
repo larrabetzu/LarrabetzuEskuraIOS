@@ -23,7 +23,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
         super.viewWillDisappear(animated)
         
         if UIApplication.sharedApplication().networkActivityIndicatorVisible {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         }
     }
     
@@ -36,7 +36,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
     
     func configureWebView() {
         
-        webView.frame =  CGRectInset(self.view.bounds, 20, 20)
+        webView.frame =  CGRectInset(self.view.bounds, 0, 0)
         webView.backgroundColor = UIColor.whiteColor()
         webView.scalesPageToFit = true
         webView.dataDetectorTypes = .All
@@ -50,7 +50,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
     }
     
     func webViewDidFinishLoad(_: UIWebView) {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
