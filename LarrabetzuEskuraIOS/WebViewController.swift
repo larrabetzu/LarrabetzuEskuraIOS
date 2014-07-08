@@ -50,7 +50,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
     }
     
     func webViewDidFinishLoad(_: UIWebView) {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
