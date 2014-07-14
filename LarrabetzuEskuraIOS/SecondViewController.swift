@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +21,20 @@ class SecondViewController: UIViewController {
     }
 
 
+    func tableView(tableView: UITableView!, numberOfRowsInSection section:Int) -> Int {
+        return 5
+    }
+    
+    
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MySecondTestCell")
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+    }
+    
 }
 

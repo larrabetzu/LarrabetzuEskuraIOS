@@ -18,11 +18,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
-        var berriakParseatu = Berriak()
+        let berriakParseatu = Berriak()
         berriakParseatu.getLarrabetzutik()
         blogenTituloa = berriakParseatu.blogenTituloa
         blogenLink = berriakParseatu.blogenLink
         blogenPubDate = berriakParseatu.blogenPubDate
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +52,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         webView.loadAddressURL(blogenLink[indexPath.row])
     }
 
+    
 
 }
 
