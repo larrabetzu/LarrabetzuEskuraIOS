@@ -9,10 +9,12 @@
 import UIKit
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-                            
+    
+    @IBOutlet var tableView: UITableView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MySecondTestCell")
+        var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as EkintzakTableViewCell
+        cell.loadItem(tituloa: "funciona", ordua: "00:00", eguna: "21")
         
         return cell
     }

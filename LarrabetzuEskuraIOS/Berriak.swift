@@ -9,10 +9,10 @@
 import Foundation
 
 class Berriak{
-    var blogenTituloa: String[] = []
-    var blogenLink: String[] = []
-    var blogenPubDate: String[] = []
-    let urlBlog: String[] = ["http://www.larrabetzutik.org/feed/","http://www.horibai.org/feed/", "http://www.larrabetzukoeskola.org/feed/"]
+    var blogenTituloa: [String] = []
+    var blogenLink: [String] = []
+    var blogenPubDate: [String] = []
+    let urlBlog: [String] = ["http://www.larrabetzutik.org/feed/","http://www.horibai.org/feed/", "http://www.larrabetzukoeskola.org/feed/"]
     
     let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q="
     
