@@ -38,7 +38,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
         cell.textLabel.text = "\(blogenTituloa[indexPath.row])"
         cell.detailTextLabel.text = "\(blogenPubDate[indexPath.row])"
         println("\(blogenLink[indexPath.row])")
