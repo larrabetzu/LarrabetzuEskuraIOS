@@ -12,9 +12,23 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet var tableView: UITableView
     
+    var ekintzanArray: [NSDictionary] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        println("viewDidLoad")
+        let ekintzakParseatu = Ekintzak()
+        
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+            println("gcd")
+            ekintzakParseatu.getEkintzak()
+            self.ekintzanArray = ekintzakParseatu.ekintzanArray
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                })
+            })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +38,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
 
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section:Int) -> Int {
-        return 5
+        return ekintzanArray.count
     }
     
     
