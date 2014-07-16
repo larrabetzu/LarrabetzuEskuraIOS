@@ -201,6 +201,43 @@
             </objects>
             <point key="canvasLocation" x="3743" y="1284"/>
         </scene>
+        <!--Ekintza View Controller-->
+        <scene sceneID="dCU-vs-xcf">
+            <objects>
+                <viewController id="hwq-Bj-kPi" customClass="EkintzaViewController" customModule="LarrabetzuEskuraIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M80-NB-E37"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ah5-4w-ROB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JzH-qO-QEZ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YbF-5B-fLD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsu-Zu-RQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5067" y="1296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fbm-9l-r1m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B97-8r-86z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D04-cM-0kb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hwq-Bj-kPi" kind="relationship" relationship="rootViewController" id="vjh-Vg-ajd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYv-93-JbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4375" y="1296"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>

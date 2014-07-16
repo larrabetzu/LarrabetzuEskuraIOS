@@ -64,7 +64,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
+        var ekintzaView = EkintzaViewController()
+        self.navigationController.pushViewController(ekintzaView, animated: true)
     }
     
     func hiddenEmptyCell(){
