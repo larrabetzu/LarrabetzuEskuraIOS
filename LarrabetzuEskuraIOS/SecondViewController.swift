@@ -27,6 +27,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             self.ekintzanArray = ekintzakParseatu.ekintzanArray
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
+                self.hiddenEmptyCell()
                 self.tableView.hidden = false
                 })
             })
@@ -61,6 +62,13 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         
+    }
+    
+    func hiddenEmptyCell(){
+        var tblView =  UIView(frame: CGRectZero)
+        self.tableView.tableFooterView = tblView
+        self.tableView.tableFooterView.hidden = true
+        self.tableView.backgroundColor = UIColor.clearColor()
     }
     
 }
