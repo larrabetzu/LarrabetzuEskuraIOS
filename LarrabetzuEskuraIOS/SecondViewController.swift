@@ -65,6 +65,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         var ekintzaView = EkintzaViewController()
+        ekintzaView.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(ekintzaView, animated: true)
     }
     

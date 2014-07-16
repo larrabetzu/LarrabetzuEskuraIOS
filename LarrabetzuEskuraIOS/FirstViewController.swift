@@ -48,6 +48,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         var webView = WebViewController()
+        webView.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(webView, animated: true)
         webView.loadAddressURL(blogenLink[indexPath.row])
     }
