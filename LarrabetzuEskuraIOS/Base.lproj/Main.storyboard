@@ -173,6 +173,9 @@
                                     <outlet property="delegate" destination="exV-Lf-msr" id="X2d-PM-ihj"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-cf-AVg">
+                                <rect key="frame" x="230" y="230" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,13 +183,16 @@
                             <constraint firstItem="7Hn-ZQ-yWc" firstAttribute="leading" secondItem="EJ5-M5-3kn" secondAttribute="leading" id="TUU-R4-7QF"/>
                             <constraint firstItem="EJ5-M5-3kn" firstAttribute="top" secondItem="J3d-ed-nth" secondAttribute="top" id="VqK-zv-FK5"/>
                             <constraint firstAttribute="width" secondItem="7Hn-ZQ-yWc" secondAttribute="width" id="aw3-zL-GtF"/>
+                            <constraint firstAttribute="centerX" secondItem="0QI-cf-AVg" secondAttribute="centerX" id="cZJ-B5-t7l"/>
                             <constraint firstItem="7Hn-ZQ-yWc" firstAttribute="top" secondItem="aRY-ql-FFa" secondAttribute="bottom" id="f4N-6H-0zy"/>
                             <constraint firstItem="cMi-Iu-ltq" firstAttribute="top" secondItem="7Hn-ZQ-yWc" secondAttribute="bottom" constant="20" symbolic="YES" id="liw-bs-2AG"/>
                             <constraint firstItem="EJ5-M5-3kn" firstAttribute="leading" secondItem="J3d-ed-nth" secondAttribute="leading" id="pq6-IB-3fV"/>
+                            <constraint firstAttribute="centerY" secondItem="0QI-cf-AVg" secondAttribute="centerY" id="vrK-Vc-1kb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="omU-j3-xtZ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="0QI-cf-AVg" id="IPc-UK-KPm"/>
                         <outlet property="tableView" destination="7Hn-ZQ-yWc" id="PMW-Ui-xIH"/>
                     </connections>
                 </viewController>

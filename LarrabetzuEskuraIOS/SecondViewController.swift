@@ -11,12 +11,14 @@ import UIKit
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView
+    @IBOutlet var activityIndicator: UIActivityIndicatorView
     
     var ekintzanArray: [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
+        activityIndicator.hidden = false
         tableView.hidden = true
         let ekintzakParseatu = Ekintzak()
         
@@ -29,6 +31,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
                 self.hiddenEmptyCell()
                 self.tableView.hidden = false
+                self.activityIndicator.hidden = true
                 })
             })
         
