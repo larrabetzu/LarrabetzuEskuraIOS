@@ -17,6 +17,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
+        tableView.hidden = true
         let ekintzakParseatu = Ekintzak()
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -26,6 +27,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             self.ekintzanArray = ekintzakParseatu.ekintzanArray
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
+                self.tableView.hidden = false
                 })
             })
         
@@ -44,7 +46,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as EkintzakTableViewCell
-        cell.loadItem(tituloa: "funciona", ordua: "00:00", eguna: "21")
+        
+        let ekintza = ekintzanArray[indexPath.row]
+        if let fields: AnyObject = ekintza["fields"]{
+            let tituloa = fields["tituloa"] as String
+            let ordua = fields["egune"] as String
+            let egune = fields["egune"] as String
+            cell.loadItem(tituloa: "\(tituloa)", ordua: "\(ordua.substringFromIndex(11))", eguna: "\(egune.substringFromIndex(8).substringToIndex(2))")
+        }
+        
         
         return cell
     }

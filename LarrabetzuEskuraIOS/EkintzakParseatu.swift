@@ -25,14 +25,7 @@ class Ekintzak{
     func getEkintzak(){
         var parsedJSON = parseJSON(getJSON(ekintzakAPI))
         ekintzanArray = parsedJSON
-        for var ekintzaNum = 0; ekintzaNum<parsedJSON.count; ++ekintzaNum{
-            println(parsedJSON[ekintzaNum])
-        }
-        
         
     }
-    
-    
-    
     
 }
