@@ -10,6 +10,16 @@ import UIKit
 
 class EkintzaViewController: UIViewController {
     
+    @IBOutlet var tituloaUI: UILabel
+    @IBOutlet var hileaUI: UILabel
+    @IBOutlet var eguneUI: UILabel
+    @IBOutlet var orduaUI: UILabel
+    @IBOutlet var lekuaUI: UILabel
+    @IBOutlet var deskribapenaUI: UITextView
+    @IBOutlet var kartelaUI: UIImageView
+    @IBOutlet var linkUI: UILabel
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view!.backgroundColor = UIColor.whiteColor()

@@ -54,19 +54,20 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         let ekintza = ekintzanArray[indexPath.row]
         if let fields: AnyObject = ekintza["fields"]{
             let tituloa = fields["tituloa"] as String
-            let ordua = fields["egune"] as String
-            let egune = fields["egune"] as String
-            cell.loadItem(tituloa: "\(tituloa)", ordua: "\(ordua.substringFromIndex(11))", eguna: "\(egune.substringFromIndex(8).substringToIndex(2))")
+            let data = fields["egune"] as String
+            cell.loadItem(tituloa: (tituloa), ordua: data.substringFromIndex(11), eguna: data.substringFromIndex(8).substringToIndex(2))
         }
-        
         
         return cell
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        var ekintzaView = EkintzaViewController()
+        let ekintza = ekintzanArray[indexPath.row]
+        println(ekintza)
+        let ekintzaView = self.storyboard.instantiateViewControllerWithIdentifier("EkintzaViewController") as EkintzaViewController
         ekintzaView.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(ekintzaView, animated: true)
+        
     }
     
     func hiddenEmptyCell(){
