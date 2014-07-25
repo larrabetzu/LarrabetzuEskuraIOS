@@ -10,8 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableView: UITableView
-    @IBOutlet var activityIndicator: UIActivityIndicatorView
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var ekintzanArray: [NSDictionary] = []
     
@@ -55,7 +55,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         if let fields: AnyObject = ekintza["fields"]{
             let tituloa = fields["tituloa"] as String
             let data = fields["egune"] as String
-            cell.loadItem(tituloa: (tituloa), ordua: data.substringFromIndex(11), eguna: data.substringFromIndex(8).substringToIndex(2))
+            cell.loadItem(tituloa: (tituloa), ordua: data.substringFromIndex(advance(data.startIndex, 11)), eguna: data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2)))
         }
         
         return cell
@@ -64,10 +64,24 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         let ekintza = ekintzanArray[indexPath.row]
         println(ekintza)
-        let ekintzaView = self.storyboard.instantiateViewControllerWithIdentifier("EkintzaViewController") as EkintzaViewController
+        let ekintzaView : EkintzaViewController = self.storyboard.instantiateViewControllerWithIdentifier("EkintzaViewController") as EkintzaViewController
+        ekintzaView
         ekintzaView.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(ekintzaView, animated: true)
-        
+        if let fields: AnyObject = ekintza["fields"]{
+            let tituloa = fields["tituloa"] as String
+            let data = fields["egune"] as String
+            let lekua = fields["lekua"] as String
+            let link = fields["link"] as String
+            let kartela = fields["kartela"] as String
+            let deskribapena = fields["deskribapena"] as String
+            let eguna:String = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2))
+            let ordua:String = data.substringFromIndex(advance(data.startIndex, 11))
+            let hilea:String = data.substringFromIndex(advance(data.startIndex, 5)).substringToIndex(advance(data.startIndex, 2))
+            
+            ekintzaView.SetEkintza(tituloa: tituloa, hilea: hilea, eguna: eguna, ordua: ordua, lekua: lekua, deskribapena: deskribapena, kartela: kartela, link: link)
+        }
+
     }
     
     func hiddenEmptyCell(){

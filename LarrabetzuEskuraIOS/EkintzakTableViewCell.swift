@@ -11,9 +11,9 @@ import UIKit
 
 class EkintzakTableViewCell : UITableViewCell {
   
-    @IBOutlet var tituloa: UILabel
-    @IBOutlet var ordua: UILabel
-    @IBOutlet var eguna: UILabel
+    @IBOutlet var tituloa: UILabel!
+    @IBOutlet var ordua: UILabel!
+    @IBOutlet var eguna: UILabel!
     
     func loadItem(#tituloa: String, ordua: String, eguna: String) {
         self.tituloa.text = tituloa
