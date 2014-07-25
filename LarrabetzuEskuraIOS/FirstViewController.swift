@@ -41,6 +41,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
         cell.textLabel.text = "\(blogenTituloa[indexPath.row])"
         cell.detailTextLabel.text = "\(blogenPubDate[indexPath.row])"
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         println("\(blogenLink[indexPath.row])")
         
         return cell
