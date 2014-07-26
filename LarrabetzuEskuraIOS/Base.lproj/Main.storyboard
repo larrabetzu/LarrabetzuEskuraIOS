@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
     </dependencies>
     <scenes>
@@ -23,9 +24,6 @@
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VBS-7e-ff2">
                                 <rect key="frame" x="0.0" y="164" width="600" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="164" width="320" height="259"/>
-                                </variation>
                                 <variation key="widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="164" width="640" height="259"/>
                                 </variation>
@@ -182,9 +180,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="359"/>
-                                </variation>
                                 <variation key="widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="64" width="640" height="359"/>
                                 </variation>
@@ -313,6 +308,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-Gu-9zD">
+                                <rect key="frame" x="281" y="449" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -334,6 +332,7 @@
                             <constraint firstItem="IZq-pw-74J" firstAttribute="leading" secondItem="JzH-qO-QEZ" secondAttribute="leading" constant="20" id="Pyr-aN-cyu"/>
                             <constraint firstItem="rcE-na-BaL" firstAttribute="top" secondItem="ygV-41-8QT" secondAttribute="top" id="Qv0-kD-igA"/>
                             <constraint firstItem="je6-fO-aJv" firstAttribute="top" secondItem="BEX-KJ-7OB" secondAttribute="bottom" constant="26" id="YgC-0p-T1n"/>
+                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="centerY" secondItem="IMV-Gu-9zD" secondAttribute="centerY" id="Ygc-hc-qPo"/>
                             <constraint firstItem="Ah5-4w-ROB" firstAttribute="top" secondItem="je6-fO-aJv" secondAttribute="bottom" constant="30" id="aPb-ta-hNC"/>
                             <constraint firstItem="WLC-Fe-PBh" firstAttribute="leading" secondItem="MrE-TJ-TAI" secondAttribute="trailing" constant="24" id="cUS-VG-ARZ"/>
                             <constraint firstItem="BEX-KJ-7OB" firstAttribute="top" secondItem="8OQ-TS-vUU" secondAttribute="bottom" constant="16" id="gSe-cH-UMU"/>
@@ -345,6 +344,7 @@
                             <constraint firstItem="WLC-Fe-PBh" firstAttribute="top" secondItem="M80-NB-E37" secondAttribute="bottom" constant="21" id="t12-de-4EV"/>
                             <constraint firstItem="ygV-41-8QT" firstAttribute="baseline" secondItem="rcE-na-BaL" secondAttribute="baseline" id="xtJ-eG-qAn"/>
                             <constraint firstAttribute="centerX" secondItem="je6-fO-aJv" secondAttribute="centerX" constant="9" id="ybC-kU-O19"/>
+                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="centerX" secondItem="IMV-Gu-9zD" secondAttribute="centerX" id="yhh-KT-elq"/>
                             <constraint firstAttribute="centerX" secondItem="BEX-KJ-7OB" secondAttribute="centerX" constant="9" id="zfa-VX-Qjl"/>
                         </constraints>
                         <variation key="default">
@@ -355,16 +355,21 @@
                                 <exclude reference="Ld2-a1-UGE"/>
                                 <exclude reference="Qv0-kD-igA"/>
                                 <exclude reference="DEi-Tc-7mN"/>
+                                <exclude reference="Ygc-hc-qPo"/>
+                                <exclude reference="yhh-KT-elq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
                                 <include reference="KB1-g5-EWF"/>
+                                <include reference="Ygc-hc-qPo"/>
+                                <include reference="yhh-KT-elq"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="YbF-5B-fLD"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="IMV-Gu-9zD" id="Uff-oN-Zkj"/>
                         <outlet property="deskribapenaUI" destination="8OQ-TS-vUU" id="ETE-5W-Nnf"/>
                         <outlet property="egunaUI" destination="IZq-pw-74J" id="rmo-Vc-Dzg"/>
                         <outlet property="hileaUI" destination="MrE-TJ-TAI" id="Wgr-Qa-LuY"/>
