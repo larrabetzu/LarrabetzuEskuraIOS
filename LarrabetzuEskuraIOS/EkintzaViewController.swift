@@ -40,7 +40,11 @@ class EkintzaViewController: UIViewController {
         self.deskribapenaUI.text = deskribapena
         self.linkUI.text = linkString
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         downloadImageBackground()
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
     override func viewWillDisappear(animated: Bool) {
