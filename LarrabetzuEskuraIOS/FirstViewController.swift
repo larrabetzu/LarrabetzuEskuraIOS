@@ -15,8 +15,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var blogenLink: [String] = []
     var blogenPubDate: [String] = []
     
+    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController.navigationBar.barTintColor = grisaColor
+        tabBarController.tabBar.barTintColor = grisaColor
         println("viewDidLoad")
         let berriakParseatu = Berriak()
         berriakParseatu.getLarrabetzutik()

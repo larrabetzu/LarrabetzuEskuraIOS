@@ -15,9 +15,13 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     var ekintzanArray: [NSDictionary] = []
     
+    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
+        navigationController.navigationBar.barTintColor = grisaColor
+        tabBarController.tabBar.barTintColor = grisaColor
         activityIndicator.hidden = false
         tableView.hidden = true
         let ekintzakParseatu = Ekintzak()
