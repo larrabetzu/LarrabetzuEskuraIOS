@@ -23,7 +23,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
         super.viewWillDisappear(animated)
         
         if UIApplication.sharedApplication().networkActivityIndicatorVisible {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
     
