@@ -91,6 +91,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             
             ekintzaView.SetEkintza(tituloa: tituloa, hilea: hilea, eguna: eguna, ordua: ordua, lekua: lekua, deskribapena: deskribapena, kartela: kartela, link: link)
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
     }
     

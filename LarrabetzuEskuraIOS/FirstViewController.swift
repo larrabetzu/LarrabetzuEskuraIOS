@@ -61,6 +61,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         var webView = WebViewController()
         webView.hidesBottomBarWhenPushed = true
         self.navigationController.pushViewController(webView, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         webView.loadAddressURL(blogenLink[indexPath.row])
     }
 
