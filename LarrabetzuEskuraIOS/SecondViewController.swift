@@ -20,8 +20,14 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
+        
+        //NabigationBar
         navigationController.navigationBar.barTintColor = grisaColor
         tabBarController.tabBar.barTintColor = grisaColor
+        navigationItem.title = "Agenda"
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController.navigationBar.titleTextAttributes = titleDict
+
         activityIndicator.hidden = false
         tableView.hidden = true
         let ekintzakParseatu = Ekintzak()

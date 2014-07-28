@@ -19,8 +19,15 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //NabigationBar
         navigationController.navigationBar.barTintColor = grisaColor
         tabBarController.tabBar.barTintColor = grisaColor
+        navigationItem.title = "Berriak"
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController.navigationBar.titleTextAttributes = titleDict
+        
+        
         println("viewDidLoad")
         let berriakParseatu = Berriak()
         berriakParseatu.getLarrabetzutik()
