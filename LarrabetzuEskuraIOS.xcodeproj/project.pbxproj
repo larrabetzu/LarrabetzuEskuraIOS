@@ -36,6 +36,7 @@
 		9F2CDD75198502B60013F38F /* andramari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = andramari.png; sourceTree = "<group>"; };
 		9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakTableViewCell.swift; sourceTree = "<group>"; };
 		9F7EE79419768A8800485B79 /* EkintzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzaViewController.swift; sourceTree = "<group>"; };
+		9F9FA98B19878F5300868658 /* eu */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = eu; path = eu.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FB3528319631BED00099645 /* Berriak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Berriak.swift; sourceTree = "<group>"; };
 		9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakParseatu.swift; sourceTree = "<group>"; };
 		9FDBB595195AE4D4003EFA9E /* LarrabetzuEskuraIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarrabetzuEskuraIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +44,6 @@
 		9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9FDBB59E195AE4D4003EFA9E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		9FDBB5A1195AE4D4003EFA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9FDBB5A9195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LarrabetzuEskuraIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB5AE195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -217,6 +217,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				eu,
 			);
 			mainGroup = 9FDBB58C195AE4D3003EFA9E;
 			productRefGroup = 9FDBB596195AE4D4003EFA9E /* Products */;
@@ -287,7 +288,7 @@
 		9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9FDBB5A1195AE4D4003EFA9E /* Base */,
+				9F9FA98B19878F5300868658 /* eu */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

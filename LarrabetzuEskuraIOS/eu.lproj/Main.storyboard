@@ -28,13 +28,10 @@
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VBS-7e-ff2">
                                 <rect key="frame" x="0.0" y="164" width="600" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="164" width="400" height="379"/>
-                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="164" width="640" height="99"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="164" width="640" height="419"/>
                                 </variation>
                                 <connections>
@@ -115,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="2205" y="1101"/>
         </scene>
-        <!--First-->
+        <!--Berriak-->
         <scene sceneID="Fel-gQ-Ubt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wNj-h1-vh5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Berriak" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEw-1M-8gK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -134,11 +131,11 @@
             </objects>
             <point key="canvasLocation" x="3042" y="672"/>
         </scene>
-        <!--Second-->
+        <!--Agenda-->
         <scene sceneID="ga0-OQ-xbx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KUc-8c-6og" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6lm-vv-CuQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -332,7 +329,7 @@
                                 <string key="text">That is the most important rule to remember when it comes to using Auto Layout. If there aren’t enough constraints, then Auto Layout will be unable to calculate where your views should be positioned or how big they should be. Such a layout is considered to be invalid. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="191" width="360" height="196"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
@@ -341,7 +338,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="191" width="360" height="168"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="20" y="191" width="440" height="228"/>
                                 </variation>
                             </textView>
