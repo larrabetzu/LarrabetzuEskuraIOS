@@ -15,18 +15,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var blogenLink: [String] = []
     var blogenPubDate: [String] = []
     
-    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //NabigationBar
         navigationController.navigationBar.barTintColor = grisaColor
-        tabBarController.tabBar.barTintColor = grisaColor
-        navigationItem.title = "Berriak"
+        navigationItem.title = "Larrabetzu #eskura"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.titleTextAttributes = titleDict
-        
         
         println("viewDidLoad")
         let berriakParseatu = Berriak()
@@ -63,6 +61,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationController.pushViewController(webView, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         webView.loadAddressURL(blogenLink[indexPath.row])
+        
     }
 
     

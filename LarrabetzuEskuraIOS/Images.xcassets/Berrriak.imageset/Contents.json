@@ -1,14 +1,16 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "first.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "first@2x.png"
+      "filename" : "Berrriak@2x.png"
     }
   ],
   "info" : {

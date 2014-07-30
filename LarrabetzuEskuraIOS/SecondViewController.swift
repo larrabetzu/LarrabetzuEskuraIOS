@@ -15,7 +15,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     var ekintzanArray: [NSDictionary] = []
     
-    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         //NabigationBar
         navigationController.navigationBar.barTintColor = grisaColor
-        tabBarController.tabBar.barTintColor = grisaColor
         navigationItem.title = "Agenda"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.titleTextAttributes = titleDict

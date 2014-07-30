@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
@@ -22,8 +22,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items/>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andramari.png" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-gB-Oj2">
+                                <rect key="frame" x="0.0" y="65" width="600" height="338"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="16:9" id="Y2Q-J7-Gma"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VBS-7e-ff2">
-                                <rect key="frame" x="0.0" y="402" width="600" height="141"/>
+                                <rect key="frame" x="0.0" y="402" width="600" height="149"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="164" width="640" height="99"/>
@@ -36,12 +42,6 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="ESe-Qc-rvW"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andramari.png" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-gB-Oj2">
-                                <rect key="frame" x="0.0" y="65" width="600" height="338"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="16:9" id="Y2Q-J7-Gma"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -49,18 +49,17 @@
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
                             <constraint firstAttribute="centerX" secondItem="N5E-gB-Oj2" secondAttribute="centerX" id="Eua-lj-DA1"/>
                             <constraint firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="width" id="FA6-65-ign"/>
-                            <constraint firstAttribute="width" secondItem="VBS-7e-ff2" secondAttribute="width" id="Fhh-qi-Kg6"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="300:137" id="L47-6T-P3x"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="leading" secondItem="iQr-d4-Ar2" secondAttribute="leading" id="YHa-Do-Y9A"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="trailing" secondItem="iQr-d4-Ar2" secondAttribute="trailing" id="bzE-bx-tba"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="VBS-7e-ff2" secondAttribute="bottom" constant="20" symbolic="YES" id="edI-qO-tTR"/>
                             <constraint firstItem="N5E-gB-Oj2" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="21" id="kOH-3C-mCK"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="top" secondItem="N5E-gB-Oj2" secondAttribute="bottom" constant="-1" id="mGE-mG-wmf"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="VBS-7e-ff2" secondAttribute="bottom" id="tnm-Bt-SLQ"/>
+                            <constraint firstItem="VBS-7e-ff2" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="zz2-Mc-C6Z"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Fhh-qi-Kg6"/>
                                 <exclude reference="L47-6T-P3x"/>
                             </mask>
                         </variation>
@@ -69,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3907" y="672"/>
+            <point key="canvasLocation" x="3795" y="672"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -94,7 +93,7 @@
         <scene sceneID="Fel-gQ-Ubt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wNj-h1-vh5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Berriak" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Berriak" image="Berrriak" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEw-1M-8gK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -113,7 +112,7 @@
         <scene sceneID="ga0-OQ-xbx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KUc-8c-6og" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Agenda" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="Agenda" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6lm-vv-CuQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -145,7 +144,7 @@
                                 <items/>
                             </toolbar>
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-ZQ-yWc">
-                                <rect key="frame" x="0.0" y="64" width="600" height="479"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EkintzakCustomTableViewCell" rowHeight="80" id="CFk-53-vVc" customClass="EkintzakTableViewCell" customModule="LarrabetzuEskuraIOS" customModuleProvider="target">
@@ -211,7 +210,7 @@
                             <constraint firstAttribute="width" secondItem="7Hn-ZQ-yWc" secondAttribute="width" id="aw3-zL-GtF"/>
                             <constraint firstAttribute="centerX" secondItem="0QI-cf-AVg" secondAttribute="centerX" id="cZJ-B5-t7l"/>
                             <constraint firstItem="7Hn-ZQ-yWc" firstAttribute="top" secondItem="aRY-ql-FFa" secondAttribute="bottom" id="f4N-6H-0zy"/>
-                            <constraint firstItem="cMi-Iu-ltq" firstAttribute="top" secondItem="7Hn-ZQ-yWc" secondAttribute="bottom" constant="20" symbolic="YES" id="liw-bs-2AG"/>
+                            <constraint firstItem="cMi-Iu-ltq" firstAttribute="top" secondItem="7Hn-ZQ-yWc" secondAttribute="bottom" constant="-1" id="f6f-3d-7Hd"/>
                             <constraint firstItem="EJ5-M5-3kn" firstAttribute="leading" secondItem="J3d-ed-nth" secondAttribute="leading" id="pq6-IB-3fV"/>
                             <constraint firstAttribute="centerY" secondItem="0QI-cf-AVg" secondAttribute="centerY" id="vrK-Vc-1kb"/>
                         </constraints>
@@ -490,9 +489,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Agenda" width="30" height="30"/>
+        <image name="Berrriak" width="30" height="30"/>
         <image name="andramari.png" width="1054" height="596"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
