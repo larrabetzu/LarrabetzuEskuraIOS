@@ -73,7 +73,7 @@ class EkintzaViewController: UIViewController {
             var request: NSURLRequest = NSURLRequest(URL: imgURL)
             var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-                if !error? {
+                if !error {
                     var image: UIImage? = UIImage(data: data)
                     self.kartelaUI.image = image
                     self.activityIndicator.stopAnimating()

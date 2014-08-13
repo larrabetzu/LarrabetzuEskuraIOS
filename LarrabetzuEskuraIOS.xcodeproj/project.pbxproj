@@ -76,7 +76,7 @@
 			name = Argazkiak;
 			sourceTree = "<group>";
 		};
-		9FD7B52A19751795009DFFC0 /* Views */ = {
+		9FD7B52A19751795009DFFC0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */,
@@ -84,7 +84,7 @@
 				9F0ED659196ADC680037A4D3 /* WebViewController.swift */,
 				9F7EE79419768A8800485B79 /* EkintzaViewController.swift */,
 			);
-			name = Views;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		9FD7B52C1975192D009DFFC0 /* Parsers */ = {
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */,
-				9FD7B52A19751795009DFFC0 /* Views */,
+				9FD7B52A19751795009DFFC0 /* Controller */,
 				9FD7B52C1975192D009DFFC0 /* Parsers */,
 				9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */,
 				9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */,
