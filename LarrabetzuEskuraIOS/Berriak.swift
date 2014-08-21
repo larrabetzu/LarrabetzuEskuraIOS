@@ -35,9 +35,14 @@ class Berriak{
                     if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
                         for var idex = 0; idex<dictionaryEntries.count; ++idex{
                             if let una : AnyObject = dictionaryEntries[idex]{
-                                blogenTituloa.append(una["title"].description)
-                                blogenLink.append(una["link"].description)
-                                blogenPubDate.append(una["publishedDate"].description)
+                                let title : String = una["title"] as String
+                                let link : String = una["link"] as String
+                                let publishedDate : String = una["publishedDate"] as String
+                                
+                                self.blogenTituloa.append(title)
+                                self.blogenLink.append(link)
+                                self.blogenPubDate.append(publishedDate)
+                                
                             }else{
                                 println("Ez deu 'dictionaryEntries' idex betegaz topetan")
                             }
