@@ -56,11 +56,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        var webView = WebViewController()
+        let webView : WebViewController = self.storyboard.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
         webView.hidesBottomBarWhenPushed = true
+        
         self.navigationController.pushViewController(webView, animated: true)
+        webView.postLink = blogenLink[indexPath.row]
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        webView.loadAddressURL(blogenLink[indexPath.row])
         
     }
 

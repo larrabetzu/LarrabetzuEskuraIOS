@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items/>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andramari" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-gB-Oj2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andramari" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-gB-Oj2">
                                 <rect key="frame" x="0.0" y="65" width="600" height="338"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="16:9" id="Y2Q-J7-Gma"/>
@@ -425,25 +425,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsu-Zu-RQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5586" y="1568"/>
+            <point key="canvasLocation" x="5533" y="1528"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="x1Y-Qu-bkB">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="NLN-O3-IEg" customClass="WebViewController" customModule="LarrabetzuEskuraIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ssb-wR-QSS"/>
+                        <viewControllerLayoutGuide type="bottom" id="wxT-Ta-NdN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WsE-7A-EaW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcx-jr-gLW">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="leading" secondItem="wxT-Ta-NdN" secondAttribute="leading" id="DwP-HU-65N"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="bottom" secondItem="wxT-Ta-NdN" secondAttribute="top" id="bTQ-sI-p2f"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="top" secondItem="Ssb-wR-QSS" secondAttribute="bottom" id="wM7-Po-AKs"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="trailing" secondItem="Ssb-wR-QSS" secondAttribute="trailing" id="ypd-aZ-Gvs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XfM-cu-rEb">
+                        <barButtonItem key="leftBarButtonItem" title="Berriak" style="plain" id="W5G-3r-MuH">
+                            <connections>
+                                <action selector="backButton:" destination="NLN-O3-IEg" id="eji-Wh-Qhl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="mcx-jr-gLW" id="G3S-8W-VYP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqg-HA-Wmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6345" y="756"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="60L-id-VBE">
+        <scene sceneID="Iwu-oa-PRt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XcO-7M-mCi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n7N-bg-I03" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKM-6Y-HYR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oeA-Tc-qz8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hwq-Bj-kPi" kind="relationship" relationship="rootViewController" id="mJD-LT-opw"/>
+                        <segue destination="hwq-Bj-kPi" kind="relationship" relationship="rootViewController" id="bSJ-VE-Djb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BDN-6h-pAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frr-qW-n2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4776" y="1568"/>
+            <point key="canvasLocation" x="4721" y="1528"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KIB-hd-8hU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2gx-ND-IAY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNT-xG-F3d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NLN-O3-IEg" kind="relationship" relationship="rootViewController" id="kif-eb-iqo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHL-mm-KT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5533" y="756"/>
         </scene>
     </scenes>
     <resources>

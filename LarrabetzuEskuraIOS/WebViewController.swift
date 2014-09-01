@@ -8,15 +8,21 @@
 
 import UIKit
 
-class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
+class WebViewController: UIViewController, UIWebViewDelegate{
     
-    var webView = UIWebView()
     
+    @IBOutlet var webView: UIWebView!
+    var postLink: String = String()
+    
+    @IBAction func backButton(sender: UIBarButtonItem) {
+        self.navigationController.popViewControllerAnimated(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view!.backgroundColor = UIColor.whiteColor()
-        webView.delegate = self;
-        configureWebView()
+        self.webView.delegate = self
+        let requestURL: NSURL = NSURL(string: postLink)
+        let request :NSURLRequest = NSURLRequest(URL: requestURL)
+        self.webView.loadRequest(request)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -25,23 +31,6 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
         if UIApplication.sharedApplication().networkActivityIndicatorVisible {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
-    }
-    
-    
-    func loadAddressURL(address: String) {
-        let requestURL = NSURL(string: address)
-        let request = NSURLRequest(URL: requestURL)
-        webView.loadRequest(request)
-    }
-    
-    func configureWebView() {
-        
-        webView.frame =  CGRectInset(self.view.bounds, 0, 0)
-        webView.backgroundColor = UIColor.whiteColor()
-        webView.scalesPageToFit = true
-        webView.dataDetectorTypes = .All
-        
-        self.view.addSubview(webView)
     }
     
     
@@ -60,7 +49,6 @@ class WebViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegat
         webView.loadHTMLString(errorHTML, baseURL: nil)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
-    
     
 }
 
