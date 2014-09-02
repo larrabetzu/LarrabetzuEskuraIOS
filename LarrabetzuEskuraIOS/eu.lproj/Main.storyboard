@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
+        <deployment defaultVersion="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -453,7 +453,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XfM-cu-rEb">
-                        <barButtonItem key="leftBarButtonItem" title="Berriak" style="plain" id="W5G-3r-MuH">
+                        <barButtonItem key="leftBarButtonItem" title="Berriak" style="done" id="W5G-3r-MuH">
                             <connections>
                                 <action selector="backButton:" destination="NLN-O3-IEg" id="eji-Wh-Qhl"/>
                             </connections>
