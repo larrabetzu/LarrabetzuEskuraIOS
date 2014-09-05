@@ -15,7 +15,7 @@ class WebViewController: UIViewController, UIWebViewDelegate{
     var postLink: String = String()
     
     @IBAction func backButton(sender: UIBarButtonItem) {
-        self.navigationController.popViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

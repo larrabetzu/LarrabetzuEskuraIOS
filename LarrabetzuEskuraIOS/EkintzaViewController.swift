@@ -31,7 +31,7 @@ class EkintzaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view!.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
+        self.view.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
         self.tituloaUI.text = tituloaString
         self.hileaUI.text = hileaString
         self.egunaUI.text = egunaString
