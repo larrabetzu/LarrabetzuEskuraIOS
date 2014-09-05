@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment defaultVersion="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -194,8 +193,8 @@
                                     <rect key="frame" x="0.0" y="64" width="640" height="199"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="exV-Lf-msr" id="SvA-gW-sGT"/>
-                                    <outlet property="delegate" destination="exV-Lf-msr" id="X2d-PM-ihj"/>
+                                    <outlet property="dataSource" destination="exV-Lf-msr" id="fwT-c9-FjJ"/>
+                                    <outlet property="delegate" destination="exV-Lf-msr" id="2X4-K4-bJD"/>
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-cf-AVg">

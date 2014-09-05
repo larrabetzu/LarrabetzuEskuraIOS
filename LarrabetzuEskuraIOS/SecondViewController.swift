@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SecondViewController : UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -22,10 +22,10 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         println("viewDidLoad")
         
         //NabigationBar
-        navigationController.navigationBar.barTintColor = grisaColor
+        navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Agenda"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController.navigationBar.titleTextAttributes = titleDict
+        navigationController?.navigationBar.titleTextAttributes = titleDict
 
         activityIndicator.hidden = false
         tableView.hidden = true
@@ -52,12 +52,12 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
 
-    func tableView(tableView: UITableView!, numberOfRowsInSection section:Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return ekintzanArray.count
     }
     
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as EkintzakTableViewCell
         
         let ekintza = ekintzanArray[indexPath.row]
@@ -73,10 +73,10 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         let ekintza = ekintzanArray[indexPath.row]
         println(ekintza)
-        let ekintzaView : EkintzaViewController = self.storyboard.instantiateViewControllerWithIdentifier("EkintzaViewController") as EkintzaViewController
+        let ekintzaView : EkintzaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EkintzaViewController") as EkintzaViewController
         ekintzaView
         ekintzaView.hidesBottomBarWhenPushed = true
-        self.navigationController.pushViewController(ekintzaView, animated: true)
+        self.navigationController?.pushViewController(ekintzaView, animated: true)
         if let fields: AnyObject = ekintza["fields"]{
             let tituloa = fields["tituloa"] as String
             let data = fields["egune"] as String
@@ -97,7 +97,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func hiddenEmptyCell(){
         var tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
-        self.tableView.tableFooterView.hidden = true
+        self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()
     }
     
