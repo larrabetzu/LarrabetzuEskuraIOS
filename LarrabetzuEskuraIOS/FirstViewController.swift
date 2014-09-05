@@ -21,10 +21,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         
         //NabigationBar
-        navigationController.navigationBar.barTintColor = grisaColor
+        navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Larrabetzu #eskura"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController.navigationBar.titleTextAttributes = titleDict
+        navigationController?.navigationBar.titleTextAttributes = titleDict
         
         println("viewDidLoad")
         let berriakParseatu = Berriak()
@@ -41,14 +41,14 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section:Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return blogenTituloa.count
     }
     
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
-        cell.textLabel.text = "\(blogenTituloa[indexPath.row])"
+        cell.textLabel?.text = "\(blogenTituloa[indexPath.row])"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         println("\(blogenLink[indexPath.row])")
         
@@ -56,10 +56,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        let webView : WebViewController = self.storyboard.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+        let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
         webView.hidesBottomBarWhenPushed = true
         
-        self.navigationController.pushViewController(webView, animated: true)
+        self.navigationController?.pushViewController(webView, animated: true)
         webView.postLink = blogenLink[indexPath.row]
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
