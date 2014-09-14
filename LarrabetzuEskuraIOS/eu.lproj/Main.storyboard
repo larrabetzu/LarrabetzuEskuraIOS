@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -441,15 +441,26 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcx-jr-gLW">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NLN-O3-IEg" id="nsQ-3e-zW1"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="leading" secondItem="wxT-Ta-NdN" secondAttribute="leading" id="DwP-HU-65N"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="bottom" secondItem="wxT-Ta-NdN" secondAttribute="top" id="bTQ-sI-p2f"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="top" secondItem="Ssb-wR-QSS" secondAttribute="bottom" id="wM7-Po-AKs"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="trailing" secondItem="Ssb-wR-QSS" secondAttribute="trailing" id="ypd-aZ-Gvs"/>
+                            <constraint firstAttribute="centerX" secondItem="mcx-jr-gLW" secondAttribute="centerX" id="3P1-DL-QMq"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="width" secondItem="WsE-7A-EaW" secondAttribute="width" id="4SS-7j-SrX"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="height" secondItem="WsE-7A-EaW" secondAttribute="height" constant="-64" id="Ipx-cK-zu9"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="width" secondItem="WsE-7A-EaW" secondAttribute="width" id="Obw-Hj-EkL"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="top" secondItem="Ssb-wR-QSS" secondAttribute="bottom" id="SPH-HN-veJ"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="height" secondItem="WsE-7A-EaW" secondAttribute="height" id="X70-7i-DkT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4SS-7j-SrX"/>
+                                <exclude reference="X70-7i-DkT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="XfM-cu-rEb">
                         <barButtonItem key="leftBarButtonItem" title="Berriak" style="done" id="W5G-3r-MuH">
