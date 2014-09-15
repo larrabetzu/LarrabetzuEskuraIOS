@@ -54,8 +54,12 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //NabigationBar
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Hobespenak"
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict
     }
 
     override func didReceiveMemoryWarning() {
