@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -226,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="3769" y="1568"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="9rq-3J-HCm">
             <objects>
-                <viewController id="Y1u-kZ-Ler" sceneMemberID="viewController">
+                <viewController id="Y1u-kZ-Ler" customClass="SettingsViewController" customModule="Larrabetzu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SQy-6T-k7h"/>
                         <viewControllerLayoutGuide type="bottom" id="rF6-Rn-N73"/>
@@ -253,6 +254,9 @@
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YZ4-D7-dph">
                                         <rect key="frame" x="511" y="13" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchKultura:" destination="Y1u-kZ-Ler" eventType="valueChanged" id="pRE-yH-6xg"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kultura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2x-oH-eJj">
                                         <rect key="frame" x="8" y="18" width="271" height="21"/>
@@ -277,6 +281,9 @@
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-hF-Y8i">
                                         <rect key="frame" x="511" y="9" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchKirola:" destination="Y1u-kZ-Ler" eventType="valueChanged" id="TFY-3F-gYa"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kirola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGQ-f0-Yk0">
                                         <rect key="frame" x="8" y="14" width="261" height="21"/>
@@ -310,6 +317,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hqA-vr-UGg">
                                         <rect key="frame" x="511" y="9" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchUdalGaiak:" destination="Y1u-kZ-Ler" eventType="valueChanged" id="8GV-Mb-umH"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,6 +344,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yym-od-OeL">
                                         <rect key="frame" x="511" y="9" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchAlbisteak:" destination="Y1u-kZ-Ler" eventType="valueChanged" id="ru3-nb-6rX"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -366,13 +379,16 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="KPM-Rd-jwX">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="2" minimumValue="2" maximumValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="KPM-Rd-jwX">
                                         <rect key="frame" x="498" y="5" width="94" height="29"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="94" id="15p-Ah-OBE"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="stepper:" destination="Y1u-kZ-Ler" eventType="valueChanged" id="woI-kc-zdz"/>
+                                        </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVh-XZ-dVq">
                                         <rect key="frame" x="182" y="12" width="32" height="21"/>
@@ -453,10 +469,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelNumeroPost" destination="zVh-XZ-dVq" id="p2o-7c-dz4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciZ-h6-4dF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3759" y="2408"/>
+            <point key="canvasLocation" x="3759" y="2399"/>
         </scene>
         <!--Ekintza View Controller-->
         <scene sceneID="dCU-vs-xcf">
