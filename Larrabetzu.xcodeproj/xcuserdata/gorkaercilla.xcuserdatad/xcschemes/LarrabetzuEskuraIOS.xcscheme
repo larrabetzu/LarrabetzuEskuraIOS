@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9FDBB594195AE4D4003EFA9E"
-               BuildableName = "LarrabetzuEskuraIOS.app"
-               BlueprintName = "LarrabetzuEskuraIOS"
-               ReferencedContainer = "container:LarrabetzuEskuraIOS.xcodeproj">
+               BuildableName = "Larrabetzu.app"
+               BlueprintName = "Larrabetzu"
+               ReferencedContainer = "container:Larrabetzu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9FDBB5A8195AE4D4003EFA9E"
-               BuildableName = "LarrabetzuEskuraIOSTests.xctest"
-               BlueprintName = "LarrabetzuEskuraIOSTests"
-               ReferencedContainer = "container:LarrabetzuEskuraIOS.xcodeproj">
+               BuildableName = "LarrabetzuTests.xctest"
+               BlueprintName = "LarrabetzuTests"
+               ReferencedContainer = "container:Larrabetzu.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9FDBB594195AE4D4003EFA9E"
-            BuildableName = "LarrabetzuEskuraIOS.app"
-            BlueprintName = "LarrabetzuEskuraIOS"
-            ReferencedContainer = "container:LarrabetzuEskuraIOS.xcodeproj">
+            BuildableName = "Larrabetzu.app"
+            BlueprintName = "Larrabetzu"
+            ReferencedContainer = "container:Larrabetzu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9FDBB594195AE4D4003EFA9E"
-            BuildableName = "LarrabetzuEskuraIOS.app"
-            BlueprintName = "LarrabetzuEskuraIOS"
-            ReferencedContainer = "container:LarrabetzuEskuraIOS.xcodeproj">
+            BuildableName = "Larrabetzu.app"
+            BlueprintName = "Larrabetzu"
+            ReferencedContainer = "container:Larrabetzu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9FDBB594195AE4D4003EFA9E"
-            BuildableName = "LarrabetzuEskuraIOS.app"
-            BlueprintName = "LarrabetzuEskuraIOS"
-            ReferencedContainer = "container:LarrabetzuEskuraIOS.xcodeproj">
+            BuildableName = "Larrabetzu.app"
+            BlueprintName = "Larrabetzu"
+            ReferencedContainer = "container:Larrabetzu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
