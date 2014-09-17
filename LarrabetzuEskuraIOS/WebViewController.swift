@@ -14,6 +14,18 @@ class WebViewController: UIViewController, UIWebViewDelegate{
     @IBOutlet var webView: UIWebView!
     var postLink: String = String()
     
+    @IBAction func share(sender: UIBarButtonItem) {
+        let someText:String = "#eskura"
+        let url:NSURL = NSURL(string: postLink)
+        
+        // let's add a String and an NSURL
+        let activityViewController = UIActivityViewController(
+            activityItems: [someText, url],
+            applicationActivities: nil)
+        self.navigationController?.presentViewController(activityViewController,
+            animated: true, 
+            completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

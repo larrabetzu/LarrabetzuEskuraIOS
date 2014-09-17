@@ -699,7 +699,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="XfM-cu-rEb">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="kYs-JF-r00" userLabel="Share"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="kYs-JF-r00" userLabel="Share">
+                            <connections>
+                                <action selector="share:" destination="NLN-O3-IEg" id="IIV-fs-Fwh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="mcx-jr-gLW" id="G3S-8W-VYP"/>
