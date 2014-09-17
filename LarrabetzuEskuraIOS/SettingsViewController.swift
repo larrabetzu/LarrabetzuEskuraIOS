@@ -13,6 +13,12 @@ class SettingsViewController: UIViewController {
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     @IBOutlet weak var labelNumeroPost: UILabel!
+    @IBAction func nortzuk(sender: UIBarButtonItem) {
+        let nortzukView : NortzukViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NortzukViewController") as NortzukViewController
+        nortzukView.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(nortzukView, animated: true)
+        
+    }
     @IBAction func stepper(sender: UIStepper) {
         let post: Int = Int(sender.value)
         self.labelNumeroPost.text = "\(post)"

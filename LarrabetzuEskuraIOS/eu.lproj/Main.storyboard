@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -466,6 +467,9 @@
                                 <rect key="frame" x="451" y="7" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <connections>
+                                <action selector="nortzuk:" destination="Y1u-kZ-Ler" id="wB0-jK-Sa8"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -662,6 +666,60 @@
             </objects>
             <point key="canvasLocation" x="5533" y="1528"/>
         </scene>
+        <!--Nortzuk View Controller-->
+        <scene sceneID="veQ-mL-n5g">
+            <objects>
+                <viewController storyboardIdentifier="NortzukViewController" id="mVc-kf-67W" customClass="NortzukViewController" customModule="Larrabetzu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y5C-oP-8q3"/>
+                        <viewControllerLayoutGuide type="bottom" id="RbT-tC-5ni"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ruF-j3-ZdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ka-uP-Uc5">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Zer da:
+Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazioa eta ekitaldien agenda modu automatikoan eskaintzen ditu eskura larrabetzu.net gunean.
+
+Zertarako:
+Aplikazio honek eskura jartzen du gure herrian sortzen den informazio guztia. Informazio dinamikoa. Parte hartzera gonbidatzen zaitu, modu aktiboan.
+
+Zelan erabiltzen da:
+Erraza da. Deskargatu ostean, zure mugikorreko pantailan Larrabetzu aplikazioaren irudia izango duzu, ostean klik egiten duzun bakoitzean herriko informazioa edo kultur ekitaldi guztien berri izango duzu.
+
+Zelan parte hartu:
+Garrantzitsua da elkarteetako lagunek ere informazioa gehitzea aplikazioan, antolatzen den guztiaren berri emanez. Irudiak, deialdiak, orduak, lekua adieraziz.
+
+Hurrengo geltokia:
+Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat eta gehiago erabili, zenbat eta parte hartze handiagoa izan... hobeto jakingo dugu gure beharrizanen gainean, eta horren arabera berritu eta hobetu ahal izango dugu. Guztion eskura dago.
+
+Garapena:
+2013ko urrian aurkeztu genuen sarean Eskura aplikazioa. Gorka Ercilla eta Patxi Gaztelumendiren artean sortu genuen lehen bertsioa. Aurrerantzean bertsio hobetuak eta irekiak egiten jarraitzea da gure asmoa; gehiago ikusi, ikasi eta berrituz.
+
+2014ko ekainean Sergio Peñak webApp bat garatu du eta sarean eskaini dugu plataforma guztietarako prestatuta: larrabetzu.net/app
+
+2014ko irailean Gorka Ercillak ios App-a garatu du eta App Storean eskaini dugu.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="top" secondItem="Y5C-oP-8q3" secondAttribute="bottom" id="1wd-4O-gml"/>
+                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="bottom" secondItem="RbT-tC-5ni" secondAttribute="top" id="gT0-GX-WWD"/>
+                            <constraint firstAttribute="centerX" secondItem="4Ka-uP-Uc5" secondAttribute="centerX" id="s1c-RF-zGK"/>
+                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="width" secondItem="ruF-j3-ZdC" secondAttribute="width" id="sTI-mz-5SC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="A6q-10-Lzv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7HA-Rn-IHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5533" y="2399"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="x1Y-Qu-bkB">
             <objects>
@@ -767,6 +825,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76E-cA-xVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3042" y="2399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ii0-sJ-egA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xQe-rw-Y4k" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wmV-NX-5A3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mVc-kf-67W" kind="relationship" relationship="rootViewController" id="Zmt-XX-b21"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQP-fs-6MC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4721" y="2399"/>
         </scene>
     </scenes>
     <resources>

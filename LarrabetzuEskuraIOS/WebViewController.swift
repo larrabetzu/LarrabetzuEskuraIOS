@@ -18,7 +18,6 @@ class WebViewController: UIViewController, UIWebViewDelegate{
         let someText:String = "#eskura"
         let url:NSURL = NSURL(string: postLink)
         
-        // let's add a String and an NSURL
         let activityViewController = UIActivityViewController(
             activityItems: [someText, url],
             applicationActivities: nil)
