@@ -14,11 +14,10 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var labelNumeroPost: UILabel!
     
-    @IBAction func nortzuk(sender: UIBarButtonItem) {
+    @IBAction func nortzuk(sender: UIButton, forEvent event: UIEvent) {
         let nortzukView : NortzukViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NortzukViewController") as NortzukViewController
         nortzukView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nortzukView, animated: true)
-        
     }
     @IBAction func stepper(sender: UIStepper) {
         let postNumeroa: Int = Int(sender.value)

@@ -34,7 +34,7 @@ class Berriak{
                 if let dictionaryFeed : AnyObject = dictionaryResponseData["feed"]{
                     if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
                         var postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
-                        if(postNumeroa != 0){
+                        if(postNumeroa == 0){
                             postNumeroa = dictionaryEntries.count
                         }
                         for var idex = 0; idex<postNumeroa; ++idex{

@@ -52,13 +52,5 @@ class WebViewController: UIViewController, UIWebViewDelegate{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
-        
-        let localizedErrorMessage = NSLocalizedString("An error occured:", comment: "")
-        let errorHTML = "<!doctype html><html><body><div style=\"width: 100%%; text-align: center; font-size: 36pt;\">\(localizedErrorMessage) \(error.localizedDescription)</div></body></html>"
-        webView.loadHTMLString(errorHTML, baseURL: nil)
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-    }
-    
 }
 
