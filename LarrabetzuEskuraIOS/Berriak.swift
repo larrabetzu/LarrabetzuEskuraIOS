@@ -33,7 +33,11 @@ class Berriak{
             if let dictionaryResponseData : AnyObject = parsedJSON["responseData"]{
                 if let dictionaryFeed : AnyObject = dictionaryResponseData["feed"]{
                     if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
-                        for var idex = 0; idex<dictionaryEntries.count; ++idex{
+                        var postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
+                        if(postNumeroa != 0){
+                            postNumeroa = dictionaryEntries.count
+                        }
+                        for var idex = 0; idex<postNumeroa; ++idex{
                             if let una : AnyObject = dictionaryEntries[idex]{
                                 let title : String = una["title"] as String
                                 let link : String = una["link"] as String

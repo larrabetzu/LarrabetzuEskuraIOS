@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     @IBOutlet weak var labelNumeroPost: UILabel!
+    
     @IBAction func nortzuk(sender: UIBarButtonItem) {
         let nortzukView : NortzukViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NortzukViewController") as NortzukViewController
         nortzukView.hidesBottomBarWhenPushed = true
@@ -20,9 +21,13 @@ class SettingsViewController: UIViewController {
         
     }
     @IBAction func stepper(sender: UIStepper) {
-        let post: Int = Int(sender.value)
-        self.labelNumeroPost.text = "\(post)"
+        let postNumeroa: Int = Int(sender.value)
+        self.labelNumeroPost.text = "\(postNumeroa)"
+        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        postNumeroaNS.setObject(postNumeroa, forKey:"postNumeroa")
+        postNumeroaNS.synchronize()
     }
+    @IBOutlet weak var stepperUI: UIStepper!
     @IBAction func switchKultura(sender: UISwitch) {
         let position = sender.on
         if(position){
@@ -66,6 +71,13 @@ class SettingsViewController: UIViewController {
         navigationItem.title = "Hobespenak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = titleDict
+        
+        let postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
+        println("\(postNumeroa)")
+        if(postNumeroa != 0){
+            self.labelNumeroPost.text = "\(postNumeroa)"
+            self.stepperUI?.value = Double (postNumeroa)
+        }
     }
 
     override func didReceiveMemoryWarning() {
