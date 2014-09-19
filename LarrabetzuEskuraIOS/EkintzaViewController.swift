@@ -33,7 +33,7 @@ class EkintzaViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
         self.tituloaUI.text = tituloaString
-        self.hileaUI.text = hileaString
+        self.hileaUI.text = hilea(hileaString)
         self.egunaUI.text = egunaString
         self.orduaUI.text = orduaString
         self.lekuaUI.text = lekuaString
@@ -84,7 +84,28 @@ class EkintzaViewController: UIViewController {
                 }
             })
        })
+    }
+    
+    func hilea(numeroa:String)-> String{
+        var hileanizena:String = "Urtarrilak";
+        let hilea : Int = numeroa.toInt()!
 
+        switch (hilea){
+            case 1: hileanizena="Urtarrilak"; break;
+            case 2: hileanizena="Otsailak"; break;
+            case 3: hileanizena="Martxoak"; break;
+            case 4: hileanizena="Apirilak"; break;
+            case 5: hileanizena="Maiatzak"; break;
+            case 6: hileanizena="Ekainak"; break;
+            case 7: hileanizena="Uztailak"; break;
+            case 8: hileanizena="Abuztuak"; break;
+            case 9: hileanizena="Irailak"; break;
+            case 10: hileanizena="Urriak"; break;
+            case 11: hileanizena="Azaroak"; break;
+            case 12: hileanizena="Abenduak"; break;
+            default: hileanizena="Abenduak"
+        }
+        return hileanizena;
     }
    
 }

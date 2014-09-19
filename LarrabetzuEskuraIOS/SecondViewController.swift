@@ -64,7 +64,10 @@ class SecondViewController : UIViewController, UITableViewDelegate , UITableView
         if let fields: AnyObject = ekintza["fields"]{
             let tituloa = fields["tituloa"] as String
             let data = fields["egune"] as String
-            cell.loadItem(tituloa: (tituloa), ordua: data.substringFromIndex(advance(data.startIndex, 11)), eguna: data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2)))
+            let lekua = fields["lekua"] as String
+            let ordua = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5)) as String
+            let eguna = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2)) as String
+            cell.loadItem(tituloa: (tituloa), ordua: ordua, eguna: eguna,lekua: lekua)
         }
         
         return cell
@@ -85,7 +88,7 @@ class SecondViewController : UIViewController, UITableViewDelegate , UITableView
             let kartela = fields["kartela"] as String
             let deskribapena = fields["deskribapena"] as String
             let eguna:String = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2))
-            let ordua:String = data.substringFromIndex(advance(data.startIndex, 11))
+            let ordua:String = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5))
             let hilea:String = data.substringFromIndex(advance(data.startIndex, 5)).substringToIndex(advance(data.startIndex, 2))
             
             ekintzaView.SetEkintza(tituloa: tituloa, hilea: hilea, eguna: eguna, ordua: ordua, lekua: lekua, deskribapena: deskribapena, kartela: kartela, link: link)
