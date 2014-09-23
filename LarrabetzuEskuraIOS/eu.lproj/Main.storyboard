@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -84,6 +85,7 @@
                     <connections>
                         <segue destination="wNj-h1-vh5" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="KUc-8c-6og" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="NQi-z0-GKE" kind="relationship" relationship="viewControllers" id="OJe-vB-D7B"/>
                         <segue destination="ceB-19-ZBT" kind="relationship" relationship="viewControllers" id="2zX-HG-YTX"/>
                     </connections>
                 </tabBarController>
@@ -493,7 +495,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciZ-h6-4dF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3759" y="2399"/>
+            <point key="canvasLocation" x="3759" y="3355"/>
+        </scene>
+        <!--Elkarteak View Controller-->
+        <scene sceneID="rxp-Mf-hgJ">
+            <objects>
+                <viewController id="MPs-RY-8av" customClass="ElkarteakViewController" customModule="Larrabetzu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="73n-eL-EHE"/>
+                        <viewControllerLayoutGuide type="bottom" id="eSj-YB-Z7n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZcB-Bf-8pf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ADQ-X6-a91">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MPs-RY-8av" id="yp3-oQ-wy5"/>
+                                    <outlet property="delegate" destination="MPs-RY-8av" id="A09-CD-BJj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="bottom" secondItem="eSj-YB-Z7n" secondAttribute="top" id="2ib-F7-3Qg"/>
+                            <constraint firstAttribute="centerX" secondItem="ADQ-X6-a91" secondAttribute="centerX" id="Dg7-9J-afa"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="top" secondItem="73n-eL-EHE" secondAttribute="bottom" id="YNe-wW-iJe"/>
+                            <constraint firstAttribute="width" secondItem="ADQ-X6-a91" secondAttribute="width" id="g3Y-hp-atn"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="leading" secondItem="eSj-YB-Z7n" secondAttribute="leading" id="z4Z-2K-BQ5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9of-Sn-Zyt"/>
+                    <connections>
+                        <outlet property="tableView" destination="ADQ-X6-a91" id="p3Q-66-CY5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaA-PU-kvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3795" y="2412"/>
         </scene>
         <!--Ekintza View Controller-->
         <scene sceneID="dCU-vs-xcf">
@@ -679,7 +720,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsu-Zu-RQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5533" y="1528"/>
+            <point key="canvasLocation" x="5533" y="1576"/>
         </scene>
         <!--Nortzuk View Controller-->
         <scene sceneID="veQ-mL-n5g">
@@ -737,7 +778,7 @@ Garapena:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HA-Rn-IHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5533" y="2399"/>
+            <point key="canvasLocation" x="5533" y="3355"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="x1Y-Qu-bkB">
@@ -752,7 +793,7 @@ Garapena:
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcx-jr-gLW">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="NLN-O3-IEg" id="nsQ-3e-zW1"/>
@@ -763,8 +804,8 @@ Garapena:
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="mcx-jr-gLW" secondAttribute="centerX" id="3P1-DL-QMq"/>
                             <constraint firstItem="mcx-jr-gLW" firstAttribute="width" secondItem="WsE-7A-EaW" secondAttribute="width" id="Obw-Hj-EkL"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="top" secondItem="Ssb-wR-QSS" secondAttribute="bottom" id="SPH-HN-veJ"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="bottom" secondItem="wxT-Ta-NdN" secondAttribute="top" id="t1N-wZ-gFK"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="topMargin" secondItem="Ssb-wR-QSS" secondAttribute="top" constant="8" id="SPH-HN-veJ"/>
+                            <constraint firstItem="mcx-jr-gLW" firstAttribute="bottom" secondItem="wxT-Ta-NdN" secondAttribute="top" constant="2" id="t1N-wZ-gFK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XfM-cu-rEb">
@@ -798,7 +839,7 @@ Garapena:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frr-qW-n2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4721" y="1528"/>
+            <point key="canvasLocation" x="4721" y="1576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KIB-hd-8hU">
@@ -822,7 +863,7 @@ Garapena:
         <scene sceneID="LPf-KD-Mh9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ceB-19-ZBT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hosbespenak" image="Settings" id="dp6-Bt-VXx"/>
+                    <tabBarItem key="tabBarItem" title="Hosbespenak" image="Hobespenak" id="dp6-Bt-VXx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qs4-vJ-QUX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -835,7 +876,7 @@ Garapena:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76E-cA-xVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3042" y="2399"/>
+            <point key="canvasLocation" x="3042" y="3355"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ii0-sJ-egA">
@@ -853,13 +894,33 @@ Garapena:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQP-fs-6MC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4721" y="2399"/>
+            <point key="canvasLocation" x="4721" y="3355"/>
+        </scene>
+        <!--Elkarteak-->
+        <scene sceneID="vHk-RY-C8P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NQi-z0-GKE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Elkarteak" image="Elkarteak" id="5Gg-Yq-BPV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uav-gc-cmA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MPs-RY-8av" kind="relationship" relationship="rootViewController" id="Ihp-OM-YEw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcR-KK-56L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3019" y="2412"/>
         </scene>
     </scenes>
     <resources>
         <image name="Agenda" width="30" height="30"/>
         <image name="Berrriak" width="30" height="30"/>
-        <image name="Settings" width="30" height="30"/>
+        <image name="Elkarteak" width="30" height="30"/>
+        <image name="Hobespenak" width="30" height="30"/>
         <image name="andramari" width="527" height="298"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
