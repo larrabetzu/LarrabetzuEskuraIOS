@@ -11,6 +11,8 @@ import UIKit
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    
     var blogenTituloa: [String] = []
     var blogenLink: [String] = []
     var blogenPubDate: [String] = []
@@ -33,6 +35,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         blogenLink = berriakParseatu.blogenLink
         blogenPubDate = berriakParseatu.blogenPubDate
         
+        self.hiddenEmptyCell()
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +93,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
-
+    
+    func hiddenEmptyCell(){
+        var tblView =  UIView(frame: CGRectZero)
+        self.tableView.tableFooterView = tblView
+        self.tableView.tableFooterView?.hidden = true
+        self.tableView.backgroundColor = UIColor.clearColor()
+    }
     
 
 }
