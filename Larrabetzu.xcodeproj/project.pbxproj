@@ -31,8 +31,8 @@
 		9FCDDD4D19C746CB0007B3F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4C19C746CB0007B3F2 /* SystemConfiguration.framework */; };
 		9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */; };
 		9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */; };
-		9FDBB59D195AE4D4003EFA9E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */; };
-		9FDBB59F195AE4D4003EFA9E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59E195AE4D4003EFA9E /* SecondViewController.swift */; };
+		9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */; };
+		9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */; };
 		9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */; };
 		9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */; };
 		9FDBB5B0195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */; };
@@ -76,8 +76,8 @@
 		9FDBB595195AE4D4003EFA9E /* Larrabetzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Larrabetzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB599195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9FDBB59E195AE4D4003EFA9E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerriakViewController.swift; sourceTree = "<group>"; };
+		9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EkintzakViewController.swift; sourceTree = "<group>"; };
 		9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9FDBB5A9195AE4D4003EFA9E /* LarrabetzuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LarrabetzuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB5AE195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 		9FD7B52A19751795009DFFC0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9FDBB59C195AE4D4003EFA9E /* FirstViewController.swift */,
-				9FDBB59E195AE4D4003EFA9E /* SecondViewController.swift */,
+				9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */,
+				9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */,
 				9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */,
 				9F56BDC019C6EECC00916CA8 /* SettingsViewController.swift */,
 				9F0ED659196ADC680037A4D3 /* WebViewController.swift */,
@@ -320,7 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB3528419631BED00099645 /* Berriak.swift in Sources */,
-				9FDBB59F195AE4D4003EFA9E /* SecondViewController.swift in Sources */,
+				9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */,
 				9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */,
 				9FB37E5619D2C63900CAF55F /* ElkarteakParseatu.swift in Sources */,
 				9F7EE79519768A8800485B79 /* EkintzaViewController.swift in Sources */,
@@ -329,7 +329,7 @@
 				9F5834CB19D1CEA000D6FD51 /* ElkarteakViewController.swift in Sources */,
 				9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */,
 				9F0ED65A196ADC680037A4D3 /* WebViewController.swift in Sources */,
-				9FDBB59D195AE4D4003EFA9E /* FirstViewController.swift in Sources */,
+				9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */,
 				9F56BDC119C6EECC00916CA8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

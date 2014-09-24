@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController : UIViewController, UITableViewDelegate , UITableViewDataSource {
+class EkintzakViewController : UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!

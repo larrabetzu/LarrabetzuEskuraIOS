@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  BerriakViewController.swift
 //  LarrabetzuEskuraIOS
 //
 //  Created by Gorka Ercilla on 25/06/14.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BerriakViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     
