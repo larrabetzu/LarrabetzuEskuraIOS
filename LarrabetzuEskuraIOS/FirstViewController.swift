@@ -50,38 +50,30 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
         cell.textLabel?.text = "\(blogenTituloa[indexPath.row])"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        println("\(blogenLink[indexPath.row])")
         
         var image : UIImage = UIImage(named: "Berriak")
         let bloganlinke : String = blogenLink[indexPath.row]
         
         if(bloganlinke.hasPrefix("http://larrabetzutik.org/")){
             image = UIImage(named: "larrabetzutik")
-            println("larrabetzutik")
             
         }else if(bloganlinke.hasPrefix("http://horibai.org/")){
             image = UIImage(named: "horibai")
-            println("horibai")
             
         }else if(bloganlinke.hasPrefix("http://www.larrabetzukoeskola.org/")){
             image = UIImage(named: "eskola")
-            println("eskola")
             
         }else if(bloganlinke.hasPrefix("http://gaztelumendi.tumblr.com/")){
             image = UIImage(named: "iptx")
-            println("patxi")
             
         }else if(bloganlinke.hasPrefix("http://www.larrabetzuko-udala.com/")){
             image = UIImage(named: "udala")
-            println("udala")
             
         }else if(bloganlinke.hasPrefix("http://www.literaturaeskola.org/")){
             image = UIImage(named: "literatura")
-            println("literatura")
             
         }else if(bloganlinke.hasPrefix("http://larrabetzuzerozabor.org/")){
             image = UIImage(named: "larrabetzuzerozabor")
-            println("zerozabor")
         }
         
         cell.imageView?.image = image
