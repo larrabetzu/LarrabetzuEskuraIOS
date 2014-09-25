@@ -12,7 +12,7 @@ class Berriak{
     var blogenTituloa: [String] = []
     var blogenLink: [String] = []
     var blogenPubDate: [String] = []
-    let urlBlog: [String] = ["http://www.larrabetzutik.org/feed/","http://www.horibai.org/feed/", "http://www.larrabetzukoeskola.org/feed/"]
+    
     
     let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q="
     
@@ -27,6 +27,27 @@ class Berriak{
     }
     
     func getLarrabetzutik(){
+        var urlBlog: [String] = []
+        
+        let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
+        let blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
+        let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
+        let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
+        
+        
+        if(blogLarrabetzutik){
+            urlBlog.append("http://www.larrabetzutik.org/feed/")
+        }
+        if(blogEskola){
+            urlBlog.append("http://www.horibai.org/feed/")
+        }
+        if(blogHoriBai){
+            urlBlog.append("http://www.larrabetzukoeskola.org/feed/")
+        }
+        if(blogLarrabetzuZeroZabor){
+            urlBlog.append("http://larrabetzuzerozabor.org/index.php/eu/bloga?format=feed&type=rss")
+        }
+        
         let countUrleBlog = urlBlog.count
         for var idex = 0; idex < countUrleBlog; ++idex{
             var parsedJSON = parseJSON(getJSON(googleApi+urlBlog[idex]))
