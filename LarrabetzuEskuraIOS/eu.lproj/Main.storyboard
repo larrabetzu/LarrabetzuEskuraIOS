@@ -395,13 +395,13 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="4" minimumValue="2" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="BzB-7P-HEs">
+                                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="4" minimumValue="2" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="BzB-7P-HEs">
                                                         <rect key="frame" x="498" y="5" width="94" height="29"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="94" id="ens-TZ-veh"/>
                                                         </constraints>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>
                                                             <action selector="stepper:" destination="Y1u-kZ-Ler" eventType="valueChanged" id="Q1r-N6-wW9"/>
                                                         </connections>
@@ -668,7 +668,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ADQ-X6-a91">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="57" width="600" height="494"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="MPs-RY-8av" id="yp3-oQ-wy5"/>
@@ -682,12 +682,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ADQ-X6-a91" firstAttribute="bottom" secondItem="eSj-YB-Z7n" secondAttribute="top" id="2ib-F7-3Qg"/>
-                            <constraint firstItem="ADQ-X6-a91" firstAttribute="top" secondItem="73n-eL-EHE" secondAttribute="bottom" id="CYC-mK-V3p"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="topMargin" secondItem="73n-eL-EHE" secondAttribute="bottom" constant="1" id="CYC-mK-V3p"/>
                             <constraint firstAttribute="centerX" secondItem="ADQ-X6-a91" secondAttribute="centerX" id="Dg7-9J-afa"/>
                             <constraint firstAttribute="centerY" secondItem="B9M-KI-Wia" secondAttribute="centerY" id="MEc-g4-9Hp"/>
                             <constraint firstAttribute="centerX" secondItem="B9M-KI-Wia" secondAttribute="centerX" id="XXH-2d-nHy"/>
                             <constraint firstAttribute="width" secondItem="ADQ-X6-a91" secondAttribute="width" id="g3Y-hp-atn"/>
-                            <constraint firstItem="ADQ-X6-a91" firstAttribute="leading" secondItem="eSj-YB-Z7n" secondAttribute="leading" id="z4Z-2K-BQ5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9of-Sn-Zyt"/>
@@ -746,20 +745,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-TS-vUU">
-                                <rect key="frame" x="20" y="205" width="560" height="108"/>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Sendavivara joango gara, bertan lo egin, parkea ezagutu eta Urriak 4an Larrabetzura bueltatuko gara. Apuntatu!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-TS-vUU">
+                                <rect key="frame" x="20" y="205" width="560" height="69"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">That is the most important rule to remember when it comes to using Auto Layout. If there aren’t enough constraints, then Auto Layout will be unable to calculate where your views should be positioned or how big they should be. Such a layout is considered to be invalid. </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="iwW-E0-gXK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="191" width="360" height="196"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="20" y="191" width="360" height="0.0"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="191" width="440" height="228"/>
                                 </variation>
                             </textView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-Gu-9zD">
@@ -841,7 +839,7 @@
                             <constraint firstItem="IZq-pw-74J" firstAttribute="bottom" secondItem="s2Z-gl-5zW" secondAttribute="bottom" constant="-53" id="7Rh-LH-k7R"/>
                             <constraint firstAttribute="centerX" secondItem="je6-fO-aJv" secondAttribute="centerX" id="ADI-6a-IMt"/>
                             <constraint firstItem="s2Z-gl-5zW" firstAttribute="width" secondItem="JzH-qO-QEZ" secondAttribute="width" id="AOh-KQ-AaF"/>
-                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="top" secondItem="8OQ-TS-vUU" secondAttribute="bottom" constant="8" symbolic="YES" id="Cdt-sz-ViK"/>
+                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="top" secondItem="8OQ-TS-vUU" secondAttribute="bottom" constant="47" id="Cdt-sz-ViK"/>
                             <constraint firstItem="BEX-KJ-7OB" firstAttribute="trailing" secondItem="JzH-qO-QEZ" secondAttribute="trailingMargin" id="DQi-bN-EeQ"/>
                             <constraint firstAttribute="centerX" secondItem="BEX-KJ-7OB" secondAttribute="centerX" constant="2.5" id="DbD-5v-qrS"/>
                             <constraint firstItem="BEX-KJ-7OB" firstAttribute="centerX" secondItem="IMV-Gu-9zD" secondAttribute="centerX" constant="6.5" id="Eu0-4o-lNh"/>
