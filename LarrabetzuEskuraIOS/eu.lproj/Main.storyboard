@@ -45,7 +45,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8qp-4k-ywN"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
@@ -667,8 +667,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ADQ-X6-a91">
-                                <rect key="frame" x="0.0" y="56" width="600" height="495"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="MPs-RY-8av" id="yp3-oQ-wy5"/>
                                     <outlet property="delegate" destination="MPs-RY-8av" id="A09-CD-BJj"/>
@@ -681,7 +682,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ADQ-X6-a91" firstAttribute="bottom" secondItem="eSj-YB-Z7n" secondAttribute="top" id="2ib-F7-3Qg"/>
-                            <constraint firstItem="ADQ-X6-a91" firstAttribute="topMargin" secondItem="73n-eL-EHE" secondAttribute="bottom" id="CYC-mK-V3p"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="top" secondItem="73n-eL-EHE" secondAttribute="bottom" id="Crd-Ca-8fh"/>
                             <constraint firstAttribute="centerY" secondItem="B9M-KI-Wia" secondAttribute="centerY" id="MEc-g4-9Hp"/>
                             <constraint firstItem="ADQ-X6-a91" firstAttribute="leading" secondItem="73n-eL-EHE" secondAttribute="leading" id="Tog-ha-tSM"/>
                             <constraint firstAttribute="centerX" secondItem="B9M-KI-Wia" secondAttribute="centerX" id="XXH-2d-nHy"/>
@@ -831,7 +832,7 @@
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MrE-TJ-TAI" firstAttribute="bottom" secondItem="IZq-pw-74J" secondAttribute="bottom" constant="-44" id="08c-Vz-jZB"/>
                             <constraint firstItem="MrE-TJ-TAI" firstAttribute="leading" secondItem="JzH-qO-QEZ" secondAttribute="leading" constant="11" id="2eP-Yt-ycg"/>
