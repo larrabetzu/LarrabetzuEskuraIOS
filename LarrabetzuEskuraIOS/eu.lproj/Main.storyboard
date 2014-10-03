@@ -242,7 +242,7 @@
         <!--Settings View Controller-->
         <scene sceneID="9rq-3J-HCm">
             <objects>
-                <viewController id="Y1u-kZ-Ler" customClass="SettingsViewController" customModule="Larrabetzu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="Y1u-kZ-Ler" customClass="SettingsViewController" customModule="Larrabetzu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U4G-qa-6bO"/>
                         <viewControllerLayoutGuide type="bottom" id="hPL-y1-oSu"/>
@@ -260,7 +260,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQy-mg-mzO" userLabel="Larrabetzutik">
                                                 <rect key="frame" x="0.0" y="78" width="600" height="58"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sKk-Br-FiG">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKk-Br-FiG">
                                                         <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                         <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>
@@ -289,7 +289,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXb-Jc-X1d" userLabel="Eskola">
                                                 <rect key="frame" x="0.0" y="135" width="600" height="58"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vb2-bg-qLK">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vb2-bg-qLK">
                                                         <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                         <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>
@@ -318,7 +318,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaQ-KZ-TGh" userLabel="Hori bai">
                                                 <rect key="frame" x="0.0" y="192" width="600" height="58"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-hz-M7c">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-hz-M7c">
                                                         <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                         <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>
@@ -347,7 +347,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0C-rr-gIB" userLabel="Larrabetzu zero zabor">
                                                 <rect key="frame" x="0.0" y="250" width="600" height="58"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-5a-e8E">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-5a-e8E">
                                                         <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                         <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>

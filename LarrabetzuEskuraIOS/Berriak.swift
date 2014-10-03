@@ -29,11 +29,17 @@ class Berriak{
     func getLarrabetzutik(){
         var urlBlog: [String] = []
         
-        let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
-        let blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
-        let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
-        let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
+        var blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
+        var blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
+        var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
+        var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
+        if(!blogLarrabetzutik & !blogEskola & !blogHoriBai & !blogLarrabetzuZeroZabor){
+            blogLarrabetzutik = true
+            blogEskola = true
+            blogHoriBai = true
+            blogLarrabetzuZeroZabor = true
+        }
         
         if(blogLarrabetzutik){
             urlBlog.append("http://www.larrabetzutik.org/feed/")

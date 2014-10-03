@@ -101,6 +101,5 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         self.tableView.backgroundColor = UIColor.clearColor()
     }
     
-
 }
 
