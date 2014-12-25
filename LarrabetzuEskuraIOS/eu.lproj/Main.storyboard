@@ -395,7 +395,7 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="4" minimumValue="2" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="BzB-7P-HEs">
+                                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="4" minimumValue="2" maximumValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="BzB-7P-HEs">
                                                         <rect key="frame" x="498" y="5" width="94" height="29"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>

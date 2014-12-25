@@ -6,8 +6,6 @@ class Berriak{
     var blogenPubDate: [String] = []
     
     
-    let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q="
-    
     func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
@@ -20,6 +18,13 @@ class Berriak{
     
     func getLarrabetzutik(){
         var urlBlog: [String] = []
+        let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0"
+        
+        var postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
+        if(postNumeroa == 0){
+            postNumeroa = 4
+        }
+        let call = googleApi + "&num=\(postNumeroa)&q="
         
         var blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
         var blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
@@ -48,15 +53,11 @@ class Berriak{
         
         let countUrleBlog = urlBlog.count
         for var idex = 0; idex < countUrleBlog; ++idex{
-            var parsedJSON = parseJSON(getJSON(googleApi+urlBlog[idex]))
+            var parsedJSON = parseJSON(getJSON(call+urlBlog[idex]))
             if let dictionaryResponseData : AnyObject = parsedJSON["responseData"]{
                 if let dictionaryFeed : AnyObject = dictionaryResponseData["feed"]{
                     if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
-                        var postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
-                        if(postNumeroa == 0){
-                            postNumeroa = dictionaryEntries.count
-                        }
-                        for var idex = 0; idex<postNumeroa; ++idex{
+                        for var idex = 0; idex < dictionaryEntries.count; ++idex{
                             if let una : AnyObject = dictionaryEntries[idex]{
                                 let title : String = una["title"] as String
                                 let link : String = una["link"] as String
