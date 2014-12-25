@@ -1,11 +1,3 @@
-//
-//  SecondViewController.swift
-//  LarrabetzuEskuraIOS
-//
-//  Created by Gorka Ercilla on 25/06/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import UIKit
 
 class EkintzakViewController : UIViewController, UITableViewDelegate , UITableViewDataSource {

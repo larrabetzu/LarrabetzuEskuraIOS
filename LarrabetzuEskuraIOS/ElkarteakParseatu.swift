@@ -1,11 +1,3 @@
-//
-//  ElkarteakParseatu.swift
-//  Larrabetzu
-//
-//  Created by Gorka Ercilla on 24/9/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import Foundation
 
 class Elkarteak{
@@ -13,7 +5,7 @@ class Elkarteak{
     let elkarteakAPI: String = "http://larrabetzu.net/wsAutor/"
     
     func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest))
+        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
     
     func parseJSON(inputData: NSData) -> Array<NSDictionary>{

@@ -1,11 +1,3 @@
-//
-//  EkintzakParseatu.swift
-//  LarrabetzuEskuraIOS
-//
-//  Created by Gorka Ercilla on 15/07/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import Foundation
 
 class Ekintzak{
@@ -13,7 +5,7 @@ class Ekintzak{
     let ekintzakAPI: String = "http://larrabetzu.net/wsEkintza/"
     
     func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest))
+        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
     
     func parseJSON(inputData: NSData) -> Array<NSDictionary>{

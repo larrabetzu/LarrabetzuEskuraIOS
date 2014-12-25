@@ -1,11 +1,3 @@
-//
-//  EkintzaViewController.swift
-//  LarrabetzuEskuraIOS
-//
-//  Created by Gorka Ercilla on 16/07/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import UIKit
 
 class EkintzaViewController: UIViewController {
@@ -69,9 +61,9 @@ class EkintzaViewController: UIViewController {
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
             println("gcd")
             var urlString: NSString = self.kartelaLink
-            var imgURL: NSURL = NSURL(string: urlString)
+            var imgURL: NSURL = NSURL(string: urlString)!
             var request: NSURLRequest = NSURLRequest(URL: imgURL)
-            var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)
+            var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)!
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
                 if !(error != nil) {
                     var image: UIImage? = UIImage(data: data)

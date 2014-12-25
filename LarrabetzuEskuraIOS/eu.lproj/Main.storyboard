@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VBS-7e-ff2">
-                                <rect key="frame" x="0.0" y="402" width="600" height="149"/>
+                                <rect key="frame" x="0.0" y="403" width="600" height="148"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="164" width="640" height="99"/>
@@ -56,7 +56,7 @@
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="leading" secondItem="iQr-d4-Ar2" secondAttribute="leading" id="YHa-Do-Y9A"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="trailing" secondItem="iQr-d4-Ar2" secondAttribute="trailing" id="bzE-bx-tba"/>
                             <constraint firstItem="N5E-gB-Oj2" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="21" id="kOH-3C-mCK"/>
-                            <constraint firstItem="VBS-7e-ff2" firstAttribute="top" secondItem="N5E-gB-Oj2" secondAttribute="bottom" constant="-1" id="mGE-mG-wmf"/>
+                            <constraint firstItem="VBS-7e-ff2" firstAttribute="top" secondItem="N5E-gB-Oj2" secondAttribute="bottom" id="mGE-mG-wmf"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="VBS-7e-ff2" secondAttribute="bottom" id="tnm-Bt-SLQ"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="zz2-Mc-C6Z"/>
                         </constraints>
@@ -151,7 +151,7 @@
                                 <items/>
                             </toolbar>
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-ZQ-yWc">
-                                <rect key="frame" x="0.0" y="64" width="600" height="488"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EkintzakCustomTableViewCell" rowHeight="80" id="CFk-53-vVc" customClass="EkintzakTableViewCell" customModule="Larrabetzu" customModuleProvider="target">
@@ -224,7 +224,7 @@
                             <constraint firstAttribute="width" secondItem="7Hn-ZQ-yWc" secondAttribute="width" id="aw3-zL-GtF"/>
                             <constraint firstAttribute="centerX" secondItem="0QI-cf-AVg" secondAttribute="centerX" id="cZJ-B5-t7l"/>
                             <constraint firstItem="7Hn-ZQ-yWc" firstAttribute="top" secondItem="aRY-ql-FFa" secondAttribute="bottom" id="f4N-6H-0zy"/>
-                            <constraint firstItem="cMi-Iu-ltq" firstAttribute="top" secondItem="7Hn-ZQ-yWc" secondAttribute="bottom" constant="-1" id="f6f-3d-7Hd"/>
+                            <constraint firstItem="cMi-Iu-ltq" firstAttribute="top" secondItem="7Hn-ZQ-yWc" secondAttribute="bottom" id="f6f-3d-7Hd"/>
                             <constraint firstItem="EJ5-M5-3kn" firstAttribute="leading" secondItem="J3d-ed-nth" secondAttribute="leading" id="pq6-IB-3fV"/>
                             <constraint firstAttribute="centerY" secondItem="0QI-cf-AVg" secondAttribute="centerY" id="vrK-Vc-1kb"/>
                         </constraints>
@@ -618,10 +618,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wMU-UN-XEh" firstAttribute="top" secondItem="U4G-qa-6bO" secondAttribute="bottom" id="24C-rA-OEW"/>
+                            <constraint firstItem="wMU-UN-XEh" firstAttribute="top" secondItem="U4G-qa-6bO" secondAttribute="top" id="24C-rA-OEW"/>
                             <constraint firstItem="wMU-UN-XEh" firstAttribute="trailing" secondItem="hPL-y1-oSu" secondAttribute="trailing" id="7QZ-Ug-rTq"/>
                             <constraint firstItem="wMU-UN-XEh" firstAttribute="leading" secondItem="hPL-y1-oSu" secondAttribute="leading" id="joG-Mc-HbY"/>
-                            <constraint firstItem="wMU-UN-XEh" firstAttribute="bottom" secondItem="hPL-y1-oSu" secondAttribute="top" id="kLj-l5-7KN"/>
+                            <constraint firstItem="wMU-UN-XEh" firstAttribute="bottom" secondItem="hPL-y1-oSu" secondAttribute="bottom" id="kLj-l5-7KN"/>
                             <constraint firstAttribute="centerX" secondItem="wMU-UN-XEh" secondAttribute="centerX" id="llY-pj-SM1"/>
                             <constraint firstAttribute="width" secondItem="N0C-rr-gIB" secondAttribute="width" id="my4-GK-2bq"/>
                             <constraint firstAttribute="width" secondItem="wMU-UN-XEh" secondAttribute="width" id="zO5-iz-WeV"/>
@@ -681,12 +681,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ADQ-X6-a91" firstAttribute="bottom" secondItem="eSj-YB-Z7n" secondAttribute="top" id="2ib-F7-3Qg"/>
-                            <constraint firstItem="ADQ-X6-a91" firstAttribute="top" secondItem="73n-eL-EHE" secondAttribute="bottom" id="Crd-Ca-8fh"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="leading" secondItem="ZcB-Bf-8pf" secondAttribute="leading" id="8cp-Ff-HHt"/>
                             <constraint firstAttribute="centerY" secondItem="B9M-KI-Wia" secondAttribute="centerY" id="MEc-g4-9Hp"/>
-                            <constraint firstItem="ADQ-X6-a91" firstAttribute="leading" secondItem="73n-eL-EHE" secondAttribute="leading" id="Tog-ha-tSM"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="top" secondItem="73n-eL-EHE" secondAttribute="top" id="Qci-7b-dTS"/>
+                            <constraint firstAttribute="centerX" secondItem="ADQ-X6-a91" secondAttribute="centerX" id="X9y-D9-Gz9"/>
                             <constraint firstAttribute="centerX" secondItem="B9M-KI-Wia" secondAttribute="centerX" id="XXH-2d-nHy"/>
-                            <constraint firstAttribute="width" secondItem="ADQ-X6-a91" secondAttribute="width" id="g3Y-hp-atn"/>
+                            <constraint firstItem="ADQ-X6-a91" firstAttribute="bottom" secondItem="eSj-YB-Z7n" secondAttribute="bottom" id="osx-e7-pUt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9of-Sn-Zyt"/>
@@ -897,19 +897,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ka-uP-Uc5">
-                                <rect key="frame" x="0.0" y="64" width="600" height="534"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Zer da:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazioa eta ekitaldien agenda modu automatikoan eskaintzen ditu eskura larrabetzu.net gunean.
-
+                                        <string key="content" base64-UTF8="YES">
+Cg
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -917,7 +917,32 @@ Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazio
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Zertarako:
+                                        <string key="content">Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazioa eta ekitaldien agenda modu automatikoan eskaintzen ditu eskura larrabetzu.net gunean.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="16" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Zertarako:">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
@@ -926,8 +951,16 @@ Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazio
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Aplikazio honek eskura jartzen du gure herrian sortzen den informazio guztia. Informazio dinamikoa. Parte hartzera gonbidatzen zaitu, modu aktiboan.
-
+                                        <string key="content">Aplikazio honek eskura jartzen du gure herrian sortzen den informazio guztia. Informazio dinamikoa. Parte hartzera gonbidatzen zaitu, modu aktiboan.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -936,15 +969,31 @@ Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazio
                                     </fragment>
                                     <fragment content="Zelan erabiltzen da:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-Erraza da. Deskargatu ostean, zure mugikorreko pantailan Larrabetzu aplikazioaren irudia izango duzu, ostean klik egiten duzun bakoitzean herriko informazioa edo kultur ekitaldi guztien berri izango duzu.
-
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Erraza da. Deskargatu ostean, zure mugikorreko pantailan Larrabetzu aplikazioaren irudia izango duzu, ostean klik egiten duzun bakoitzean herriko informazioa edo kultur ekitaldi guztien berri izango duzu.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -953,15 +1002,31 @@ Erraza da. Deskargatu ostean, zure mugikorreko pantailan Larrabetzu aplikazioare
                                     </fragment>
                                     <fragment content="Zelan parte hartu:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-Garrantzitsua da elkarteetako lagunek ere informazioa gehitzea aplikazioan, antolatzen den guztiaren berri emanez. Irudiak, deialdiak, orduak, lekua adieraziz.
-
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Garrantzitsua da elkarteetako lagunek ere informazioa gehitzea aplikazioan, antolatzen den guztiaren berri emanez. Irudiak, deialdiak, orduak, lekua adieraziz.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -970,15 +1035,31 @@ Garrantzitsua da elkarteetako lagunek ere informazioa gehitzea aplikazioan, anto
                                     </fragment>
                                     <fragment content="Hurrengo geltokia:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat eta gehiago erabili, zenbat eta parte hartze handiagoa izan... hobeto jakingo dugu gure beharrizanen gainean, eta horren arabera berritu eta hobetu ahal izango dugu. Guztion eskura dago.
-
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat eta gehiago erabili, zenbat eta parte hartze handiagoa izan... hobeto jakingo dugu gure beharrizanen gainean, eta horren arabera berritu eta hobetu ahal izango dugu. Guztion eskura dago.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -987,20 +1068,29 @@ Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat 
                                     </fragment>
                                     <fragment content="Garapena:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-2013ko urrian aurkeztu genuen sarean Eskura aplikazioa. Gorka Ercilla eta Patxi Gaztelumendiren artean sortu genuen lehen bertsioa. Aurrerantzean bertsio hobetuak eta irekiak egiten jarraitzea da gure asmoa; gehiago ikusi, ikasi eta berrituz.
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">2013ko urrian aurkeztu genuen sarean Eskura aplikazioa. Gorka Ercilla eta Patxi Gaztelumendiren artean sortu genuen lehen bertsioa. Aurrerantzean bertsio hobetuak eta irekiak egiten jarraitzea da gure asmoa; gehiago ikusi, ikasi eta berrituz.
 
 2014ko ekainean Sergio Peñak webApp bat garatu du eta sarean eskaini dugu plataforma guztietarako prestatuta: larrabetzu.net/app
 
 2014ko irailean Gorka Ercillak ios App-a garatu du eta App Storean eskaini dugu.</string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -1010,9 +1100,9 @@ Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat 
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RbT-tC-5ni" firstAttribute="top" secondItem="4Ka-uP-Uc5" secondAttribute="bottom" constant="2" id="BzW-lw-rb1"/>
+                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="bottom" secondItem="RbT-tC-5ni" secondAttribute="bottom" id="BzW-lw-rb1"/>
                             <constraint firstAttribute="width" secondItem="4Ka-uP-Uc5" secondAttribute="width" id="UWB-Qn-Zbc"/>
-                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="top" secondItem="Y5C-oP-8q3" secondAttribute="bottom" id="eNp-wV-6Y5"/>
+                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="top" secondItem="Y5C-oP-8q3" secondAttribute="top" id="eNp-wV-6Y5"/>
                             <constraint firstItem="4Ka-uP-Uc5" firstAttribute="leading" secondItem="Y5C-oP-8q3" secondAttribute="leading" id="zOA-xO-0LK"/>
                         </constraints>
                     </view>
@@ -1050,7 +1140,6 @@ Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat 
                             <constraint firstAttribute="centerX" secondItem="mcx-jr-gLW" secondAttribute="centerX" id="3P1-DL-QMq"/>
                             <constraint firstItem="mcx-jr-gLW" firstAttribute="width" secondItem="WsE-7A-EaW" secondAttribute="width" id="Obw-Hj-EkL"/>
                             <constraint firstItem="mcx-jr-gLW" firstAttribute="topMargin" secondItem="Ssb-wR-QSS" secondAttribute="top" constant="8" id="SPH-HN-veJ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="mcx-jr-gLW" secondAttribute="bottom" constant="-2" id="pYe-vW-dUI"/>
                             <constraint firstItem="mcx-jr-gLW" firstAttribute="bottom" secondItem="wxT-Ta-NdN" secondAttribute="top" constant="2" id="t1N-wZ-gFK"/>
                         </constraints>
                     </view>

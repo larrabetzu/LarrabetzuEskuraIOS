@@ -1,11 +1,3 @@
-//
-//  Berriak.swift
-//  LarrabetzuEskuraIOS
-//
-//  Created by Gorka Ercilla on 01/07/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import Foundation
 
 class Berriak{
@@ -17,7 +9,7 @@ class Berriak{
     let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q="
     
     func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest))
+        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
     
     func parseJSON(inputData: NSData) -> NSDictionary{

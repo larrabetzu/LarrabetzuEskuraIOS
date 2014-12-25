@@ -1,11 +1,3 @@
-//
-//  WebViewController.swift
-//  LarrabetzuEskuraIOS
-//
-//  Created by Gorka Ercilla on 07/07/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import UIKit
 
 class WebViewController: UIViewController, UIWebViewDelegate{
@@ -16,7 +8,7 @@ class WebViewController: UIViewController, UIWebViewDelegate{
     
     @IBAction func share(sender: UIBarButtonItem) {
         let someText:String = "#eskura"
-        let url:NSURL = NSURL(string: postLink)
+        let url:NSURL = NSURL(string: postLink)!
         
         let activityViewController = UIActivityViewController(
             activityItems: [someText, url],
@@ -30,7 +22,7 @@ class WebViewController: UIViewController, UIWebViewDelegate{
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = "Berriak"
         self.webView.delegate = self
-        let requestURL: NSURL = NSURL(string: postLink)
+        let requestURL: NSURL = NSURL(string: postLink)!
         let request :NSURLRequest = NSURLRequest(URL: requestURL)
         self.webView.loadRequest(request)
     }

@@ -1,12 +1,3 @@
-//
-//  BerriakViewController.swift
-//  LarrabetzuEskuraIOS
-//
-//  Created by Gorka Ercilla on 25/06/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
-
 import UIKit
 
 class BerriakViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -54,29 +45,29 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.textLabel?.text = "\(blogenTituloa[indexPath.row])"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
-        var image : UIImage = UIImage(named: "Berriak")
+        var image = UIImage(named: "Berrriak.png")
         let bloganlinke : String = blogenLink[indexPath.row]
         
         if(bloganlinke.hasPrefix("http://larrabetzutik.org/")){
-            image = UIImage(named: "larrabetzutik")
+            image = UIImage(named: "larrabetzutik")!
             
         }else if(bloganlinke.hasPrefix("http://horibai.org/")){
-            image = UIImage(named: "horibai")
+            image = UIImage(named: "horibai")!
             
         }else if(bloganlinke.hasPrefix("http://www.larrabetzukoeskola.org/")){
-            image = UIImage(named: "eskola")
+            image = UIImage(named: "eskola")!
             
         }else if(bloganlinke.hasPrefix("http://gaztelumendi.tumblr.com/")){
-            image = UIImage(named: "iptx")
+            image = UIImage(named: "iptx")!
             
         }else if(bloganlinke.hasPrefix("http://www.larrabetzuko-udala.com/")){
-            image = UIImage(named: "udala")
+            image = UIImage(named: "udala")!
             
         }else if(bloganlinke.hasPrefix("http://www.literaturaeskola.org/")){
-            image = UIImage(named: "literatura")
+            image = UIImage(named: "literatura")!
             
         }else if(bloganlinke.hasPrefix("http://larrabetzuzerozabor.org/")){
-            image = UIImage(named: "larrabetzuzerozabor")
+            image = UIImage(named: "larrabetzuzerozabor")!
         }
         
         cell.imageView?.image = image

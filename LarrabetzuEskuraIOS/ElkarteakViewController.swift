@@ -1,11 +1,3 @@
-//
-//  ElkarteakViewController.swift
-//  Larrabetzu
-//
-//  Created by Gorka Ercilla on 23/9/14.
-//  Copyright (c) 2014 gorka. All rights reserved.
-//
-
 import UIKit
 
 class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -69,6 +61,32 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+        let ekintza = elkarteakArray[indexPath.row]
+        if let fields: AnyObject = ekintza["fields"]{
+            let nor = fields["nor"] as String
+            let email = fields["email"] as String
+            let webgunea = fields["webgunea"] as String
+            
+            var alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                let url = NSURL(string: "mailto:\(email)")
+                UIApplication.sharedApplication().openURL(url!)
+            }
+            let cancelAction = UIAlertAction(title: "web", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+                webView.hidesBottomBarWhenPushed = true
+                
+                self.navigationController?.pushViewController(webView, animated: true)
+                webView.postLink = webgunea
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
         
     }
     
