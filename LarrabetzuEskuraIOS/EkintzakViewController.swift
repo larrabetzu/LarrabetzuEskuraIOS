@@ -21,20 +21,26 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
 
         activityIndicator.hidden = false
         tableView.hidden = true
-        let ekintzakParseatu = Ekintzak()
         
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-            println("gcd")
-            ekintzakParseatu.getEkintzak()
-            self.ekintzanArray = ekintzakParseatu.ekintzanArray
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-                self.hiddenEmptyCell()
-                self.tableView.hidden = false
-                self.activityIndicator.hidden = true
+        if Internet.isConnectedToNetwork() {
+            println("Interneta badago!")
+            let ekintzakParseatu = Ekintzak()
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                println("gcd")
+                ekintzakParseatu.getEkintzak()
+                self.ekintzanArray = ekintzakParseatu.ekintzanArray
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    self.hiddenEmptyCell()
+                    self.tableView.hidden = false
+                    self.activityIndicator.hidden = true
                 })
             })
+        } else {
+            println("Ez dago internetik")
+            self.activityIndicator.hidden = true
+        }
         
     }
 

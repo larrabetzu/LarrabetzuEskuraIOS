@@ -19,19 +19,25 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
         
         activityIndicator.hidden = false
         tableView.hidden = true
-        let elkarteakParseatu = Elkarteak()
         
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-            elkarteakParseatu.getElkarteak()
-            self.elkarteakArray = elkarteakParseatu.elkarteakArray
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-                self.hiddenEmptyCell()
-                self.tableView.hidden = false
-                self.activityIndicator.hidden = true
+        if Internet.isConnectedToNetwork() {
+            println("Interneta badago!")
+            let elkarteakParseatu = Elkarteak()
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                elkarteakParseatu.getElkarteak()
+                self.elkarteakArray = elkarteakParseatu.elkarteakArray
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    self.hiddenEmptyCell()
+                    self.tableView.hidden = false
+                    self.activityIndicator.hidden = true
+                })
             })
-        })
+        } else {
+            println("Ez dago internetik")
+            self.activityIndicator.hidden = true
+        }
 
     }
 
@@ -69,12 +75,12 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
             let webgunea = fields["webgunea"] as String
             
             var alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default) {
+            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 let url = NSURL(string: "mailto:\(email)")
                 UIApplication.sharedApplication().openURL(url!)
             }
-            let cancelAction = UIAlertAction(title: "web", style: UIAlertActionStyle.Default) {
+            let webAction = UIAlertAction(title: "web", style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
                 webView.hidesBottomBarWhenPushed = true
@@ -83,8 +89,8 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
                 webView.postLink = webgunea
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }
-            alertController.addAction(okAction)
-            alertController.addAction(cancelAction)
+            alertController.addAction(emailAction)
+            alertController.addAction(webAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         

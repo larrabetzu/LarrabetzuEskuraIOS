@@ -20,11 +20,24 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         navigationController?.navigationBar.titleTextAttributes = titleDict
         
         println("viewDidLoad")
-        let berriakParseatu = Berriak()
-        berriakParseatu.getLarrabetzutik()
-        blogenTituloa = berriakParseatu.blogenTituloa
-        blogenLink = berriakParseatu.blogenLink
-        blogenPubDate = berriakParseatu.blogenPubDate
+        
+        if Internet.isConnectedToNetwork() {
+            println("Interneta badago!")
+            let berriakParseatu = Berriak()
+            berriakParseatu.getLarrabetzutik()
+            blogenTituloa = berriakParseatu.blogenTituloa
+            blogenLink = berriakParseatu.blogenLink
+            blogenPubDate = berriakParseatu.blogenPubDate
+
+        } else {
+            println("Ez dago internetik")
+            var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+            }
+            alertInterneta.addAction(okAction)
+            self.presentViewController(alertInterneta, animated: true, completion: nil)
+        }
         
         self.hiddenEmptyCell()
     }
