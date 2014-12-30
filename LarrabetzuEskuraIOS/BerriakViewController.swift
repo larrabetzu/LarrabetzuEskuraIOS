@@ -41,6 +41,11 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.hiddenEmptyCell()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        println("viewWillAppear")
+        navigationItem.title = "Larrabetzu #eskura"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
