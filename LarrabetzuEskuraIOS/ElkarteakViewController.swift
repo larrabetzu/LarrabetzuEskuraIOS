@@ -40,6 +40,11 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
         }
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        println("viewWillAppear")
+        navigationItem.title = "Elkarteak"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,7 +79,7 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
             let email = fields["email"] as String
             let webgunea = fields["webgunea"] as String
             
-            var alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: .Alert)
+            var alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
             let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 let url = NSURL(string: "mailto:\(email)")
@@ -89,8 +94,11 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
                 webView.postLink = webgunea
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }
+            let cancelAction = UIAlertAction(title: "Ezebez", style: .Cancel, handler: nil)
+
             alertController.addAction(emailAction)
             alertController.addAction(webAction)
+            alertController.addAction(cancelAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         
