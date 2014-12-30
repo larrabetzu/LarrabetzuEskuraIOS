@@ -37,6 +37,10 @@
 		9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */; };
 		9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */; };
 		9FDBB5B0195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */; };
+		9FFAC19E1A5344FF000A0AAC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAC19B1A5344FF000A0AAC /* GameScene.sks */; };
+		9FFAC19F1A5344FF000A0AAC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAC19C1A5344FF000A0AAC /* GameScene.swift */; };
+		9FFAC1A01A5344FF000A0AAC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAC19D1A5344FF000A0AAC /* GameViewController.swift */; };
+		9FFAC1A21A534533000A0AAC /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAC1A11A534533000A0AAC /* bird.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		9FDBB5A9195AE4D4003EFA9E /* LarrabetzuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LarrabetzuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB5AE195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LarrabetzuEskuraIOSTests.swift; sourceTree = "<group>"; };
+		9FFAC19B1A5344FF000A0AAC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9FFAC19C1A5344FF000A0AAC /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9FFAC19D1A5344FF000A0AAC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9FFAC1A11A534533000A0AAC /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,7 @@
 				9FD7B52A19751795009DFFC0 /* Controller */,
 				9FD7B52C1975192D009DFFC0 /* Parsers */,
 				9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */,
+				9FEF17A01A53417D00BD0054 /* Game */,
 				9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */,
 				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
 				9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */,
@@ -218,6 +227,17 @@
 				9FDBB5AE195AE4D4003EFA9E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FEF17A01A53417D00BD0054 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9FFAC1A11A534533000A0AAC /* bird.atlas */,
+				9FFAC19B1A5344FF000A0AAC /* GameScene.sks */,
+				9FFAC19C1A5344FF000A0AAC /* GameScene.swift */,
+				9FFAC19D1A5344FF000A0AAC /* GameViewController.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFAC1A21A534533000A0AAC /* bird.atlas in Resources */,
 				9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */,
+				9FFAC19E1A5344FF000A0AAC /* GameScene.sks in Resources */,
 				9FB577BF1A4C4917006137C0 /* Launch Screen.xib in Resources */,
 				9F56EB8B19C74D4000571BD4 /* parse-library-1.3.0 in Resources */,
 				9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */,
@@ -337,8 +359,10 @@
 				9F5834CB19D1CEA000D6FD51 /* ElkarteakViewController.swift in Sources */,
 				9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */,
 				9F0ED65A196ADC680037A4D3 /* WebViewController.swift in Sources */,
+				9FFAC1A01A5344FF000A0AAC /* GameViewController.swift in Sources */,
 				9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */,
 				9FC42A081A4D8D9E00954105 /* Internet.swift in Sources */,
+				9FFAC19F1A5344FF000A0AAC /* GameScene.swift in Sources */,
 				9F56BDC119C6EECC00916CA8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

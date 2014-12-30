@@ -47,7 +47,7 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
     override func viewDidAppear(animated: Bool) {
         if ekintzanArray.count == 0 {
             let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
-            alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: nil))
+            alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: handler))
             alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Ez eskerrik asko!!!", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
         }
@@ -109,6 +109,12 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()
+    }
+    
+    func handler(act:UIAlertAction!){
+        let gameView : GameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as GameViewController
+        gameView.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(gameView, animated: true)
     }
     
 }
