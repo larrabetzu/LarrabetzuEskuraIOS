@@ -42,12 +42,9 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         println("viewWillAppear")
         navigationItem.title = "Elkarteak"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {

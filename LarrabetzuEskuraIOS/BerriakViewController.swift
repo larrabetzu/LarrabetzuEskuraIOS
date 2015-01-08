@@ -43,15 +43,10 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         println("viewWillAppear")
         navigationItem.title = "Larrabetzu #eskura"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return blogenTituloa.count

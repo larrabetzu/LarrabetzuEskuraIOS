@@ -112,11 +112,6 @@ class SettingsViewController: UIViewController {
         self.switchLarrabetzuZeroZabor.on = blogLarrabetzuZeroZabor
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
     
 
 }

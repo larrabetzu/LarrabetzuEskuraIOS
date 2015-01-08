@@ -45,6 +45,7 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
     }
 
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if ekintzanArray.count == 0 {
             let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
             alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: handler))
@@ -52,12 +53,6 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
             self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return ekintzanArray.count
