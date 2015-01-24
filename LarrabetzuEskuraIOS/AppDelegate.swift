@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.pushNotificationController = PushNotificationController()
         
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         // Register for Push Notitications, if running iOS 8
         if application.respondsToSelector("registerUserNotificationSettings:") {
             let types:UIUserNotificationType = (.Alert | .Badge | .Sound)
