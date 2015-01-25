@@ -52,36 +52,48 @@ class SettingsViewController: UIViewController {
     }
     
     /**Abisuak*/
+    @IBOutlet weak var switchKultura: UISwitch!
     @IBAction func switchKultura(sender: UISwitch) {
         let position = sender.on
         if(position){
             println("\(position) switchKultura")
+            PFPush.subscribeToChannelInBackground("kultura")
         }else{
             println("\(position) switchKultura")
+            PFPush.unsubscribeFromChannelInBackground("kultura")
         }
     }
+    @IBOutlet weak var switchKirola: UISwitch!
     @IBAction func switchKirola(sender: UISwitch) {
         let position = sender.on
         if(position){
             println("\(position) switchKirola")
+            PFPush.subscribeToChannelInBackground("kirola")
         }else{
             println("\(position) switchKirola")
+            PFPush.unsubscribeFromChannelInBackground("kirola")
         }
     }
+    @IBOutlet weak var switchUdalgaiak: UISwitch!
     @IBAction func switchUdalGaiak(sender: UISwitch) {
         let position = sender.on
         if(position){
             println("\(position) switchUdalGaiak")
+            PFPush.subscribeToChannelInBackground("udalgaiak")
         }else{
             println("\(position) switchUdalGaiak")
+            PFPush.unsubscribeFromChannelInBackground("udalgaiak")
         }
     }
+    @IBOutlet weak var switchAlbisteak: UISwitch!
     @IBAction func switchAlbisteak(sender: UISwitch) {
         let position = sender.on
         if(position){
             println("\(position) switchAlbisteak")
+            PFPush.subscribeToChannelInBackground("albisteak")
         }else{
             println("\(position) switchAlbisteak")
+            PFPush.unsubscribeFromChannelInBackground("albisteak")
         }
     }
     
@@ -111,6 +123,30 @@ class SettingsViewController: UIViewController {
         self.switchHoriBai.on = blogHoriBai
         self.switchLarrabetzuZeroZabor.on = blogLarrabetzuZeroZabor
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var channels: [String] = PFInstallation.currentInstallation().channels as [String]
+        println("\(channels)")
+        
+        for item in channels{
+            switch(item){
+                case "kultura":     self.switchKultura.setOn(true, animated: true)
+                case "kirola":      self.switchKirola.setOn(true, animated: true)
+                case "udalgaiak":   self.switchUdalgaiak.setOn(true, animated: true)
+                case "albisteak":   self.switchAlbisteak.setOn(true, animated: true)
+                default:            abisuakOff()
+            }
+        }
+        
+    }
+    
+    func abisuakOff(){
+        self.switchKultura.setOn(false, animated: true)
+        self.switchKirola.setOn(false, animated: true)
+        self.switchUdalgaiak.setOn(false, animated: true)
+        self.switchAlbisteak.setOn(false, animated: true)
     }
     
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -662,10 +661,14 @@
                     <connections>
                         <outlet property="labelNumeroPost" destination="Cvk-Up-kWk" id="jua-Ph-FkL"/>
                         <outlet property="stepperUI" destination="BzB-7P-HEs" id="yky-cl-WKF"/>
+                        <outlet property="switchAlbisteak" destination="6hL-fR-zcT" id="VWd-wP-Mfs"/>
                         <outlet property="switchEskola" destination="Vb2-bg-qLK" id="dkq-4f-1l3"/>
                         <outlet property="switchHoriBai" destination="Wyq-hz-M7c" id="NoU-wg-G3d"/>
+                        <outlet property="switchKirola" destination="BCe-XE-eWe" id="jW3-ve-ga4"/>
+                        <outlet property="switchKultura" destination="rH4-q1-FNr" id="LVq-48-6Kz"/>
                         <outlet property="switchLarrabetzuZeroZabor" destination="XDg-5a-e8E" id="yx8-Xd-R5c"/>
                         <outlet property="switchLarrabetzutik" destination="sKk-Br-FiG" id="8o3-Ww-g2f"/>
+                        <outlet property="switchUdalgaiak" destination="wTh-rh-Cr5" id="cBQ-R9-DbL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciZ-h6-4dF" userLabel="First Responder" sceneMemberID="firstResponder"/>
