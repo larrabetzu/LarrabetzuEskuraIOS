@@ -61,11 +61,29 @@ class Berriak{
                             if let una : AnyObject = dictionaryEntries[idex]{
                                 let title : String = una["title"] as String
                                 let link : String = una["link"] as String
-                                let publishedDate : String = una["publishedDate"] as String
+                                let publishedDateString : String = una["publishedDate"] as String
                                 
-                                self.blogenTituloa.append(title)
-                                self.blogenLink.append(link)
-                                self.blogenPubDate.append(publishedDate)
+                                let arrayNumeroa = self.blogenPubDate.count
+                                
+                                if(arrayNumeroa != 0){
+                                    for var x = 0; x <= arrayNumeroa; ++x{
+                                        if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: self.blogenPubDate[x])){
+                                            self.blogenTituloa.insert(title, atIndex: x)
+                                            self.blogenLink.insert(link, atIndex: x)
+                                            self.blogenPubDate.insert(publishedDateString, atIndex: x)
+                                            x = arrayNumeroa
+                                        }else if(x+1 == arrayNumeroa){
+                                            self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
+                                            self.blogenLink.insert(link, atIndex: arrayNumeroa)
+                                            self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
+                                            x = arrayNumeroa
+                                        }
+                                    }
+                                }else{
+                                    self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
+                                    self.blogenLink.insert(link, atIndex: arrayNumeroa)
+                                    self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
+                                }
                                 
                             }else{
                                 println("Ez deu 'dictionaryEntries' idex betegaz topetan")
@@ -81,5 +99,16 @@ class Berriak{
                 println("Ez deu 'responseData' topatu")
             }
         }
+    }
+    
+    func lehenengoDataHandiagoaDa(lehenengoData : String, bigarrenData : String)->Bool{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss xx" //Thu, 22 May 2014 11:36:45 -0700
+        let data1 = dateFormatter.dateFromString(lehenengoData)
+        let data2 = dateFormatter.dateFromString(bigarrenData)
+        if data1?.compare(data2!) == NSComparisonResult.OrderedDescending{
+            return true
+        }
+        return false
     }
 }
