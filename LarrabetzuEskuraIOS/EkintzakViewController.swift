@@ -31,6 +31,12 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
                 ekintzakParseatu.getEkintzak()
                 self.ekintzanArray = ekintzakParseatu.ekintzanArray
                 dispatch_async(dispatch_get_main_queue(), {
+                    if self.ekintzanArray.count == 0 {
+                        let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: self.handler))
+                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Ez eskerrik asko!!!", style: UIAlertActionStyle.Cancel, handler: nil))
+                        self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
+                    }
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()
                     self.tableView.hidden = false
@@ -42,16 +48,6 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
             self.activityIndicator.hidden = true
         }
         
-    }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if ekintzanArray.count == 0 {
-            let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
-            alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: handler))
-            alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Ez eskerrik asko!!!", style: UIAlertActionStyle.Cancel, handler: nil))
-            self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
-        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
