@@ -2,7 +2,7 @@ import Foundation
 
 class Elkarteak{
     var elkarteakArray: [NSDictionary] = []
-    let elkarteakAPI: String = "http://larrabetzu.net/wsAutor/"
+    let elkarteakAPI: String = "http://larrabetzu.net/wsElkarteak/"
     
     func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!

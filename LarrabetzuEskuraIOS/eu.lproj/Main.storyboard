@@ -273,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acs-Wa-LKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4681" y="1614"/>
+            <point key="canvasLocation" x="4681" y="2454"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9rq-3J-HCm">
@@ -752,14 +752,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="webgunea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je6-fO-aJv">
-                                <rect key="frame" x="228" y="506" width="144" height="24"/>
+                                <rect key="frame" x="150" y="602" width="300" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="amc-MW-tjB"/>
-                                    <constraint firstAttribute="width" constant="144" id="hkD-8V-g7C"/>
+                                    <constraint firstAttribute="width" constant="300" id="hkD-8V-g7C"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="310" width="300" height="20"/>
+                                </variation>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZq-pw-74J">
                                 <rect key="frame" x="35" y="105" width="53" height="45"/>
@@ -785,23 +788,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Sendavivara joango gara, bertan lo egin, parkea ezagutu eta Urriak 4an Larrabetzura bueltatuko gara. Apuntatu!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-TS-vUU">
-                                <rect key="frame" x="20" y="205" width="560" height="69"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="iwW-E0-gXK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-Gu-9zD">
+                                <rect key="frame" x="288" y="435" width="20" height="20"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="281" y="204" width="20" height="20"/>
+                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="191" width="360" height="196"/>
+                                    <rect key="frame" x="188" y="435" width="20" height="20"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="20" y="191" width="360" height="0.0"/>
-                                </variation>
-                            </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-Gu-9zD">
-                                <rect key="frame" x="281" y="400" width="20" height="20"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2Z-gl-5zW">
                                 <rect key="frame" x="0.0" y="167" width="600" height="36"/>
@@ -834,20 +828,11 @@
                                 <constraints>
                                     <constraint firstItem="ygV-41-8QT" firstAttribute="top" secondItem="s2Z-gl-5zW" secondAttribute="top" id="3Ob-Un-DoX"/>
                                     <constraint firstItem="ygV-41-8QT" firstAttribute="centerY" secondItem="rcE-na-BaL" secondAttribute="centerY" id="7Ov-ux-OR2"/>
-                                    <constraint firstItem="rcE-na-BaL" firstAttribute="top" secondItem="s2Z-gl-5zW" secondAttribute="top" constant="8" id="C1d-9a-mrZ"/>
-                                    <constraint firstItem="rcE-na-BaL" firstAttribute="leading" secondItem="s2Z-gl-5zW" secondAttribute="leading" constant="15" id="HbV-Rf-rQu"/>
                                     <constraint firstItem="rcE-na-BaL" firstAttribute="leading" secondItem="s2Z-gl-5zW" secondAttribute="leading" constant="15" id="KAr-h7-4Hk"/>
-                                    <constraint firstAttribute="centerX" secondItem="rcE-na-BaL" secondAttribute="centerX" constant="254.5" id="Xid-g5-pxE"/>
                                     <constraint firstItem="ygV-41-8QT" firstAttribute="centerY" secondItem="s2Z-gl-5zW" secondAttribute="centerY" id="ZpO-jj-l0F"/>
                                     <constraint firstItem="ygV-41-8QT" firstAttribute="baseline" secondItem="rcE-na-BaL" secondAttribute="baseline" constant="7" id="aBQ-Tz-6ep"/>
                                     <constraint firstItem="ygV-41-8QT" firstAttribute="leading" secondItem="rcE-na-BaL" secondAttribute="trailing" constant="42" id="c7C-BA-ydT"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="C1d-9a-mrZ"/>
-                                        <exclude reference="HbV-Rf-rQu"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TItuloa" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="455" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-Fe-PBh">
                                 <rect key="frame" x="119" y="85" width="465" height="65"/>
@@ -856,21 +841,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEX-KJ-7OB">
-                                <rect key="frame" x="11" y="321" width="573" height="177"/>
+                                <rect key="frame" x="11" y="294" width="573" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Ucl-H1-GZV"/>
+                                    <constraint firstAttribute="height" constant="300" id="Vin-P3-4SQ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Ucl-H1-GZV"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="11" y="302" width="573" height="0.0"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Ucl-H1-GZV"/>
+                                        <exclude reference="Ucl-H1-GZV"/>
                                     </mask>
                                 </variation>
                             </imageView>
+                            <textView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" text="Sendavivara joango gara, bertan lo egin, parkea ezagutu eta Urriak 4an Larrabetzura bueltatuko gara. Apuntatu!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-TS-vUU">
+                                <rect key="frame" x="20" y="205" width="560" height="69"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="iwW-E0-gXK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="205" width="560" height="50"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -879,10 +883,11 @@
                             <constraint firstItem="IZq-pw-74J" firstAttribute="bottom" secondItem="s2Z-gl-5zW" secondAttribute="bottom" constant="-53" id="7Rh-LH-k7R"/>
                             <constraint firstAttribute="centerX" secondItem="je6-fO-aJv" secondAttribute="centerX" id="ADI-6a-IMt"/>
                             <constraint firstItem="s2Z-gl-5zW" firstAttribute="width" secondItem="JzH-qO-QEZ" secondAttribute="width" id="AOh-KQ-AaF"/>
-                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="top" secondItem="8OQ-TS-vUU" secondAttribute="bottom" constant="47" id="Cdt-sz-ViK"/>
+                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="top" secondItem="8OQ-TS-vUU" secondAttribute="bottom" constant="20" id="Cdt-sz-ViK">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="BEX-KJ-7OB" firstAttribute="trailing" secondItem="JzH-qO-QEZ" secondAttribute="trailingMargin" id="DQi-bN-EeQ"/>
-                            <constraint firstAttribute="centerX" secondItem="BEX-KJ-7OB" secondAttribute="centerX" constant="2.5" id="DbD-5v-qrS"/>
-                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="centerX" secondItem="IMV-Gu-9zD" secondAttribute="centerX" constant="6.5" id="Eu0-4o-lNh"/>
+                            <constraint firstItem="BEX-KJ-7OB" firstAttribute="centerX" secondItem="IMV-Gu-9zD" secondAttribute="centerX" id="Eu0-4o-lNh"/>
                             <constraint firstItem="8OQ-TS-vUU" firstAttribute="top" secondItem="s2Z-gl-5zW" secondAttribute="bottom" constant="2" id="Gfh-TO-PLh"/>
                             <constraint firstItem="BEX-KJ-7OB" firstAttribute="leading" secondItem="JzH-qO-QEZ" secondAttribute="leadingMargin" constant="-5" id="HUs-Ql-hAf"/>
                             <constraint firstItem="MrE-TJ-TAI" firstAttribute="width" secondItem="IZq-pw-74J" secondAttribute="width" constant="47" id="JME-dt-l8H"/>
@@ -897,8 +902,6 @@
                             <constraint firstItem="MrE-TJ-TAI" firstAttribute="centerX" secondItem="IZq-pw-74J" secondAttribute="centerX" constant="-0.5" id="hn1-52-SJe"/>
                             <constraint firstItem="WLC-Fe-PBh" firstAttribute="leading" secondItem="MrE-TJ-TAI" secondAttribute="trailing" constant="8" id="i1J-Iv-hXU"/>
                             <constraint firstAttribute="trailing" secondItem="8OQ-TS-vUU" secondAttribute="trailing" constant="20" id="leh-rE-gOE"/>
-                            <constraint firstItem="je6-fO-aJv" firstAttribute="top" secondItem="IMV-Gu-9zD" secondAttribute="bottom" constant="86" id="uSb-kA-pPn"/>
-                            <constraint firstItem="Ah5-4w-ROB" firstAttribute="top" secondItem="je6-fO-aJv" secondAttribute="bottom" constant="70" id="wUJ-Y2-1OX"/>
                             <constraint firstItem="MrE-TJ-TAI" firstAttribute="centerX" secondItem="rcE-na-BaL" secondAttribute="centerX" constant="15.5" id="yVO-au-jj3"/>
                         </constraints>
                         <variation key="default">
@@ -922,7 +925,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsu-Zu-RQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5493" y="872"/>
+            <point key="canvasLocation" x="5557" y="872"/>
         </scene>
         <!--Nortzuk View Controller-->
         <scene sceneID="veQ-mL-n5g">
