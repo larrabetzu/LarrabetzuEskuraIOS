@@ -9,9 +9,16 @@ class EkintzaViewController: UIViewController {
     @IBOutlet var lekuaUI: UILabel!
     @IBOutlet var deskribapenaUI: UITextView!
     @IBOutlet var kartelaUI: UIImageView!
-    @IBOutlet var linkUI: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var buttonLink: UIButton!
     
+    @IBAction func tapLink() {
+        let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+        webView.hidesBottomBarWhenPushed = true
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Ekintza", style:.Plain, target:nil, action:nil)
+        self.navigationController?.pushViewController(webView, animated: true)
+        webView.postLink = self.linkString
+    }
     var tituloaString : String = ""
     var hileaString :String = ""
     var egunaString :String = ""
@@ -30,7 +37,14 @@ class EkintzaViewController: UIViewController {
         self.orduaUI.text = orduaString
         self.lekuaUI.text = lekuaString
         self.deskribapenaUI.text = deskribapena
-        self.linkUI.text = linkString
+        
+        if let rangeString = linkString.lowercaseString.rangeOfString("http://"){
+            let subString = linkString.substringFromIndex(rangeString.endIndex)
+            self.buttonLink.setTitle(subString, forState:UIControlState.Normal)
+        }else{
+            self.buttonLink.setTitle(linkString, forState:UIControlState.Normal)
+        }
+        
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
@@ -61,6 +75,7 @@ class EkintzaViewController: UIViewController {
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
             println("gcd")
             var urlString: NSString = self.kartelaLink
+            urlString = urlString.substringToIndex(urlString.length-4) + ".medium.jpg"
             var imgURL: NSURL = NSURL(string: urlString)!
             var request: NSURLRequest = NSURLRequest(URL: imgURL)
             var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)!

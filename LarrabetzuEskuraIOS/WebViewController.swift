@@ -20,7 +20,6 @@ class WebViewController: UIViewController, UIWebViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = "Berriak"
         self.webView.delegate = self
         let requestURL: NSURL = NSURL(string: postLink)!
         let request :NSURLRequest = NSURLRequest(URL: requestURL)

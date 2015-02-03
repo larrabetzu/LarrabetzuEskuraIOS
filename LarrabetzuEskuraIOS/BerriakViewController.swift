@@ -91,7 +91,7 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
         webView.hidesBottomBarWhenPushed = true
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(webView, animated: true)
         webView.postLink = blogenLink[indexPath.row]
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
