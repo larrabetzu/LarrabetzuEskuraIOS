@@ -24,7 +24,6 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
         tableView.hidden = true
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.refreshControl.tintColor = UIColor.whiteColor()
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
