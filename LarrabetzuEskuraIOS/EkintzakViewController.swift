@@ -4,6 +4,7 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    var refreshControl:UIRefreshControl!
     
     var ekintzanArray: [NSDictionary] = []
     
@@ -22,32 +23,13 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
         activityIndicator.hidden = false
         tableView.hidden = true
         
-        if Internet.isConnectedToNetwork() {
-            println("Interneta badago!")
-            let ekintzakParseatu = Ekintzak()
-            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-                println("gcd")
-                ekintzakParseatu.getEkintzak()
-                self.ekintzanArray = ekintzakParseatu.ekintzanArray
-                dispatch_async(dispatch_get_main_queue(), {
-                    if self.ekintzanArray.count == 0 {
-                        let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
-                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: self.handler))
-                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Ez eskerrik asko!!!", style: UIAlertActionStyle.Cancel, handler: nil))
-                        self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
-                    }
-                    self.tableView.reloadData()
-                    self.hiddenEmptyCell()
-                    self.tableView.hidden = false
-                    self.activityIndicator.hidden = true
-                })
-            })
-        } else {
-            println("Ez dago internetik")
-            self.activityIndicator.hidden = true
-        }
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.refreshControl.tintColor = UIColor.whiteColor()
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
+        getData()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
@@ -95,6 +77,34 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
 
     }
     
+    func getData(){
+        if Internet.isConnectedToNetwork() {
+            println("Interneta badago!")
+            let ekintzakParseatu = Ekintzak()
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                println("gcd")
+                ekintzakParseatu.getEkintzak()
+                self.ekintzanArray = ekintzakParseatu.ekintzanArray
+                dispatch_async(dispatch_get_main_queue(), {
+                    if self.ekintzanArray.count == 0 {
+                        let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: self.handler))
+                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Ez eskerrik asko!!!", style: UIAlertActionStyle.Cancel, handler: nil))
+                        self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
+                    }
+                    self.tableView.reloadData()
+                    self.hiddenEmptyCell()
+                    self.tableView.hidden = false
+                    self.activityIndicator.hidden = true
+                })
+            })
+        } else {
+            println("Ez dago internetik")
+            self.activityIndicator.hidden = true
+        }
+    }
+    
     func hiddenEmptyCell(){
         var tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
@@ -106,6 +116,11 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
         let gameView : GameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as GameViewController
         gameView.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(gameView, animated: true)
+    }
+    
+    func refresh(sender:AnyObject){
+        getData()
+        self.refreshControl.endRefreshing()
     }
     
 }

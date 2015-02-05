@@ -123,8 +123,7 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         self.tableView.backgroundColor = UIColor.clearColor()
     }
     
-    func refresh(sender:AnyObject)
-    {
+    func refresh(sender:AnyObject){
         getData()
         self.refreshControl.endRefreshing()
     }
