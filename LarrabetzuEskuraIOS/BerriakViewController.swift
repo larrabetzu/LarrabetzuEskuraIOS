@@ -3,6 +3,7 @@ import UIKit
 class BerriakViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
+    var refreshControl:UIRefreshControl! 
     
     var blogenTituloa: [String] = []
     var blogenLink: [String] = []
@@ -21,25 +22,13 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         
         println("viewDidLoad")
         
-        if Internet.isConnectedToNetwork() {
-            println("Interneta badago!")
-            let berriakParseatu = Berriak()
-            berriakParseatu.getLarrabetzutik()
-            blogenTituloa = berriakParseatu.blogenTituloa
-            blogenLink = berriakParseatu.blogenLink
-            blogenPubDate = berriakParseatu.blogenPubDate
-
-        } else {
-            println("Ez dago internetik")
-            var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
-                UIAlertAction in
-            }
-            alertInterneta.addAction(okAction)
-            self.presentViewController(alertInterneta, animated: true, completion: nil)
-        }
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.refreshControl.tintColor = UIColor.whiteColor()
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
-        self.hiddenEmptyCell()
+        getData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -98,11 +87,46 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    func getData(){
+        if Internet.isConnectedToNetwork() {
+            println("Interneta badago!")
+            
+            let berriakParseatu = Berriak()
+            
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                berriakParseatu.getLarrabetzutik()
+                self.blogenTituloa = berriakParseatu.blogenTituloa
+                self.blogenLink = berriakParseatu.blogenLink
+                self.blogenPubDate = berriakParseatu.blogenPubDate
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    self.hiddenEmptyCell()
+                })
+            })
+            
+        } else {
+            println("Ez dago internetik")
+            var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
+            alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
+            self.presentViewController(alertInterneta, animated: true, completion: nil)
+        }
+        self.hiddenEmptyCell()
+
+    }
+    
+    
     func hiddenEmptyCell(){
         var tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        getData()
+        self.refreshControl.endRefreshing()
     }
     
 }
