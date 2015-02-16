@@ -11,10 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
         self.pushNotificationController = PushNotificationController()
-        
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         // Register for Push Notitications, if running iOS 8
         if application.respondsToSelector("registerUserNotificationSettings:") {
@@ -74,11 +71,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("failed to register for remote notifications:  \(error)")
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: NSDictionary!) {
         println("didReceiveRemoteNotification")
         PFPush.handlePush(userInfo)
+        if ( application.applicationState == UIApplicationState.Inactive || application.applicationState == UIApplicationState.Background ){
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+            
+            println("\(userInfo)")
+            if var url: String = userInfo.objectForKey("url") as? String{
+                println("\(url)")
+                let urlNSURL = NSURL(string: url)!
+                dispatch_async(dispatch_get_main_queue(), {
+                    if (UIApplication.sharedApplication().canOpenURL(urlNSURL)){
+                        UIApplication.sharedApplication().openURL(urlNSURL)
+                    }
+                })
+            } 
+        }
     }
-
 
 }
 

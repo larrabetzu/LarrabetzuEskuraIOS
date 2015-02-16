@@ -219,8 +219,8 @@
 		9FDBB597195AE4D4003EFA9E /* LarrabetzuEskuraIOS */ = {
 			isa = PBXGroup;
 			children = (
-				9FF904351A73B991001E4891 /* ApiKeys.swift */,
 				9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */,
+				9FF904351A73B991001E4891 /* ApiKeys.swift */,
 				9FF904301A73B5A2001E4891 /* bridgingHeader.h */,
 				9FD7B52A19751795009DFFC0 /* Controller */,
 				9FD7B52C1975192D009DFFC0 /* Parsers */,
@@ -325,7 +325,7 @@
 						DevelopmentTeam = T355TDU55C;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
