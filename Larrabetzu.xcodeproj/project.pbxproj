@@ -34,6 +34,10 @@
 		9FD791B51A73C79600E205EC /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791B41A73C79600E205EC /* libstdc++.6.dylib */; };
 		9FD791B71A73C7A600E205EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791B61A73C7A600E205EC /* libsqlite3.dylib */; };
 		9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */; };
+		9FD7EA221A93438C00979903 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7EA211A93438C00979903 /* libGoogleAnalyticsServices.a */; };
+		9FD7EA241A9343B800979903 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7EA231A9343B800979903 /* AdSupport.framework */; };
+		9FD7EA261A9343C600979903 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7EA251A9343C600979903 /* CoreData.framework */; };
+		9FD7EA2C1A934F7E00979903 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7EA2B1A934F7E00979903 /* libAdIdAccess.a */; };
 		9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */; };
 		9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */; };
 		9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */; };
@@ -88,6 +92,20 @@
 		9FD791B41A73C79600E205EC /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		9FD791B61A73C7A600E205EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakParseatu.swift; sourceTree = "<group>"; };
+		9FD7EA1B1A93436900979903 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		9FD7EA1C1A93436900979903 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		9FD7EA1D1A93436900979903 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		9FD7EA1E1A93436900979903 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		9FD7EA1F1A93436900979903 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		9FD7EA201A93436900979903 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		9FD7EA211A93438C00979903 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		9FD7EA231A9343B800979903 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9FD7EA251A9343C600979903 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9FD7EA271A934CE500979903 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		9FD7EA281A934CE500979903 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		9FD7EA291A934CE500979903 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		9FD7EA2A1A934CE500979903 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		9FD7EA2B1A934F7E00979903 /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
 		9FDBB595195AE4D4003EFA9E /* Larrabetzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Larrabetzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB599195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD7EA261A9343C600979903 /* CoreData.framework in Frameworks */,
+				9FD7EA241A9343B800979903 /* AdSupport.framework in Frameworks */,
 				9FD791B71A73C7A600E205EC /* libsqlite3.dylib in Frameworks */,
 				9FD791B51A73C79600E205EC /* libstdc++.6.dylib in Frameworks */,
 				9FCDDD4D19C746CB0007B3F2 /* SystemConfiguration.framework in Frameworks */,
@@ -119,6 +139,7 @@
 				9FD791B31A73C60100E205EC /* ParseUI.framework in Frameworks */,
 				9FCDDD4719C746820007B3F2 /* QuartzCore.framework in Frameworks */,
 				9FCDDD4519C746770007B3F2 /* MobileCoreServices.framework in Frameworks */,
+				9FD7EA2C1A934F7E00979903 /* libAdIdAccess.a in Frameworks */,
 				9FCDDD4319C7466A0007B3F2 /* libz.dylib in Frameworks */,
 				9FD791AF1A73C60100E205EC /* Bolts.framework in Frameworks */,
 				9FD791B01A73C60100E205EC /* Parse.framework in Frameworks */,
@@ -126,6 +147,7 @@
 				9FCDDD4119C746580007B3F2 /* CoreLocation.framework in Frameworks */,
 				9FCDDD3F19C7464B0007B3F2 /* CoreGraphics.framework in Frameworks */,
 				9FCDDD3D19C7463F0007B3F2 /* CFNetwork.framework in Frameworks */,
+				9FD7EA221A93438C00979903 /* libGoogleAnalyticsServices.a in Frameworks */,
 				9FCDDD3B19C746330007B3F2 /* AudioToolbox.framework in Frameworks */,
 				9FD791B21A73C60100E205EC /* ParseFacebookUtils.framework in Frameworks */,
 			);
@@ -198,6 +220,27 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
+		9FD7EA1A1A93429600979903 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				9FD7EA251A9343C600979903 /* CoreData.framework */,
+				9FD7EA231A9343B800979903 /* AdSupport.framework */,
+				9FD7EA211A93438C00979903 /* libGoogleAnalyticsServices.a */,
+				9FD7EA2B1A934F7E00979903 /* libAdIdAccess.a */,
+				9FD7EA271A934CE500979903 /* GAIEcommerceFields.h */,
+				9FD7EA281A934CE500979903 /* GAIEcommerceProduct.h */,
+				9FD7EA291A934CE500979903 /* GAIEcommerceProductAction.h */,
+				9FD7EA2A1A934CE500979903 /* GAIEcommercePromotion.h */,
+				9FD7EA1B1A93436900979903 /* GAI.h */,
+				9FD7EA1C1A93436900979903 /* GAIDictionaryBuilder.h */,
+				9FD7EA1D1A93436900979903 /* GAIFields.h */,
+				9FD7EA1E1A93436900979903 /* GAILogger.h */,
+				9FD7EA1F1A93436900979903 /* GAITrackedViewController.h */,
+				9FD7EA201A93436900979903 /* GAITracker.h */,
+			);
+			name = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
 		9FDBB58C195AE4D3003EFA9E = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +273,7 @@
 				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
 				9FF904331A73B912001E4891 /* ApiKeys.plist */,
 				9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */,
+				9FD7EA1A1A93429600979903 /* GoogleAnalytics */,
 				9FCDDD3119C745350007B3F2 /* Frameworks */,
 				9FDBB598195AE4D4003EFA9E /* Supporting Files */,
 			);
@@ -545,6 +589,10 @@
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LarrabetzuEskuraIOS",
+				);
 				PRODUCT_NAME = Larrabetzu;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
@@ -564,6 +612,10 @@
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LarrabetzuEskuraIOS",
+				);
 				PRODUCT_NAME = Larrabetzu;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";

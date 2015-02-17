@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: GAITrackedViewController {
 
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     var blogLarrabetzutik  = true
@@ -131,7 +131,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.screenName = "Hobespenak"
         if let channels = PFInstallation.currentInstallation().channels as? [String]{
             println("\(channels)")
             

@@ -1,6 +1,6 @@
 import UIKit
 
-class EkintzakViewController : UIViewController, UITableViewDelegate , UITableViewDataSource {
+class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -30,6 +30,11 @@ class EkintzakViewController : UIViewController, UITableViewDelegate , UITableVi
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
         getData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.screenName = "Agenda"
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {

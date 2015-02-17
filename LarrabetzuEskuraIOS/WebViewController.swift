@@ -1,6 +1,6 @@
 import UIKit
 
-class WebViewController: UIViewController, UIWebViewDelegate{
+class WebViewController: GAITrackedViewController, UIWebViewDelegate{
     
     
     @IBOutlet var webView: UIWebView!
@@ -24,6 +24,11 @@ class WebViewController: UIViewController, UIWebViewDelegate{
         let requestURL: NSURL = NSURL(string: postLink)!
         let request :NSURLRequest = NSURLRequest(URL: requestURL)
         self.webView.loadRequest(request)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.screenName = "WebView"
     }
     
     override func viewWillDisappear(animated: Bool) {

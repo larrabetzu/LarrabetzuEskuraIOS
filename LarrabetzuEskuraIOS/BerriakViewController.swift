@@ -1,6 +1,6 @@
 import UIKit
 
-class BerriakViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     var refreshControl:UIRefreshControl! 
@@ -35,6 +35,7 @@ class BerriakViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(animated)
         println("viewWillAppear")
         navigationItem.title = "Larrabetzu #eskura"
+        self.screenName = "Berriak"
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {

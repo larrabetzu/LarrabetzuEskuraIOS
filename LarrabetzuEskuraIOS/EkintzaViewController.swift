@@ -1,6 +1,6 @@
 import UIKit
 
-class EkintzaViewController: UIViewController {
+class EkintzaViewController: GAITrackedViewController {
     
     @IBOutlet var tituloaUI: UILabel!
     @IBOutlet var hileaUI: UILabel!
@@ -56,7 +56,11 @@ class EkintzaViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.screenName = "Ekintza"
     }
 
     func SetEkintza(#tituloa:String, hilea:String, eguna:String, ordua:String, lekua:String, deskribapena:String, kartela:String, link:String ){

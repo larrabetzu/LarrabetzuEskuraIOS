@@ -13,6 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.pushNotificationController = PushNotificationController()
         
+        //Google Analytics
+        GAI.sharedInstance().trackerWithTrackingId(valueForAPIKey(keyname: "GOOGLE_ANALYTICS-ID"))
+        GAI.sharedInstance().trackUncaughtExceptions = true
+        
+        GAI.sharedInstance().logger.logLevel = GAILogLevel.Warning
+        GAI.sharedInstance().dispatchInterval = 20
+        
+        GAI.sharedInstance().defaultTracker.allowIDFACollection = true
+        GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build())
+        
+        
+        
         // Register for Push Notitications, if running iOS 8
         if application.respondsToSelector("registerUserNotificationSettings:") {
             let types:UIUserNotificationType = (.Alert | .Badge | .Sound)

@@ -1,6 +1,6 @@
 import UIKit
 
-class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -45,6 +45,7 @@ class ElkarteakViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewWillAppear(animated)
         println("viewWillAppear")
         navigationItem.title = "Elkarteak"
+        self.screenName = "Elkarteak"
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
