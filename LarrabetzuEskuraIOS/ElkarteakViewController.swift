@@ -77,7 +77,12 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
             let email = fields["email"] as String
             let webgunea = fields["webgunea"] as String
             
+            
             var alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+            
+            if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
+                alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            }
             let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 let url = NSURL(string: "mailto:\(email)")
