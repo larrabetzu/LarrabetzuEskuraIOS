@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GAI.sharedInstance().defaultTracker.allowIDFACollection = true
         GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build())
         
+        //https://github.com/ArtSabintsev/Siren
+        let siren = Siren.sharedInstance
+        siren.appID = valueForAPIKey(keyname: "APP_ID")
+        siren.presentingViewController = window?.rootViewController
+        siren.alertType = .Option
+        // siren.forceLanguageLocalization = .Basque
+        siren.checkVersion(.Weekly)
         
         
         // Register for Push Notitications, if running iOS 8
