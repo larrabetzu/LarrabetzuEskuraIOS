@@ -11,15 +11,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         self.pushNotificationController = PushNotificationController()
         
         //Google Analytics
         GAI.sharedInstance().trackerWithTrackingId(valueForAPIKey(keyname: "GOOGLE_ANALYTICS-ID"))
         GAI.sharedInstance().trackUncaughtExceptions = true
-        
-        GAI.sharedInstance().logger.logLevel = GAILogLevel.Warning
         GAI.sharedInstance().dispatchInterval = 20
-        
         GAI.sharedInstance().defaultTracker.allowIDFACollection = true
         GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build())
         

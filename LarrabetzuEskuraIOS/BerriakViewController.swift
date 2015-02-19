@@ -19,6 +19,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         navigationItem.title = "Larrabetzu #eskura"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = titleDict
+        tabBarController?.tabBar.tintColor = UIColor.blackColor()
         
         println("viewDidLoad")
         
