@@ -21,15 +21,34 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         navigationController?.navigationBar.titleTextAttributes = titleDict
         tabBarController?.tabBar.tintColor = UIColor.blackColor()
         
-        println("viewDidLoad")
-        
         self.refreshControl = UIRefreshControl()
         self.refreshControl.tintColor = UIColor.whiteColor()
         self.refreshControl.backgroundColor = grisaColor
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
-        getData()
+        if Internet.isConnectedToNetwork() {
+            println("Interneta badago!")
+            
+            let berriakParseatu = Berriak()
+            berriakParseatu.getLarrabetzutik()
+            self.blogenTituloa = berriakParseatu.blogenTituloa
+            self.blogenLink = berriakParseatu.blogenLink
+            self.blogenPubDate = berriakParseatu.blogenPubDate
+            
+            self.tableView.reloadData()
+            self.hiddenEmptyCell()
+            
+            
+            
+        } else {
+            println("Ez dago internetik")
+            var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
+            alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
+            self.presentViewController(alertInterneta, animated: true, completion: nil)
+        }
+        self.hiddenEmptyCell()
+        
     }
     
     override func viewWillAppear(animated: Bool) {

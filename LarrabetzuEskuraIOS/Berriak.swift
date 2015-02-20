@@ -103,9 +103,10 @@ class Berriak{
     
     func lehenengoDataHandiagoaDa(lehenengoData : String, bigarrenData : String)->Bool{
         let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss xx" //Thu, 22 May 2014 11:36:45 -0700
-        let data1 = dateFormatter.dateFromString(lehenengoData)
-        let data2 = dateFormatter.dateFromString(bigarrenData)
+        var data1 = dateFormatter.dateFromString(lehenengoData)
+        var data2 = dateFormatter.dateFromString(bigarrenData)
         if data1?.compare(data2!) == NSComparisonResult.OrderedDescending{
             return true
         }
