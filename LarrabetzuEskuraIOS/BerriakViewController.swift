@@ -49,6 +49,11 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         }
         self.hiddenEmptyCell()
         
+        let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as PageViewController
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
+        pageView.hidesBottomBarWhenPushed = true
+        //self.navigationController?.pushViewController(pageView, animated: false)
+        self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {

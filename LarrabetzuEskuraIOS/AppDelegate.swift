@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        application.statusBarStyle = .LightContent
         var navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.whiteColor()
         
@@ -32,19 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // siren.forceLanguageLocalization = .Basque
         siren.checkVersion(.Weekly)
         
-        
-        // Register for Push Notitications, if running iOS 8
-        if application.respondsToSelector("registerUserNotificationSettings:") {
-            let types:UIUserNotificationType = (.Alert | .Badge | .Sound)
-            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
-            
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
-            
-        } else {
-            // Register for Push Notifications before iOS 8
-            application.registerForRemoteNotificationTypes(.Alert | .Badge | .Sound)
-        }
         
         return true
     }
