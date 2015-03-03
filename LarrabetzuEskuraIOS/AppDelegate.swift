@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var pushNotificationController:PushNotificationController?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         application.statusBarStyle = .LightContent
         var navigationBarAppearace = UINavigationBar.appearance()
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GAI.sharedInstance().trackUncaughtExceptions = true
         GAI.sharedInstance().dispatchInterval = 20
         GAI.sharedInstance().defaultTracker.allowIDFACollection = true
-        GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build())
+        GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build() as [NSObject : AnyObject])
         
         //https://github.com/ArtSabintsev/Siren
         let siren = Siren.sharedInstance
@@ -78,14 +78,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("failed to register for remote notifications:  \(error)")
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: NSDictionary!) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
         println("didReceiveRemoteNotification")
         PFPush.handlePush(userInfo)
         if ( application.applicationState == UIApplicationState.Inactive || application.applicationState == UIApplicationState.Background ){
-            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo )
             
             println("\(userInfo)")
-            if var url: String = userInfo.objectForKey("url") as? String{
+            if var url: String = userInfo["url"] as? String{
                 println("\(url)")
                 let urlNSURL = NSURL(string: url)!
                 dispatch_async(dispatch_get_main_queue(), {

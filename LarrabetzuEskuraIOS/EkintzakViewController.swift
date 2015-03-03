@@ -17,8 +17,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         //NabigationBar
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Agenda"
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
 
         activityIndicator.hidden = false
         tableView.hidden = true
@@ -43,13 +42,13 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as EkintzakTableViewCell
+        var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as! EkintzakTableViewCell
         
         let ekintza = ekintzanArray[indexPath.row]
-        if let fields: AnyObject = ekintza["fields"]{
-            let tituloa = fields["tituloa"] as String
-            let data = fields["egune"] as String
-            let lekua = fields["lekua"] as String
+        if let fields = ekintza["fields"] as? NSDictionary{
+            let tituloa: String = fields["tituloa"] as! String!
+            let data: String = fields["egune"] as! String!
+            let lekua: String = fields["lekua"] as! String!
             let ordua = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5)) as String
             let eguna = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2)) as String
             cell.loadItem(tituloa: (tituloa), ordua: ordua, eguna: eguna,lekua: lekua)
@@ -58,20 +57,20 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         return cell
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let ekintza = ekintzanArray[indexPath.row]
         println(ekintza)
-        let ekintzaView : EkintzaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EkintzaViewController") as EkintzaViewController
+        let ekintzaView : EkintzaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EkintzaViewController") as! EkintzaViewController
         ekintzaView
         ekintzaView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ekintzaView, animated: true)
-        if let fields: AnyObject = ekintza["fields"]{
-            let tituloa = fields["tituloa"] as String
-            let data = fields["egune"] as String
-            let lekua = fields["lekua"] as String
-            let link = fields["link"] as String
-            let kartela = fields["kartela"] as String
-            let deskribapena = fields["deskribapena"] as String
+        if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
+            let tituloa = fields["tituloa"] as! String
+            let data = fields["egune"] as! String
+            let lekua = fields["lekua"] as! String
+            let link = fields["link"] as! String
+            let kartela = fields["kartela"] as! String
+            let deskribapena = fields["deskribapena"] as! String
             let eguna:String = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2))
             let ordua:String = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5))
             let hilea:String = data.substringFromIndex(advance(data.startIndex, 5)).substringToIndex(advance(data.startIndex, 2))
@@ -118,7 +117,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     }
     
     func handler(act:UIAlertAction!){
-        let gameView : GameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as GameViewController
+        let gameView : GameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
         gameView.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(gameView, animated: true)
     }

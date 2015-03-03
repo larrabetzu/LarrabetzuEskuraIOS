@@ -18,7 +18,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Larrabetzu #eskura"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict
+        navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
         tabBarController?.tabBar.tintColor = UIColor.blackColor()
         
         self.refreshControl = UIRefreshControl()
@@ -49,7 +49,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         }
         self.hiddenEmptyCell()
         
-        let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as PageViewController
+        let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
         pageView.hidesBottomBarWhenPushed = true
         //self.navigationController?.pushViewController(pageView, animated: false)
@@ -103,8 +103,9 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         return cell
     }
 
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
         webView.hidesBottomBarWhenPushed = true
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(webView, animated: true)

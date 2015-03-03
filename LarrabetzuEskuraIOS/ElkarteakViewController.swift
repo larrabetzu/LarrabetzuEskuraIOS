@@ -15,7 +15,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Elkarteak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict
+        navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
         
         activityIndicator.hidden = false
         tableView.hidden = true
@@ -58,24 +58,24 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         cell.textLabel?.text = "Elkartea"
         cell.accessoryType = UITableViewCellAccessoryType.DetailButton
         
-        let ekintza = elkarteakArray[indexPath.row]
-        if let fields: AnyObject = ekintza["fields"]{
-            let nor = fields["nor"] as String
-            let email = fields["email"] as String
-            let webgunea = fields["webgunea"] as String
+        let ekintza : NSDictionary = elkarteakArray[indexPath.row] as NSDictionary
+        if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
+            let nor = fields["nor"] as! String
+            let email = fields["email"] as! String
+            let webgunea = fields["webgunea"] as! String
             cell.textLabel?.text = "\(nor)"
         }
         
         return cell
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let ekintza = elkarteakArray[indexPath.row]
-        if let fields: AnyObject = ekintza["fields"]{
-            let nor = fields["nor"] as String
-            let email = fields["email"] as String
-            let webgunea = fields["webgunea"] as String
+        let ekintza : NSDictionary = elkarteakArray[indexPath.row] as NSDictionary
+        if let fields: NSDictionary = ekintza["fields"]as? NSDictionary{
+            let nor = fields["nor"] as! String
+            let email = fields["email"] as! String
+            let webgunea = fields["webgunea"] as! String
             
             
             var alertController = UIAlertController(title: "Elkartean informazioa", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -90,7 +90,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
             }
             let webAction = UIAlertAction(title: "web", style: UIAlertActionStyle.Default) {
                 UIAlertAction in
-                let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+                let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
                 webView.hidesBottomBarWhenPushed = true
                 
                 self.navigationController?.pushViewController(webView, animated: true)

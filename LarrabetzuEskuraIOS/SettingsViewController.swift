@@ -11,7 +11,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBOutlet weak var labelNumeroPost: UILabel!
     
     @IBAction func nortzuk(sender: UIButton, forEvent event: UIEvent) {
-        let nortzukView : NortzukViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NortzukViewController") as NortzukViewController
+        let nortzukView : NortzukViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NortzukViewController") as! NortzukViewController
         nortzukView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nortzukView, animated: true)
     }
@@ -110,7 +110,7 @@ class SettingsViewController: GAITrackedViewController {
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Hobespenak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict
+        navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
         
         let postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
         let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
@@ -155,7 +155,7 @@ class SettingsViewController: GAITrackedViewController {
     }
     
     func blogGuztiakKendutaDauz(){
-        if(!self.blogLarrabetzutik & !self.blogEskola & !self.blogHoribai & !self.blogLarrabetzuZeroZabor){
+        if(!self.blogLarrabetzutik && !self.blogEskola && !self.blogHoribai && !self.blogLarrabetzuZeroZabor){
             let alertBlogAukerak = UIAlertController(
                 title: "Blog Aukerak",
                 message: "Denak kentzen badozuz ez da blogarik agertuko.",

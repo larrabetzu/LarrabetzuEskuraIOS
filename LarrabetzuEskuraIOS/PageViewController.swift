@@ -34,13 +34,13 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     
     private func createPageViewController() {
         
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as UIPageViewController
+        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as! UIPageViewController
         pageController.dataSource = self
         
         if contentArgazkia.count > 0 {
             let firstController = getItemController(0)!
             let startingViewControllers: NSArray = [firstController]
-            pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            pageController.setViewControllers(startingViewControllers as [AnyObject] , direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
         
         pageViewController = pageController
@@ -58,7 +58,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
-        let itemController = viewController as PageItemController
+        let itemController = viewController as! PageItemController
         
         if itemController.itemIndex > 0 {
             return getItemController(itemController.itemIndex-1)
@@ -69,7 +69,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        let itemController = viewController as PageItemController
+        let itemController = viewController as! PageItemController
         
         if itemController.itemIndex+1 < contentArgazkia.count {
             if(itemController.itemIndex == 3){
@@ -89,7 +89,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     private func getItemController(itemIndex: Int) -> PageItemController? {
         
         if itemIndex < contentArgazkia.count {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as PageItemController
+            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as! PageItemController
             pageItemController.itemIndex = itemIndex
             pageItemController.argazkiaName = contentArgazkia[itemIndex]
             pageItemController.tituloaName = contentTituloa [itemIndex]

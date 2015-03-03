@@ -12,7 +12,7 @@ class Berriak{
     
     func parseJSON(inputData: NSData) -> NSDictionary{
         var error: NSError?
-        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
         return boardsDictionary
     }
     
@@ -31,7 +31,7 @@ class Berriak{
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
-        if(!blogLarrabetzutik & !blogEskola & !blogHoriBai & !blogLarrabetzuZeroZabor){
+        if(!blogLarrabetzutik && !blogEskola && !blogHoriBai && !blogLarrabetzuZeroZabor){
             blogLarrabetzutik = true
             blogEskola = true
             blogHoriBai = true
@@ -54,14 +54,14 @@ class Berriak{
         let countUrleBlog = urlBlog.count
         for var idex = 0; idex < countUrleBlog; ++idex{
             var parsedJSON = parseJSON(getJSON(call+urlBlog[idex]))
-            if let dictionaryResponseData : AnyObject = parsedJSON["responseData"]{
-                if let dictionaryFeed : AnyObject = dictionaryResponseData["feed"]{
-                    if let dictionaryEntries : AnyObject = dictionaryFeed["entries"]{
+            if let dictionaryResponseData = parsedJSON["responseData"] as? NSDictionary{
+                if let dictionaryFeed = dictionaryResponseData["feed"] as? NSDictionary{
+                    if let dictionaryEntries = dictionaryFeed["entries"] as? NSArray{
                         for var idex = 0; idex < dictionaryEntries.count; ++idex{
-                            if let una : AnyObject = dictionaryEntries[idex]{
-                                let title : String = una["title"] as String
-                                let link : String = una["link"] as String
-                                let publishedDateString : String = una["publishedDate"] as String
+                            if let una = dictionaryEntries[idex] as? NSDictionary{
+                                let title : String = una["title"] as! String
+                                let link : String = una["link"] as! String
+                                let publishedDateString : String = una["publishedDate"] as! String
                                 
                                 let arrayNumeroa = self.blogenPubDate.count
                                 
