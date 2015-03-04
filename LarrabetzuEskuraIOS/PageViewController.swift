@@ -6,16 +6,15 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     private var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-    private let contentArgazkia = ["BerriakPantaila.png", "AgendaPantaila.png", "ElkarteakPantaila.png", "HobespenakPantaila.png", "HobespenakPantaila.png", "HobespenakPantaila.png"]
+    private let contentArgazkia = ["BerriakPantaila.png", "AgendaPantaila.png", "ElkarteakPantaila.png", "HobespenakPantaila.png", "HobespenakPantaila.png"]
     
-    private let contentTituloa = ["Berriak", "Agenda", "Elkarteak", "Abisuak", "Hobespenak", ""]
+    private let contentTituloa = ["Berriak", "Agenda", "Elkarteak", "Abisuak", "Hobespenak"]
     
-    private let contentDeskribapena = ["Larrabetzun gertatzen diren berri",
-        "Herrian datorren egunetan egongo diren ekintzak",
-        "Elkarteen informazioa #eskura",
-        "Ekitaldia bertan behera geratu badan, udaleko abisuk...",
-        "Hobespenak",
-        ""]
+    private let contentDeskribapena = ["Larrabetzuko azken albisteak #eskura",
+        "Herriko ekitaldi guztiei buruzko informazioa, ordutegia, lekua eta kartelak #eskura",
+        "Larrabetzuko elkarteen informazioa eta kontaktua #eskura",
+        "Herriko mezu garrantzitsuak, azkarrak, labur laburrak mugikorrean jasotzeko. Kanal ezberdinak daudenez, aukeratzeko moduan dituzu #eskura",
+        "Aukeratu nahi dituzun informazio iturriak, eta kopurua. Mezu labur eta azkarrak ere #eskura jasoko dituzu, oso erraz"]
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -77,10 +76,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
             }
             return getItemController(itemController.itemIndex+1)
         }else{
-            for view in self.view.subviews {
-                view.removeFromSuperview()
-            }
-            self.dismissViewControllerAnimated(true, completion: nil)
+            var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("dismissViews"), userInfo: nil, repeats: false)
         }
         
         return nil
@@ -122,6 +118,21 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
             // Register for Push Notifications before iOS 8
             application.registerForRemoteNotificationTypes(.Alert | .Badge | .Sound)
         }
+    }
+    
+    func dismissViews(){
+        if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
+            
+            var appVersionInt: Int! = text.toInt()
+            var instaledAppVersion = NSUserDefaults.standardUserDefaults()
+                instaledAppVersion.setInteger(appVersionInt, forKey: "instaledAppVersion")
+                instaledAppVersion.synchronize()
+        }
+        
+        for view in self.view.subviews {
+            view.removeFromSuperview()
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
