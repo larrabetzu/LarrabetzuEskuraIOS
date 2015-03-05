@@ -17,7 +17,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
         
-        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
         tableView.hidden = true
         
         if Internet.isConnectedToNetwork() {
@@ -31,12 +31,12 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()
                     self.tableView.hidden = false
-                    self.activityIndicator.hidden = true
+                    self.activityIndicator.stopAnimating()
                 })
             })
         } else {
             println("Ez dago internetik")
-            self.activityIndicator.hidden = true
+            self.activityIndicator.stopAnimating()
         }
 
     }

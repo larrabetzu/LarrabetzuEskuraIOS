@@ -75,13 +75,21 @@ class EkintzaViewController: GAITrackedViewController {
     }
     
     func downloadImageBackground(){
+        self.activityIndicator.startAnimating()
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
             println("gcd")
             var urlString: NSString = self.kartelaLink
-            let urlStringPath = urlString.substringToIndex(urlString.length-4) //http://larrabetzu.net/media/kartelanIzena
-            let urlStringFile = urlString.substringFromIndex(urlString.length-3) //.jpg .png
-            urlString =  urlStringPath + ".medium." + urlStringFile
+            
+            if("peg" == urlString.substringFromIndex(urlString.length-3)){
+                let urlStringPath = urlString.substringToIndex(urlString.length-5) //http://larrabetzu.net/media/kartelanIzena
+                let urlStringFile = urlString.substringFromIndex(urlString.length-4) //jpeg
+                urlString =  urlStringPath + ".medium." + urlStringFile
+            }else{
+                let urlStringPath = urlString.substringToIndex(urlString.length-4) //http://larrabetzu.net/media/kartelanIzena
+                let urlStringFile = urlString.substringFromIndex(urlString.length-3) //jpg png
+                urlString =  urlStringPath + ".medium." + urlStringFile
+            }
             var imgURL: NSURL = NSURL(string: urlString as String)!
             var request: NSURLRequest = NSURLRequest(URL: imgURL)
             var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)!
@@ -90,7 +98,6 @@ class EkintzaViewController: GAITrackedViewController {
                     var image: UIImage? = UIImage(data: data)
                     self.kartelaUI.image = image
                     self.activityIndicator.stopAnimating()
-                    self.activityIndicator.hidden = true
                     
                 }else {
                     println("Error: \(error.localizedDescription)")

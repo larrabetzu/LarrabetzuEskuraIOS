@@ -19,7 +19,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         navigationItem.title = "Agenda"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
 
-        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
         tableView.hidden = true
         
         self.refreshControl = UIRefreshControl()
@@ -94,12 +94,12 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()
                     self.tableView.hidden = false
-                    self.activityIndicator.hidden = true
+                    self.activityIndicator.stopAnimating()
                 })
             })
         } else {
             println("Ez dago internetik")
-            self.activityIndicator.hidden = true
+            self.activityIndicator.stopAnimating()
         }
     }
     
