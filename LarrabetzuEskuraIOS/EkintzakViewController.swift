@@ -91,12 +91,6 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
                 ekintzakParseatu.getEkintzak()
                 self.ekintzanArray = ekintzakParseatu.ekintzanArray
                 dispatch_async(dispatch_get_main_queue(), {
-                    if self.ekintzanArray.count == 0 {
-                        let alertEzdagoEkintzarik = UIAlertController(title: "Ez dago Ekintzarik", message: "Orain ez dago ekintzarik agendan. Nahi badozu joku batera eramango zaitut.", preferredStyle: UIAlertControllerStyle.Alert)
-                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Jolastu", style: UIAlertActionStyle.Default, handler: self.handler))
-                        alertEzdagoEkintzarik.addAction(UIAlertAction(title: "Ez eskerrik asko!!!", style: UIAlertActionStyle.Cancel, handler: nil))
-                        self.presentViewController(alertEzdagoEkintzarik, animated: true, completion: nil)
-                    }
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()
                     self.tableView.hidden = false
@@ -114,12 +108,6 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()
-    }
-    
-    func handler(act:UIAlertAction!){
-        let gameView : GameViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
-        gameView.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(gameView, animated: true)
     }
     
     func refresh(sender:AnyObject){
