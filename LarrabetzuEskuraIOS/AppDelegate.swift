@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         siren.appID = valueForAPIKey(keyname: "APP_ID")
         siren.presentingViewController = window?.rootViewController
         siren.alertType = .Option
-        // siren.forceLanguageLocalization = .Basque
+        siren.forceLanguageLocalization = .Basque
         siren.checkVersion(.Weekly)
         
         
