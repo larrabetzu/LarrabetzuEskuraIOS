@@ -54,49 +54,36 @@ class Berriak{
         let countUrleBlog = urlBlog.count
         for var idex = 0; idex < countUrleBlog; ++idex{
             var parsedJSON = parseJSON(getJSON(call+urlBlog[idex]))
-            if let dictionaryResponseData = parsedJSON["responseData"] as? NSDictionary{
-                if let dictionaryFeed = dictionaryResponseData["feed"] as? NSDictionary{
-                    if let dictionaryEntries = dictionaryFeed["entries"] as? NSArray{
-                        for var idex = 0; idex < dictionaryEntries.count; ++idex{
-                            if let una = dictionaryEntries[idex] as? NSDictionary{
-                                let title : String = una["title"] as! String
-                                let link : String = una["link"] as! String
-                                let publishedDateString : String = una["publishedDate"] as! String
+            if let dictionaryResponseData = parsedJSON["responseData"] as? NSDictionary, dictionaryFeed = dictionaryResponseData["feed"] as? NSDictionary , dictionaryEntries = dictionaryFeed["entries"] as? NSArray{
+                for var idex = 0; idex < dictionaryEntries.count; ++idex{
+                    if let una = dictionaryEntries[idex] as? NSDictionary{
+                        let title : String = una["title"] as! String
+                        let link : String = una["link"] as! String
+                        let publishedDateString : String = una["publishedDate"] as! String
                                 
-                                let arrayNumeroa = self.blogenPubDate.count
+                        let arrayNumeroa = self.blogenPubDate.count
                                 
-                                if(arrayNumeroa != 0){
-                                    for var x = 0; x <= arrayNumeroa; ++x{
-                                        if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: self.blogenPubDate[x])){
-                                            self.blogenTituloa.insert(title, atIndex: x)
-                                            self.blogenLink.insert(link, atIndex: x)
-                                            self.blogenPubDate.insert(publishedDateString, atIndex: x)
-                                            x = arrayNumeroa
-                                        }else if(x+1 == arrayNumeroa){
-                                            self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
-                                            self.blogenLink.insert(link, atIndex: arrayNumeroa)
-                                            self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
-                                            x = arrayNumeroa
-                                        }
-                                    }
-                                }else{
+                        if(arrayNumeroa != 0){
+                            for var x = 0; x <= arrayNumeroa; ++x{
+                                if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: self.blogenPubDate[x])){
+                                    self.blogenTituloa.insert(title, atIndex: x)
+                                    self.blogenLink.insert(link, atIndex: x)
+                                    self.blogenPubDate.insert(publishedDateString, atIndex: x)
+                                    x = arrayNumeroa
+                                }else if(x+1 == arrayNumeroa){
                                     self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
                                     self.blogenLink.insert(link, atIndex: arrayNumeroa)
                                     self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
+                                    x = arrayNumeroa
                                 }
-                                
-                            }else{
-                                println("Ez deu 'dictionaryEntries' idex betegaz topetan")
                             }
+                        }else{
+                            self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
+                            self.blogenLink.insert(link, atIndex: arrayNumeroa)
+                            self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
                         }
-                    } else {
-                        println("Ez deu 'entries' topatu")
                     }
-                } else {
-                    println("Ez deu 'feed' topatu")
                 }
-            } else {
-                println("Ez deu 'responseData' topatu")
             }
         }
     }
