@@ -95,7 +95,6 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
                 
                 self.navigationController?.pushViewController(webView, animated: true)
                 webView.postLink = webgunea
-                tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }
             let cancelAction = UIAlertAction(title: "Ezebez", style: .Cancel, handler: nil)
 
@@ -103,6 +102,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
             alertController.addAction(webAction)
             alertController.addAction(cancelAction)
             self.presentViewController(alertController, animated: true, completion: nil)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
     }
