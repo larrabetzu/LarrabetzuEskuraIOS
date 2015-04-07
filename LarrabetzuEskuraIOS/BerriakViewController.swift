@@ -5,9 +5,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     @IBOutlet var tableView: UITableView!
     var refreshControl:UIRefreshControl! 
     
-    var blogenTituloa: [String] = []
-    var blogenLink: [String] = []
-    var blogenPubDate: [String] = []
+    var posts :[Dictionary<String,String>] = []
     
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
@@ -31,10 +29,8 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             println("Interneta badago!")
             
             let berriakParseatu = Berriak()
-            berriakParseatu.getLarrabetzutik()
-            self.blogenTituloa = berriakParseatu.blogenTituloa
-            self.blogenLink = berriakParseatu.blogenLink
-            self.blogenPubDate = berriakParseatu.blogenPubDate
+            berriakParseatu.getPostak()
+            self.posts = berriakParseatu.posts
             
             self.tableView.reloadData()
             self.hiddenEmptyCell()
@@ -72,39 +68,45 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-        return blogenTituloa.count
+        return self.posts.count
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
-        cell.textLabel?.text = "\(blogenTituloa[indexPath.row])"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         var image = UIImage(named: "Berrriak.png")
-        let bloganlinke : String = blogenLink[indexPath.row]
+        let arrayPost = self.posts[indexPath.row]
+            let bloganlinke : String = arrayPost["link"] as String!
+            let title : String = arrayPost["title"] as String!
+            let publishedDateString : String = arrayPost["publishedDate"] as String!
+            
+            cell.textLabel?.text = "\(title)"
+            
+            if(bloganlinke.hasPrefix("http://larrabetzutik.org/")){
+                image = UIImage(named: "larrabetzutik")!
+                
+            }else if(bloganlinke.hasPrefix("http://horibai.org/")){
+                image = UIImage(named: "horibai")!
+                
+            }else if(bloganlinke.hasPrefix("http://www.larrabetzukoeskola.org/")){
+                image = UIImage(named: "eskola")!
+                
+            }else if(bloganlinke.hasPrefix("http://gaztelumendi.tumblr.com/")){
+                image = UIImage(named: "iptx")!
+                
+            }else if(bloganlinke.hasPrefix("http://www.larrabetzuko-udala.com/")){
+                image = UIImage(named: "udala")!
+                
+            }else if(bloganlinke.hasPrefix("http://www.literaturaeskola.org/")){
+                image = UIImage(named: "literatura")!
+                
+            }else if(bloganlinke.hasPrefix("http://larrabetzuzerozabor.org/")){
+                image = UIImage(named: "larrabetzuzerozabor")!
+            }
         
-        if(bloganlinke.hasPrefix("http://larrabetzutik.org/")){
-            image = UIImage(named: "larrabetzutik")!
-            
-        }else if(bloganlinke.hasPrefix("http://horibai.org/")){
-            image = UIImage(named: "horibai")!
-            
-        }else if(bloganlinke.hasPrefix("http://www.larrabetzukoeskola.org/")){
-            image = UIImage(named: "eskola")!
-            
-        }else if(bloganlinke.hasPrefix("http://gaztelumendi.tumblr.com/")){
-            image = UIImage(named: "iptx")!
-            
-        }else if(bloganlinke.hasPrefix("http://www.larrabetzuko-udala.com/")){
-            image = UIImage(named: "udala")!
-            
-        }else if(bloganlinke.hasPrefix("http://www.literaturaeskola.org/")){
-            image = UIImage(named: "literatura")!
-            
-        }else if(bloganlinke.hasPrefix("http://larrabetzuzerozabor.org/")){
-            image = UIImage(named: "larrabetzuzerozabor")!
-        }
         
         cell.imageView?.image = image
         
@@ -113,11 +115,15 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
         webView.hidesBottomBarWhenPushed = true
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(webView, animated: true)
-        webView.postLink = blogenLink[indexPath.row]
+        let arrayPost = self.posts[indexPath.row]
+        let bloganlinke : String = arrayPost["link"] as String!
+        webView.postLink = bloganlinke
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
@@ -130,10 +136,8 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-                berriakParseatu.getLarrabetzutik()
-                self.blogenTituloa = berriakParseatu.blogenTituloa
-                self.blogenLink = berriakParseatu.blogenLink
-                self.blogenPubDate = berriakParseatu.blogenPubDate
+                berriakParseatu.getPostak()
+                self.posts = berriakParseatu.posts
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()

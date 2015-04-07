@@ -1,9 +1,8 @@
 import Foundation
 
 class Berriak{
-    var blogenTituloa: [String] = []
-    var blogenLink: [String] = []
-    var blogenPubDate: [String] = []
+    
+    var posts :[Dictionary<String,String>] = []
     
     
     func getJSON(urlToRequest: String) -> NSData{
@@ -16,7 +15,7 @@ class Berriak{
         return boardsDictionary
     }
     
-    func getLarrabetzutik(){
+    func getPostak(){
         var urlBlog: [String] = []
         let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0"
         
@@ -61,26 +60,31 @@ class Berriak{
                         let link : String = una["link"] as! String
                         let publishedDateString : String = una["publishedDate"] as! String
                                 
-                        let arrayNumeroa = self.blogenPubDate.count
+                        let arrayNumeroa = self.posts.count
                                 
                         if(arrayNumeroa != 0){
                             for var x = 0; x <= arrayNumeroa; ++x{
-                                if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: self.blogenPubDate[x])){
-                                    self.blogenTituloa.insert(title, atIndex: x)
-                                    self.blogenLink.insert(link, atIndex: x)
-                                    self.blogenPubDate.insert(publishedDateString, atIndex: x)
-                                    x = arrayNumeroa
-                                }else if(x+1 == arrayNumeroa){
-                                    self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
-                                    self.blogenLink.insert(link, atIndex: arrayNumeroa)
-                                    self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
-                                    x = arrayNumeroa
-                                }
+                                
+                                    let postArray = posts[x]
+                                    let publishedDateStringArray : String = postArray["publishedDate"] as String!
+                                    if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: publishedDateStringArray)){
+                                        let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
+                                        self.posts.insert(dic, atIndex: x)
+                                        println("\(self.posts)")
+                                        x = arrayNumeroa
+                                    }else if(x+1 == arrayNumeroa){
+                                        let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
+                                        self.posts.insert(dic, atIndex: arrayNumeroa)
+                                        
+                                        println("\(self.posts)")
+                                        x = arrayNumeroa
+                                    }
+                                
                             }
                         }else{
-                            self.blogenTituloa.insert(title, atIndex: arrayNumeroa)
-                            self.blogenLink.insert(link, atIndex: arrayNumeroa)
-                            self.blogenPubDate.insert(publishedDateString, atIndex: arrayNumeroa)
+                            let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
+                            self.posts.insert(dic, atIndex: arrayNumeroa)
+                            println("\(self.posts)")
                         }
                     }
                 }
