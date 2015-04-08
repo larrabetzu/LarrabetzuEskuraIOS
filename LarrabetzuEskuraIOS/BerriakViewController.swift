@@ -2,13 +2,13 @@ import UIKit
 
 class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: Constants and Variables
     @IBOutlet var tableView: UITableView!
-    var refreshControl:UIRefreshControl! 
+    private var refreshControl:UIRefreshControl!
+    private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    private var berriakParseatu : Berriak = Berriak()
     
-    var posts :[Dictionary<String,String>] = []
-    
-    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    
+    // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,10 +28,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         if Internet.isConnectedToNetwork() {
             println("Interneta badago!")
             
-            let berriakParseatu = Berriak()
             berriakParseatu.getPostak()
-            self.posts = berriakParseatu.posts
-            
             self.tableView.reloadData()
             self.hiddenEmptyCell()
             
@@ -67,67 +64,37 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.screenName = "Berriak"
     }
     
+    // MARK: Delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-        return self.posts.count
+        return berriakParseatu.getPostNumeroa()
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
-        var image = UIImage(named: "Berrriak.png")
-        let arrayPost = self.posts[indexPath.row]
-            let bloganlinke : String = arrayPost["link"] as String!
-            let title : String = arrayPost["title"] as String!
-            let publishedDateString : String = arrayPost["publishedDate"] as String!
+        let postBat = berriakParseatu.getPostBat(indexPath.row)
             
-            cell.textLabel?.text = "\(title)"
-            
-            if(bloganlinke.hasPrefix("http://larrabetzutik.org/")){
-                image = UIImage(named: "larrabetzutik")!
-                
-            }else if(bloganlinke.hasPrefix("http://horibai.org/")){
-                image = UIImage(named: "horibai")!
-                
-            }else if(bloganlinke.hasPrefix("http://www.larrabetzukoeskola.org/")){
-                image = UIImage(named: "eskola")!
-                
-            }else if(bloganlinke.hasPrefix("http://gaztelumendi.tumblr.com/")){
-                image = UIImage(named: "iptx")!
-                
-            }else if(bloganlinke.hasPrefix("http://www.larrabetzuko-udala.com/")){
-                image = UIImage(named: "udala")!
-                
-            }else if(bloganlinke.hasPrefix("http://www.literaturaeskola.org/")){
-                image = UIImage(named: "literatura")!
-                
-            }else if(bloganlinke.hasPrefix("http://larrabetzuzerozabor.org/")){
-                image = UIImage(named: "larrabetzuzerozabor")!
-            }
-        
-        
-        cell.imageView?.image = image
+        cell.textLabel?.text = postBat.title
+        cell.imageView?.image = postBat.image
         
         return cell
     }
 
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
         webView.hidesBottomBarWhenPushed = true
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(webView, animated: true)
-        let arrayPost = self.posts[indexPath.row]
-        let bloganlinke : String = arrayPost["link"] as String!
-        webView.postLink = bloganlinke
+        webView.postLink = berriakParseatu.getLink(indexPath.row)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
     
+    // MARK: Functions
     func getData(){
         if Internet.isConnectedToNetwork() {
             println("Interneta badago!")
@@ -137,7 +104,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 berriakParseatu.getPostak()
-                self.posts = berriakParseatu.posts
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()

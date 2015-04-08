@@ -2,14 +2,13 @@ import Foundation
 
 class Berriak{
     
-    var posts :[Dictionary<String,String>] = []
+    private var posts :[Dictionary<String,String>] = []
     
-    
-    func getJSON(urlToRequest: String) -> NSData{
+    private func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
     
-    func parseJSON(inputData: NSData) -> NSDictionary{
+    private func parseJSON(inputData: NSData) -> NSDictionary{
         var error: NSError?
         var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
         return boardsDictionary
@@ -70,13 +69,11 @@ class Berriak{
                                     if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: publishedDateStringArray)){
                                         let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
                                         self.posts.insert(dic, atIndex: x)
-                                        println("\(self.posts)")
                                         x = arrayNumeroa
                                     }else if(x+1 == arrayNumeroa){
                                         let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
                                         self.posts.insert(dic, atIndex: arrayNumeroa)
                                         
-                                        println("\(self.posts)")
                                         x = arrayNumeroa
                                     }
                                 
@@ -84,7 +81,6 @@ class Berriak{
                         }else{
                             let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
                             self.posts.insert(dic, atIndex: arrayNumeroa)
-                            println("\(self.posts)")
                         }
                     }
                 }
@@ -102,5 +98,49 @@ class Berriak{
             return true
         }
         return false
+    }
+    
+    func getPostNumeroa()->Int{
+        return self.posts.count
+    }
+    
+    func getPostBat(position: Int)->(title: String, image: UIImage){
+
+        let dicPost = self.posts[position]
+        var image = UIImage(named: "Berrriak.png")
+        let bloganlinke : String = dicPost["link"] as String!
+        let title : String = dicPost["title"] as String!
+        
+        if(bloganlinke.hasPrefix("http://larrabetzutik.org/")){
+            image = UIImage(named: "larrabetzutik")!
+            
+        }else if(bloganlinke.hasPrefix("http://horibai.org/")){
+            image = UIImage(named: "horibai")!
+            
+        }else if(bloganlinke.hasPrefix("http://www.larrabetzukoeskola.org/")){
+            image = UIImage(named: "eskola")!
+            
+        }else if(bloganlinke.hasPrefix("http://gaztelumendi.tumblr.com/")){
+            image = UIImage(named: "iptx")!
+            
+        }else if(bloganlinke.hasPrefix("http://www.larrabetzuko-udala.com/")){
+            image = UIImage(named: "udala")!
+            
+        }else if(bloganlinke.hasPrefix("http://www.literaturaeskola.org/")){
+            image = UIImage(named: "literatura")!
+            
+        }else if(bloganlinke.hasPrefix("http://larrabetzuzerozabor.org/")){
+            image = UIImage(named: "larrabetzuzerozabor")!
+        }
+        
+        return (title, image!)
+    }
+    
+    func getLink(position: Int)->String{
+        
+        let dicPost = self.posts[position]
+        let bloganlinke : String = dicPost["link"] as String!
+
+        return bloganlinke
     }
 }
