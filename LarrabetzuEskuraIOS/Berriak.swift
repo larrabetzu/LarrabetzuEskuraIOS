@@ -29,12 +29,7 @@ class Berriak{
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
-        if(!blogLarrabetzutik && !blogEskola && !blogHoriBai && !blogLarrabetzuZeroZabor){
-            blogLarrabetzutik = true
-            blogEskola = true
-            blogHoriBai = true
-            blogLarrabetzuZeroZabor = true
-        }
+        urlBlog.append("http://medium.com/feed/@larrabetzu")
         
         if(blogLarrabetzutik){
             urlBlog.append("http://www.larrabetzutik.org/feed/")
@@ -107,7 +102,7 @@ class Berriak{
     func getPostBat(position: Int)->(title: String, image: UIImage){
 
         let dicPost = self.posts[position]
-        var image = UIImage(named: "Berrriak.png")
+        var image = UIImage(named: "eskura.png")
         let bloganlinke : String = dicPost["link"] as String!
         let title : String = dicPost["title"] as String!
         
