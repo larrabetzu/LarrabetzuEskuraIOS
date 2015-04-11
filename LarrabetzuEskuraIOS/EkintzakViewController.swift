@@ -2,14 +2,14 @@ import UIKit
 
 class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , UITableViewDataSource {
     
+    // MARK: Constants and Variables
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    var refreshControl:UIRefreshControl!
+    private var refreshControl:UIRefreshControl!
+    private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    private var ekintzakParseatu : Ekintzak = Ekintzak()
     
-    var ekintzanArray: [NSDictionary] = []
-    
-    let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    
+    // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
@@ -36,60 +36,41 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         self.screenName = "Agenda"
     }
 
+    // MARK: Delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-        return ekintzanArray.count
+        return ekintzakParseatu.getEkintzaNumeroa()
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as! EkintzakTableViewCell
         
-        let ekintza = ekintzanArray[indexPath.row]
-        if let fields = ekintza["fields"] as? NSDictionary{
-            let tituloa: String = fields["tituloa"] as! String!
-            let data: String = fields["egune"] as! String!
-            let lekua: String = fields["lekua"] as! String!
-            let ordua = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5)) as String
-            let eguna = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2)) as String
-            cell.loadItem(tituloa: (tituloa), ordua: ordua, eguna: eguna,lekua: lekua)
-        }
+        var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as! EkintzakTableViewCell
+        let ekintza = ekintzakParseatu.getEkintzaCell(indexPath.row)
+        cell.loadItem(tituloa: ekintza.tituloa, ordua: ekintza.ordua, eguna: ekintza.eguna, lekua: ekintza.lekua)
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let ekintza = ekintzanArray[indexPath.row]
-        println(ekintza)
+        
+        
         let ekintzaView : EkintzaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EkintzaViewController") as! EkintzaViewController
         ekintzaView
         ekintzaView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ekintzaView, animated: true)
-        if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
-            let tituloa = fields["tituloa"] as! String
-            let data = fields["egune"] as! String
-            let lekua = fields["lekua"] as! String
-            let link = fields["link"] as! String
-            let kartela = fields["kartela"] as! String
-            let deskribapena = fields["deskribapena"] as! String
-            let eguna:String = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2))
-            let ordua:String = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5))
-            let hilea:String = data.substringFromIndex(advance(data.startIndex, 5)).substringToIndex(advance(data.startIndex, 2))
-            
-            ekintzaView.SetEkintza(tituloa: tituloa, hilea: hilea, eguna: eguna, ordua: ordua, lekua: lekua, deskribapena: deskribapena, kartela: kartela, link: link)
-        }
+        ekintzaView.SetEkintza(ekintzakParseatu.getEkintzaInfo(indexPath.row))
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
     }
     
+    // MARK: Functions
     func getData(){
         if Internet.isConnectedToNetwork() {
             println("Interneta badago!")
-            let ekintzakParseatu = Ekintzak()
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 println("gcd")
-                ekintzakParseatu.getEkintzak()
-                self.ekintzanArray = ekintzakParseatu.ekintzanArray
+                self.ekintzakParseatu.getEkintzak()
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()

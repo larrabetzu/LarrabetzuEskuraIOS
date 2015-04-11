@@ -29,6 +29,13 @@ class Berriak{
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
+        if(!blogLarrabetzutik && !blogEskola && !blogHoriBai && !blogLarrabetzuZeroZabor){
+            blogLarrabetzutik = true
+            blogEskola = true
+            blogHoriBai = true
+            blogLarrabetzuZeroZabor = true
+        }
+        
         urlBlog.append("http://medium.com/feed/@larrabetzu")
         
         if(blogLarrabetzutik){

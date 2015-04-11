@@ -32,7 +32,7 @@ class EkintzaViewController: GAITrackedViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
         self.tituloaUI.text = tituloaString
-        self.hileaUI.text = hilea(hileaString)
+        self.hileaUI.text = hileaString
         self.egunaUI.text = egunaString
         self.orduaUI.text = orduaString
         self.lekuaUI.text = lekuaString
@@ -63,15 +63,15 @@ class EkintzaViewController: GAITrackedViewController {
         self.screenName = "Ekintza"
     }
 
-    func SetEkintza(#tituloa:String, hilea:String, eguna:String, ordua:String, lekua:String, deskribapena:String, kartela:String, link:String ){
-        self.tituloaString = tituloa
-        self.hileaString = hilea
-        self.egunaString = eguna
-        self.orduaString = ordua
-        self.lekuaString = lekua
-        self.deskribapena = deskribapena
-        self.kartelaLink = "http://larrabetzu.net/media/"+kartela
-        self.linkString = link
+    func SetEkintza(ekintzaDic:[String : String]){
+        self.tituloaString = ekintzaDic["tituloa"]!
+        self.hileaString = ekintzaDic["hilea"]!
+        self.egunaString = ekintzaDic["eguna"]!
+        self.orduaString = ekintzaDic["ordua"]!
+        self.lekuaString = ekintzaDic["lekua"]!
+        self.deskribapena = ekintzaDic["tituloa"]!
+        self.kartelaLink = ekintzaDic["kartela"]!
+        self.linkString = ekintzaDic["link"]!
     }
     
     func downloadImageBackground(){
@@ -106,26 +106,4 @@ class EkintzaViewController: GAITrackedViewController {
        })
     }
     
-    func hilea(numeroa:String)-> String{
-        var hileanizena:String = "Urtarrilak";
-        let hilea : Int = numeroa.toInt()!
-
-        switch (hilea){
-            case 1: hileanizena="Urtarrilak"; break;
-            case 2: hileanizena="Otsailak"; break;
-            case 3: hileanizena="Martxoak"; break;
-            case 4: hileanizena="Apirilak"; break;
-            case 5: hileanizena="Maiatzak"; break;
-            case 6: hileanizena="Ekainak"; break;
-            case 7: hileanizena="Uztailak"; break;
-            case 8: hileanizena="Abuztuak"; break;
-            case 9: hileanizena="Irailak"; break;
-            case 10: hileanizena="Urriak"; break;
-            case 11: hileanizena="Azaroak"; break;
-            case 12: hileanizena="Abenduak"; break;
-            default: hileanizena="Abenduak"
-        }
-        return hileanizena;
-    }
-   
 }
