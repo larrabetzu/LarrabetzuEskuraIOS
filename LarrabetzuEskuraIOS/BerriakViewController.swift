@@ -6,7 +6,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     @IBOutlet var tableView: UITableView!
     private var refreshControl:UIRefreshControl!
     private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    private var berriakParseatu : Berriak = Berriak()
+    private let berriakParseatu : Berriak = Berriak()
     
     // MARK: lifeCycle
     override func viewDidLoad() {

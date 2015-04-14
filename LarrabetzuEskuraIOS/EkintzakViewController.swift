@@ -7,7 +7,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     private var refreshControl:UIRefreshControl!
     private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    private var ekintzakParseatu : Ekintzak = Ekintzak()
+    private let ekintzakParseatu : Ekintzak = Ekintzak()
     
     // MARK: lifeCycle
     override func viewDidLoad() {

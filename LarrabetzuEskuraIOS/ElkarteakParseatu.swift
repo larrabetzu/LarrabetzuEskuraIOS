@@ -1,22 +1,46 @@
 import Foundation
 
 class Elkarteak{
-    var elkarteakArray: [NSDictionary] = []
-    let elkarteakAPI: String = "http://larrabetzu.net/wsElkarteak/"
-    
-    func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
+    private var elkarteakArray: [NSDictionary] = []
+    private let elkarteakAPI: String = "http://larrabetzu.net/wsElkarteak/"
+
+    func getElkarteak(){
+        elkarteakArray = parseJSON(getJSON(elkarteakAPI))
     }
     
-    func parseJSON(inputData: NSData) -> Array<NSDictionary>{
+    func getElkarteNumeroa()-> Int {
+        return elkarteakArray.count
+    }
+    
+    func getElkarteaNor(position: Int)-> String{
+        var elkarteaNor = "Ez dago informaziorik"
+        let ekintza = self.elkarteakArray[position]
+        if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
+            elkarteaNor = fields["nor"] as! String
+        }
+        return elkarteaNor
+    }
+    
+    func getEkintzaCell(position: Int)->(nor: String, email: String, webgunea: String){
+        let ekintza = self.elkarteakArray[position]
+        if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
+            let nor = fields["nor"] as! String
+            let email = fields["email"] as! String
+            let webgunea = fields["webgunea"] as! String
+            return (nor, email, webgunea)
+        }
+        return ("Ez dago informaziorik", "", "")
+    }
+    
+    private func parseJSON(inputData: NSData) -> Array<NSDictionary>{
         var error: NSError?
         var boardsDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! Array<NSDictionary>
         return boardsDictionary
     }
     
-    func getElkarteak(){
-        var parsedJSON = parseJSON(getJSON(elkarteakAPI))
-        elkarteakArray = parsedJSON
+    private func getJSON(urlToRequest: String) -> NSData{
+        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
+    
     
 }
