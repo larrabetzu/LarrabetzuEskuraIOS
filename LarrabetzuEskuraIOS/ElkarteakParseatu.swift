@@ -1,9 +1,12 @@
 import Foundation
 
 class Elkarteak{
+    
+    // MARK: Constants and Variables
     private var elkarteakArray: [NSDictionary] = []
     private let elkarteakAPI: String = "http://larrabetzu.net/wsElkarteak/"
 
+    // MARK: Methods
     func getElkarteak(){
         elkarteakArray = parseJSON(getJSON(elkarteakAPI))
     }
@@ -32,6 +35,7 @@ class Elkarteak{
         return ("Ez dago informaziorik", "", "")
     }
     
+    // MARK: Functions
     private func parseJSON(inputData: NSData) -> Array<NSDictionary>{
         var error: NSError?
         var boardsDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! Array<NSDictionary>

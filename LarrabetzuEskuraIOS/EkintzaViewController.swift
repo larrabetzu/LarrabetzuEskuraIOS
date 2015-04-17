@@ -2,6 +2,7 @@ import UIKit
 
 class EkintzaViewController: GAITrackedViewController {
     
+    // MARK: Constants and Variables
     @IBOutlet var tituloaUI: UILabel!
     @IBOutlet var hileaUI: UILabel!
     @IBOutlet var egunaUI: UILabel!
@@ -28,6 +29,7 @@ class EkintzaViewController: GAITrackedViewController {
     var kartelaLink :String = ""
     var linkString :String = ""
     
+    // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
@@ -63,6 +65,7 @@ class EkintzaViewController: GAITrackedViewController {
         self.screenName = "Ekintza"
     }
 
+    // MARK: Functions
     func SetEkintza(ekintzaDic:[String : String]){
         self.tituloaString = ekintzaDic["tituloa"]!
         self.hileaString = ekintzaDic["hilea"]!
@@ -74,7 +77,7 @@ class EkintzaViewController: GAITrackedViewController {
         self.linkString = ekintzaDic["link"]!
     }
     
-    func downloadImageBackground(){
+    private func downloadImageBackground(){
         self.activityIndicator.startAnimating()
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in

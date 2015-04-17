@@ -1,9 +1,10 @@
 import Foundation
 
 class Berriak{
-    
+    // MARK: Constants and Variables
     private var posts :[Dictionary<String,String>] = []
     
+    // MARK: Functions
     private func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
@@ -14,6 +15,19 @@ class Berriak{
         return boardsDictionary
     }
     
+    private func lehenengoDataHandiagoaDa(lehenengoData : String, bigarrenData : String)->Bool{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss xx" //Thu, 22 May 2014 11:36:45 -0700
+        var data1 = dateFormatter.dateFromString(lehenengoData)
+        var data2 = dateFormatter.dateFromString(bigarrenData)
+        if data1?.compare(data2!) == NSComparisonResult.OrderedDescending{
+            return true
+        }
+        return false
+    }
+    
+    // MARK: Methods
     func getPostak(){
         var urlBlog: [String] = []
         let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0"
@@ -60,24 +74,24 @@ class Berriak{
                         let title : String = una["title"] as! String
                         let link : String = una["link"] as! String
                         let publishedDateString : String = una["publishedDate"] as! String
-                                
+                        
                         let arrayNumeroa = self.posts.count
-                                
+                        
                         if(arrayNumeroa != 0){
                             for var x = 0; x <= arrayNumeroa; ++x{
                                 
-                                    let postArray = posts[x]
-                                    let publishedDateStringArray : String = postArray["publishedDate"] as String!
-                                    if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: publishedDateStringArray)){
-                                        let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
-                                        self.posts.insert(dic, atIndex: x)
-                                        x = arrayNumeroa
-                                    }else if(x+1 == arrayNumeroa){
-                                        let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
-                                        self.posts.insert(dic, atIndex: arrayNumeroa)
-                                        
-                                        x = arrayNumeroa
-                                    }
+                                let postArray = posts[x]
+                                let publishedDateStringArray : String = postArray["publishedDate"] as String!
+                                if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: publishedDateStringArray)){
+                                    let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
+                                    self.posts.insert(dic, atIndex: x)
+                                    x = arrayNumeroa
+                                }else if(x+1 == arrayNumeroa){
+                                    let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
+                                    self.posts.insert(dic, atIndex: arrayNumeroa)
+                                    
+                                    x = arrayNumeroa
+                                }
                                 
                             }
                         }else{
@@ -88,18 +102,6 @@ class Berriak{
                 }
             }
         }
-    }
-    
-    func lehenengoDataHandiagoaDa(lehenengoData : String, bigarrenData : String)->Bool{
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss xx" //Thu, 22 May 2014 11:36:45 -0700
-        var data1 = dateFormatter.dateFromString(lehenengoData)
-        var data2 = dateFormatter.dateFromString(bigarrenData)
-        if data1?.compare(data2!) == NSComparisonResult.OrderedDescending{
-            return true
-        }
-        return false
     }
     
     func getPostNumeroa()->Int{

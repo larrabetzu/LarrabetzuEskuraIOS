@@ -2,6 +2,7 @@ import UIKit
 
 class SettingsViewController: GAITrackedViewController {
 
+    // MARK: Constants and Variables
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     var blogLarrabetzutik  = true
     var blogEskola  = true
@@ -16,7 +17,7 @@ class SettingsViewController: GAITrackedViewController {
         self.navigationController?.pushViewController(nortzukView, animated: true)
     }
     
-    /**Berriak */
+    // MARK: Berriak
     @IBAction func stepper(sender: UIStepper) {
         let postNumeroa: Int = Int(sender.value)
         self.labelNumeroPost.text = "\(postNumeroa)"
@@ -63,7 +64,7 @@ class SettingsViewController: GAITrackedViewController {
         self.blogGuztiakKendutaDauz()
     }
     
-    /**Abisuak*/
+    // MARK: Abisuak
     @IBOutlet weak var switchKultura: UISwitch!
     @IBAction func switchKultura(sender: UISwitch) {
         let position = sender.on
@@ -102,7 +103,7 @@ class SettingsViewController: GAITrackedViewController {
     }
     
     
-    
+    // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -147,14 +148,15 @@ class SettingsViewController: GAITrackedViewController {
         }
     }
     
-    func abisuakOff(){
+    // MARK: Functions
+    private func abisuakOff(){
         self.switchKultura.setOn(false, animated: true)
         self.switchKirola.setOn(false, animated: true)
         self.switchUdalgaiak.setOn(false, animated: true)
         self.switchAlbisteak.setOn(false, animated: true)
     }
     
-    func blogGuztiakKendutaDauz(){
+    private func blogGuztiakKendutaDauz(){
         if(!self.blogLarrabetzutik && !self.blogEskola && !self.blogHoribai && !self.blogLarrabetzuZeroZabor){
             let alertBlogAukerak = UIAlertController(
                 title: "Blog Aukerak",

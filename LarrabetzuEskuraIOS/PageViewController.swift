@@ -55,6 +55,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         appearance.backgroundColor = UIColor.whiteColor()
     }
     
+    // MARK: Delegates
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         let itemController = viewController as! PageItemController
@@ -82,6 +83,15 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         return nil
     }
     
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return contentArgazkia.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
+    // MARK: Functions
     private func getItemController(itemIndex: Int) -> PageItemController? {
         
         if itemIndex < contentArgazkia.count {
@@ -95,14 +105,6 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         return nil
-    }
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return contentArgazkia.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
     }
     
     func registerUserNotificationSettings(){

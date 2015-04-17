@@ -1,9 +1,12 @@
 import Foundation
 
 class Ekintzak{
+    
+    // MARK: Constants and Variables
     private let ekintzakAPI: String = "http://larrabetzu.net/wsEkintza/"
     var ekintzanArray: [NSDictionary] = []
     
+    // MARK: Methods
     func getEkintzak(){
         ekintzanArray = parseJSON(getJSON(ekintzakAPI))
     }
@@ -43,6 +46,7 @@ class Ekintzak{
         return ("Ez dago informazioa", "", "", "")
     }
     
+    // MARK: Functions
     private func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }

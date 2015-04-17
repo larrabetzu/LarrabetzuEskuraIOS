@@ -2,7 +2,7 @@ import UIKit
 
 class WebViewController: GAITrackedViewController, UIWebViewDelegate{
     
-    
+    // MARK: Constants and Variables
     @IBOutlet var webView: UIWebView!
     var postLink: String = String()
     
@@ -18,6 +18,7 @@ class WebViewController: GAITrackedViewController, UIWebViewDelegate{
             completion: nil)
     }
 
+    // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.webView.delegate = self
@@ -39,12 +40,12 @@ class WebViewController: GAITrackedViewController, UIWebViewDelegate{
         }
     }
     
-    
-    func webViewDidStartLoad(_: UIWebView) {
+    // MARK: Functions
+    private func webViewDidStartLoad(_: UIWebView) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
-    func webViewDidFinishLoad(_: UIWebView) {
+    private func webViewDidFinishLoad(_: UIWebView) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
