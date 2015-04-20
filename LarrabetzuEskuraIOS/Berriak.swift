@@ -29,6 +29,7 @@ class Berriak{
     
     // MARK: Methods
     func getPostak(){
+        var postsBerriak :[Dictionary<String,String>] = []
         var urlBlog: [String] = []
         let googleApi: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0"
         
@@ -42,13 +43,6 @@ class Berriak{
         var blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
-        
-        if(!blogLarrabetzutik && !blogEskola && !blogHoriBai && !blogLarrabetzuZeroZabor){
-            blogLarrabetzutik = true
-            blogEskola = true
-            blogHoriBai = true
-            blogLarrabetzuZeroZabor = true
-        }
         
         urlBlog.append("http://medium.com/feed/@larrabetzu")
         
@@ -75,20 +69,20 @@ class Berriak{
                         let link : String = una["link"] as! String
                         let publishedDateString : String = una["publishedDate"] as! String
                         
-                        let arrayNumeroa = self.posts.count
+                        let arrayNumeroa = postsBerriak.count
                         
                         if(arrayNumeroa != 0){
                             for var x = 0; x <= arrayNumeroa; ++x{
                                 
-                                let postArray = posts[x]
+                                let postArray = postsBerriak[x]
                                 let publishedDateStringArray : String = postArray["publishedDate"] as String!
                                 if(lehenengoDataHandiagoaDa(publishedDateString, bigarrenData: publishedDateStringArray)){
                                     let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
-                                    self.posts.insert(dic, atIndex: x)
+                                    postsBerriak.insert(dic, atIndex: x)
                                     x = arrayNumeroa
                                 }else if(x+1 == arrayNumeroa){
                                     let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
-                                    self.posts.insert(dic, atIndex: arrayNumeroa)
+                                    postsBerriak.insert(dic, atIndex: arrayNumeroa)
                                     
                                     x = arrayNumeroa
                                 }
@@ -96,12 +90,13 @@ class Berriak{
                             }
                         }else{
                             let dic : [String: String] = ["title" : title , "link" : link, "publishedDate" : publishedDateString]
-                            self.posts.insert(dic, atIndex: arrayNumeroa)
+                            postsBerriak.insert(dic, atIndex: arrayNumeroa)
                         }
                     }
                 }
             }
         }
+        self.posts = postsBerriak
     }
     
     func getPostNumeroa()->Int{
@@ -147,4 +142,5 @@ class Berriak{
 
         return bloganlinke
     }
+    
 }

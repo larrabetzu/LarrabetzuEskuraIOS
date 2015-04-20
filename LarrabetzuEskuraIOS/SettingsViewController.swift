@@ -113,26 +113,29 @@ class SettingsViewController: GAITrackedViewController {
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
         
-        let postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
-        let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
-        let blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
-        let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
-        let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
-        println("\(postNumeroa)")
-        if(postNumeroa != 0){
-            self.labelNumeroPost.text = "\(postNumeroa)"
-            self.stepperUI?.value = Double (postNumeroa)
-            self.switchLarrabetzutik.setOn(blogLarrabetzutik, animated: true)
-            self.switchEskola.setOn(blogEskola, animated: true)
-            self.switchHoriBai.setOn(blogHoriBai, animated: true)
-            self.switchLarrabetzuZeroZabor.setOn(blogLarrabetzuZeroZabor, animated: true)
-        }
+        
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.screenName = "Hobespenak"
+        
+        let postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
+        println("\(postNumeroa)")
+        if(postNumeroa != 0){
+            self.labelNumeroPost.text = "\(postNumeroa)"
+            self.stepperUI?.value = Double (postNumeroa)
+        }
+        let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
+        let blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
+        let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
+        let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
+        self.switchLarrabetzutik.setOn(blogLarrabetzutik, animated: true)
+        self.switchEskola.setOn(blogEskola, animated: true)
+        self.switchHoriBai.setOn(blogHoriBai, animated: true)
+        self.switchLarrabetzuZeroZabor.setOn(blogLarrabetzuZeroZabor, animated: true)
+        
         if let channels = PFInstallation.currentInstallation().channels as? [String]{
             println("\(channels)")
             

@@ -42,17 +42,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         }
         self.hiddenEmptyCell()
         
-        let previousAppVersion: Int = NSUserDefaults.standardUserDefaults().integerForKey("instaledAppVersion")
-        if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
-            
-            var actualVersionInt: Int! = text.toInt()
-            if(actualVersionInt != previousAppVersion   ){
-                let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
-                self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
-                pageView.hidesBottomBarWhenPushed = true
-                self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
-            }
-        }
+        
         
         
     }
@@ -62,6 +52,10 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         println("viewWillAppear")
         navigationItem.title = "Larrabetzu #eskura"
         self.screenName = "Berriak"
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.appPresentation()
     }
     
     // MARK: Delegates
@@ -95,15 +89,13 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     }
     
     // MARK: Functions
-    func getData(){
+    private func getData(){
         if Internet.isConnectedToNetwork() {
             println("Interneta badago!")
             
-            let berriakParseatu = Berriak()
-            
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-                berriakParseatu.getPostak()
+                self.berriakParseatu.getPostak()
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()
@@ -120,8 +112,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
 
     }
     
-    
-    func hiddenEmptyCell(){
+    private func hiddenEmptyCell(){
         var tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
@@ -133,5 +124,18 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.refreshControl.endRefreshing()
     }
     
+    private func appPresentation(){
+        let previousAppVersion: Int = NSUserDefaults.standardUserDefaults().integerForKey("instaledAppVersion")
+        if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
+            
+            var actualVersionInt: Int! = text.toInt()
+            if(actualVersionInt != previousAppVersion   ){
+                let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
+                self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
+                pageView.hidesBottomBarWhenPushed = true
+                self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
