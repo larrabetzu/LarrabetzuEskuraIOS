@@ -20,6 +20,20 @@ class EkintzaViewController: GAITrackedViewController {
         self.navigationController?.pushViewController(webView, animated: true)
         webView.postLink = self.linkString
     }
+    
+    @IBAction func shareButton(sender: UIBarButtonItem) {
+        let someText:String = self.tituloaString
+        let url:NSURL = NSURL(string: self.slug)!
+        
+        let activityViewController = UIActivityViewController(
+            activityItems: [someText, url],
+            applicationActivities: nil)
+        self.navigationController?.presentViewController(activityViewController,
+            animated: true,
+            completion: nil)
+
+    }
+    
     var tituloaString : String = ""
     var hileaString :String = ""
     var egunaString :String = ""
@@ -28,6 +42,7 @@ class EkintzaViewController: GAITrackedViewController {
     var deskribapena :String = ""
     var kartelaLink :String = ""
     var linkString :String = ""
+    var slug :String = ""
     
     // MARK: lifeCycle
     override func viewDidLoad() {
@@ -75,6 +90,7 @@ class EkintzaViewController: GAITrackedViewController {
         self.deskribapena = ekintzaDic["tituloa"]!
         self.kartelaLink = ekintzaDic["kartela"]!
         self.linkString = ekintzaDic["link"]!
+        self.slug = ekintzaDic["slug"]!
     }
     
     private func downloadImageBackground(){

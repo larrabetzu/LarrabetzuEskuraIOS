@@ -26,13 +26,10 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
         if Internet.isConnectedToNetwork() {
-            println("Interneta badago!")
             
             berriakParseatu.getPostak()
             self.tableView.reloadData()
             self.hiddenEmptyCell()
-            
-            
             
         } else {
             println("Ez dago internetik")
@@ -91,7 +88,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     // MARK: Functions
     private func getData(){
         if Internet.isConnectedToNetwork() {
-            println("Interneta badago!")
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in

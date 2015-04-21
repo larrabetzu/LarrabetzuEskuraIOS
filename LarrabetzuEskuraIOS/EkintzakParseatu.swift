@@ -23,9 +23,15 @@ class Ekintzak{
             ekintzaDic["tituloa"] = fields["tituloa"] as? String
             ekintzaDic["lekua"] = fields["lekua"] as? String
             ekintzaDic["link"] = fields["link"] as? String
-            let kartela : String = fields["kartela"] as! String
+            
+            let slugUrl = "http://larrabetzu.net/ekintza/"
+            let slug :String = fields["slug"] as! String
+            ekintzaDic["slug"] = slugUrl + slug
+            
             let urlKartela = "http://larrabetzu.net/media/"
+            let kartela : String = fields["kartela"] as! String
             ekintzaDic["kartela"] = urlKartela + kartela
+            
             ekintzaDic["deskribapena"] = fields["deskribapena"] as? String
             ekintzaDic["eguna"] = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2))
             ekintzaDic["ordua"] = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5))
