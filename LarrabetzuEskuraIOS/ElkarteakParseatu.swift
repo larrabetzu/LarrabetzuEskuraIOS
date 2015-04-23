@@ -15,16 +15,20 @@ class Elkarteak{
         return elkarteakArray.count
     }
     
-    func getElkarteaNor(position: Int)-> String{
-        var elkarteaNor = "Ez dago informaziorik"
+    func getElkarteaCell(position: Int)->(nor: String, ikonoa : String){
         let ekintza = self.elkarteakArray[position]
         if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
-            elkarteaNor = fields["nor"] as! String
+            let elkarteaNor = fields["nor"] as! String
+            let larrabetzuMedia = "http://larrabetzu.net/media/"
+            var ikonoa : String = fields["ikonoa"] as! String
+            ikonoa = ikonoa.substringToIndex(advance(ikonoa.endIndex, -3))
+            ikonoa = larrabetzuMedia + ikonoa + "thumbnail.jpg"
+            return (elkarteaNor, ikonoa)
         }
-        return elkarteaNor
+        return ("Ez dago informaziorik", "")
     }
     
-    func getEkintzaCell(position: Int)->(nor: String, email: String, webgunea: String){
+    func getElkarteaInfo(position: Int)->(nor: String, email: String, webgunea: String){
         let ekintza = self.elkarteakArray[position]
         if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
             let nor = fields["nor"] as! String

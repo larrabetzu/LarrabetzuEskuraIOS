@@ -66,7 +66,7 @@
 /* Begin PBXFileReference section */
 		9F0ED659196ADC680037A4D3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakTableViewCell.swift; sourceTree = "<group>"; };
-		9F403A421A98AF2700155055 /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageItemController.swift; path = ../PageItemController.swift; sourceTree = "<group>"; };
+		9F403A421A98AF2700155055 /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageItemController.swift; path = /Users/gorkaercilla/Documents/Cursos/Programacion/xcode/LarrabetzuEskuraIOS/LarrabetzuEskuraIOS/PageItemController.swift; sourceTree = "<absolute>"; };
 		9F403A441A98AF8B00155055 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9F54139B19C9D8840075C6EA /* NortzukViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NortzukViewController.swift; sourceTree = "<group>"; };
 		9F56BDC019C6EECC00916CA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -163,9 +163,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F93C06F1AE8DFF600DF004D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				9F403A421A98AF2700155055 /* PageItemController.swift */,
+				9FC42A071A4D8D9E00954105 /* Internet.swift */,
+				9FF904311A73B7EF001E4891 /* PushNotificationController.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
 		9FCDDD3119C745350007B3F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FD7EA251A9343C600979903 /* CoreData.framework */,
+				9FD7EA231A9343B800979903 /* AdSupport.framework */,
 				9FD791A91A73C5CC00E205EC /* parse-library-1.6.2 */,
 				9FCDDD4C19C746CB0007B3F2 /* SystemConfiguration.framework */,
 				9FCDDD4819C7468A0007B3F2 /* Security.framework */,
@@ -194,7 +206,7 @@
 			path = "parse-library-1.6.2";
 			sourceTree = "<group>";
 		};
-		9FD7B52A19751795009DFFC0 /* Controller */ = {
+		9FD7B52A19751795009DFFC0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */,
@@ -204,11 +216,9 @@
 				9F0ED659196ADC680037A4D3 /* WebViewController.swift */,
 				9F7EE79419768A8800485B79 /* EkintzaViewController.swift */,
 				9F54139B19C9D8840075C6EA /* NortzukViewController.swift */,
-				9FC42A071A4D8D9E00954105 /* Internet.swift */,
-				9FF904311A73B7EF001E4891 /* PushNotificationController.swift */,
 				9F403A441A98AF8B00155055 /* PageViewController.swift */,
 			);
-			name = Controller;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		9FD7B52C1975192D009DFFC0 /* Parsers */ = {
@@ -224,8 +234,6 @@
 		9FD7EA1A1A93429600979903 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				9FD7EA251A9343C600979903 /* CoreData.framework */,
-				9FD7EA231A9343B800979903 /* AdSupport.framework */,
 				9FD7EA211A93438C00979903 /* libGoogleAnalyticsServices.a */,
 				9FD7EA2B1A934F7E00979903 /* libAdIdAccess.a */,
 				9FD7EA271A934CE500979903 /* GAIEcommerceFields.h */,
@@ -266,10 +274,10 @@
 				9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */,
 				9FF904351A73B991001E4891 /* ApiKeys.swift */,
 				9FF904301A73B5A2001E4891 /* bridgingHeader.h */,
-				9FD7B52A19751795009DFFC0 /* Controller */,
+				9FD7B52A19751795009DFFC0 /* ViewController */,
 				9FD7B52C1975192D009DFFC0 /* Parsers */,
 				9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */,
-				9F403A421A98AF2700155055 /* PageItemController.swift */,
+				9F93C06F1AE8DFF600DF004D /* Class */,
 				9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */,
 				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
 				9FF904331A73B912001E4891 /* ApiKeys.plist */,

@@ -8,6 +8,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
     
     private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     private let ElkarteakParser : Elkarteak = Elkarteak()
+    private var imageCache = [String:UIImage]()
     
     // MARK: lifeCycle
     override func viewDidLoad() {
@@ -54,18 +55,40 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cellElkarteak")
-        cell.textLabel?.text = "Elkartea"
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellElkarteak")
         cell.accessoryType = UITableViewCellAccessoryType.DetailButton
-        let nor = ElkarteakParser.getElkarteaNor(indexPath.row)
-        cell.textLabel?.text = "\(nor)"
+        let elkartea = ElkarteakParser.getElkarteaCell(indexPath.row)
+        cell.textLabel?.text = "\(elkartea.nor)"
+        var image = UIImage(named: "eskura.png")
+        cell.imageView?.image = image
+        let urlString = elkartea.ikonoa
+        let imgUrl = NSURL(string: urlString)!
+        
+        if let img = imageCache[urlString] {
+            cell.imageView?.image = img
+        }else{
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                let imageData = NSData(contentsOfURL: imgUrl)
+                if imageData != nil{
+                    image = self.reciseImage(UIImage(data: imageData!)!)
+                    self.imageCache[urlString] = image
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
+                        cellToUpdate.imageView?.image = image
+                    }
+                })
+            })
+        }
+        
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let ekintza  = ElkarteakParser.getEkintzaCell(indexPath.row)
+        let ekintza  = ElkarteakParser.getElkarteaInfo(indexPath.row)
         
         let alertController = alertElkarteInfo(email: ekintza.email, webgunea: ekintza.webgunea)
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -111,6 +134,17 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         alertController.addAction(cancelAction)
         
         return alertController
+    }
+    
+    private func reciseImage(image: UIImage)->UIImage{
+        var newSize:CGSize = CGSize(width: 30, height: 30)
+        let rect = CGRectMake(0,0, newSize.width, newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
 }
