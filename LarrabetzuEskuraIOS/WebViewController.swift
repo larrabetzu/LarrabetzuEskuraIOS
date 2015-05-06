@@ -41,11 +41,11 @@ class WebViewController: GAITrackedViewController, UIWebViewDelegate{
     }
     
     // MARK: Functions
-    private func webViewDidStartLoad(_: UIWebView) {
+    func webViewDidStartLoad(_: UIWebView) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
-    private func webViewDidFinishLoad(_: UIWebView) {
+    func webViewDidFinishLoad(_: UIWebView) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     

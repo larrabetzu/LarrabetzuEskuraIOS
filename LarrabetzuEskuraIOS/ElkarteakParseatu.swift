@@ -21,8 +21,7 @@ class Elkarteak{
             let elkarteaNor = fields["nor"] as! String
             let larrabetzuMedia = "http://larrabetzu.net/media/"
             var ikonoa : String = fields["ikonoa"] as! String
-            ikonoa = ikonoa.substringToIndex(advance(ikonoa.endIndex, -3))
-            ikonoa = larrabetzuMedia + ikonoa + "thumbnail.jpg"
+            ikonoa = larrabetzuMedia + getThumbnail(ikonoa)
             return (elkarteaNor, ikonoa)
         }
         return ("Ez dago informaziorik", "")
@@ -50,5 +49,19 @@ class Elkarteak{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
     
+    private func getThumbnail(ikonoa: String)-> String{
+        var urlString: NSString = ikonoa
+        
+        if("peg" == urlString.substringFromIndex(urlString.length-3)){
+            let urlStringPath = urlString.substringToIndex(urlString.length-5) //http://larrabetzu.net/media/kartelanIzena
+            let urlStringFile = urlString.substringFromIndex(urlString.length-4) //jpeg
+            urlString =  urlStringPath + ".thumbnail." + urlStringFile
+        }else{
+            let urlStringPath = urlString.substringToIndex(urlString.length-4) //http://larrabetzu.net/media/kartelanIzena
+            let urlStringFile = urlString.substringFromIndex(urlString.length-3) //jpg png
+            urlString =  urlStringPath + ".thumbnail." + urlStringFile
+        }
+        return urlString as String
+    }
     
 }

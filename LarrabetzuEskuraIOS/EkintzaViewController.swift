@@ -14,11 +14,13 @@ class EkintzaViewController: GAITrackedViewController {
     @IBOutlet weak var buttonLink: UIButton!
     
     @IBAction func tapLink() {
-        let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-        webView.hidesBottomBarWhenPushed = true
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Ekintza", style:.Plain, target:nil, action:nil)
-        self.navigationController?.pushViewController(webView, animated: true)
-        webView.postLink = self.linkString
+        if(!self.linkString.isEmpty){
+            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
+            webView.hidesBottomBarWhenPushed = true
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Ekintza", style:.Plain, target:nil, action:nil)
+            self.navigationController?.pushViewController(webView, animated: true)
+            webView.postLink = self.linkString
+        }
     }
     
     @IBAction func shareButton(sender: UIBarButtonItem) {
@@ -87,7 +89,7 @@ class EkintzaViewController: GAITrackedViewController {
         self.egunaString = ekintzaDic["eguna"]!
         self.orduaString = ekintzaDic["ordua"]!
         self.lekuaString = ekintzaDic["lekua"]!
-        self.deskribapena = ekintzaDic["tituloa"]!
+        self.deskribapena = ekintzaDic["deskribapena"]!
         self.kartelaLink = ekintzaDic["kartela"]!
         self.linkString = ekintzaDic["link"]!
         self.slug = ekintzaDic["slug"]!
