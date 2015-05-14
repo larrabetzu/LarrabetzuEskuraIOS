@@ -18,4 +18,6 @@
 #import "GAIEcommerceProductAction.h"
 #import "GAIEcommercePromotion.h"
 
+#import "SARate.h"
+
 #endif

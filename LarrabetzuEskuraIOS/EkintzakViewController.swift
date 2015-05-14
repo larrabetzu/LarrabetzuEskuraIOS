@@ -55,7 +55,6 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         
         
         let ekintzaView : EkintzaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EkintzaViewController") as! EkintzaViewController
-        ekintzaView
         ekintzaView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ekintzaView, animated: true)
         ekintzaView.SetEkintza(ekintzakParseatu.getEkintzaInfo(indexPath.row))

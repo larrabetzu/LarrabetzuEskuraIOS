@@ -2,7 +2,41 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-                            
+    
+    override class func initialize(){
+        setupSARate()
+    }
+    
+    class func setupSARate(){
+        
+        SARate.sharedInstance().previewMode = true
+        //configure
+        SARate.sharedInstance().daysUntilPrompt = 5
+        SARate.sharedInstance().usesUntilPrompt = 5
+        SARate.sharedInstance().remindPeriod = 30
+        SARate.sharedInstance().promptForNewVersionIfUserRated = true
+        //enable preview mode
+        SARate.sharedInstance().email = "ercillagorka@gmail.com"
+        // 4 and 5 stars
+        SARate.sharedInstance().minAppStoreRaiting = 4
+        let mainBundle = NSBundle.mainBundle()
+        
+        SARate.sharedInstance().emailText = "Desabantailak: "
+        SARate.sharedInstance().headerLabelText = "Aplikazioa atsegin duzu?"
+        SARate.sharedInstance().descriptionLabelText = "Ikutu izarrak baloratzeko."
+        SARate.sharedInstance().rateButtonLabelText = "Puntuatu"
+        SARate.sharedInstance().cancelButtonLabelText = "Orain ez"
+        SARate.sharedInstance().setRaitingAlertTitle = "Baloratu"
+        SARate.sharedInstance().setRaitingAlertMessage = "Ikutu izarrak baloratzeko."
+        SARate.sharedInstance().appstoreRaitingAlertTitle = "AppStoren zure iritzia idatzi"
+        SARate.sharedInstance().appstoreRaitingAlertMessage = "Aplikazioa AppStoren baloratzeko momentu bat daukazu? Ez dizu minutu bat baino gehiago eramango. Eskerrik asko zure laguntzagatik!"
+        SARate.sharedInstance().appstoreRaitingCancel = "Ezeztatu"
+        SARate.sharedInstance().appstoreRaitingButton = "Baloratu orain"
+        SARate.sharedInstance().disadvantagesAlertTitle = "Desabantailak"
+        SARate.sharedInstance().disadvantagesAlertMessage = "Mesedez, zehaztu aplikazioaren gabeziak. Konpontzen saiatuko gara!"
+    }
+    
+    
     var window: UIWindow?
 
 
