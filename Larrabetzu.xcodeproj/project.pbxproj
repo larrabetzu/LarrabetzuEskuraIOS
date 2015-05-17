@@ -39,8 +39,6 @@
 		9FD791AF1A73C60100E205EC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791AA1A73C60100E205EC /* Bolts.framework */; };
 		9FD791B01A73C60100E205EC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791AB1A73C60100E205EC /* Parse.framework */; };
 		9FD791B11A73C60100E205EC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791AC1A73C60100E205EC /* ParseCrashReporting.framework */; };
-		9FD791B21A73C60100E205EC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791AD1A73C60100E205EC /* ParseFacebookUtils.framework */; };
-		9FD791B31A73C60100E205EC /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791AE1A73C60100E205EC /* ParseUI.framework */; };
 		9FD791B51A73C79600E205EC /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791B41A73C79600E205EC /* libstdc++.6.dylib */; };
 		9FD791B71A73C7A600E205EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791B61A73C7A600E205EC /* libsqlite3.dylib */; };
 		9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */; };
@@ -155,7 +153,6 @@
 				9FD791B51A73C79600E205EC /* libstdc++.6.dylib in Frameworks */,
 				9FCDDD4D19C746CB0007B3F2 /* SystemConfiguration.framework in Frameworks */,
 				9FCDDD4919C7468A0007B3F2 /* Security.framework in Frameworks */,
-				9FD791B31A73C60100E205EC /* ParseUI.framework in Frameworks */,
 				9FCDDD4719C746820007B3F2 /* QuartzCore.framework in Frameworks */,
 				9FCDDD4519C746770007B3F2 /* MobileCoreServices.framework in Frameworks */,
 				9FD7EA2C1A934F7E00979903 /* libAdIdAccess.a in Frameworks */,
@@ -168,7 +165,6 @@
 				9FCDDD3D19C7463F0007B3F2 /* CFNetwork.framework in Frameworks */,
 				9FD7EA221A93438C00979903 /* libGoogleAnalyticsServices.a in Frameworks */,
 				9FCDDD3B19C746330007B3F2 /* AudioToolbox.framework in Frameworks */,
-				9FD791B21A73C60100E205EC /* ParseFacebookUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

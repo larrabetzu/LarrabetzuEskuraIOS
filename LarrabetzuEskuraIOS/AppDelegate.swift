@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         self.pushNotificationController = PushNotificationController()
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         //Google Analytics
         GAI.sharedInstance().trackerWithTrackingId(valueForAPIKey(keyname: "GOOGLE_ANALYTICS-ID"))
