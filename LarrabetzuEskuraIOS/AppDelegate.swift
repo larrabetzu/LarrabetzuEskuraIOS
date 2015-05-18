@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     class func setupSARate(){
         
-        SARate.sharedInstance().previewMode = true
+        SARate.sharedInstance().previewMode = false
         //configure
         SARate.sharedInstance().daysUntilPrompt = 5
         SARate.sharedInstance().usesUntilPrompt = 5
