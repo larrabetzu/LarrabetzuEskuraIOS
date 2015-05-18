@@ -44,10 +44,10 @@ class Berriak{
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
-        urlBlog.append("http://medium.com/feed/@larrabetzu")
+        urlBlog.append("http://medium.com/feed/@larrabetzu/")
         
         if(blogLarrabetzutik){
-            urlBlog.append("http://www.larrabetzutik.org/feed/")
+            urlBlog.append("http://larrabetzutik.org/feed/")
         }
         if(blogEskola){
             urlBlog.append("http://www.horibai.org/feed/")
