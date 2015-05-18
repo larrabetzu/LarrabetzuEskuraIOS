@@ -44,7 +44,7 @@ class Berriak{
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
-        urlBlog.append("http://medium.com/feed/@larrabetzu/")
+        urlBlog.append("http://medium.com/feed/@larrabetzu")
         
         if(blogLarrabetzutik){
             urlBlog.append("http://larrabetzutik.org/feed/")
