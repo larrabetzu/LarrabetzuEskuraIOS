@@ -10,16 +10,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class func setupSARate(){
         
         SARate.sharedInstance().previewMode = false
+        SARate.sharedInstance().verboseLogging = false
         //configure
         SARate.sharedInstance().daysUntilPrompt = 5
         SARate.sharedInstance().usesUntilPrompt = 5
         SARate.sharedInstance().remindPeriod = 30
         SARate.sharedInstance().promptForNewVersionIfUserRated = true
-        //enable preview mode
         SARate.sharedInstance().email = "ercillagorka@gmail.com"
         // 4 and 5 stars
         SARate.sharedInstance().minAppStoreRaiting = 4
-        let mainBundle = NSBundle.mainBundle()
         
         SARate.sharedInstance().emailText = "Desabantailak: "
         SARate.sharedInstance().headerLabelText = "Aplikazioa atsegin duzu?"
