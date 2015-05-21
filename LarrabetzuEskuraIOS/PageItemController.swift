@@ -20,24 +20,15 @@ class PageItemController: UIViewController {
         }
     }
     
-    var deskribapenaName: String = "" {
-        didSet {
-            if let deskribapenaView = contentDeskribapenaView {
-                deskribapenaView.text = deskribapenaName
-            }
-        }
-    }
     
     @IBOutlet var contentArgazkiaView: UIImageView?
     @IBOutlet var contentTituloaView: UILabel?
-    @IBOutlet var contentDeskribapenaView: UITextView?
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         contentArgazkiaView!.image = UIImage(named: argazkiaName)
         contentTituloaView!.text = tituloaName
-        contentDeskribapenaView!.text = deskribapenaName
     }
     
     

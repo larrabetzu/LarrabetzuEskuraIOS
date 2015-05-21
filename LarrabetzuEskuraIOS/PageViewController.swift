@@ -6,15 +6,9 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     private var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-    private let contentArgazkia = ["BerriakPantaila.png", "AgendaPantaila.png", "ElkarteakPantaila.png", "HobespenakPantaila.png", "HobespenakPantaila.png"]
+    private let contentArgazkia = ["BerriakPantaila.png", "AgendaPantaila.png", "ElkarteakPantaila.png", "AbisuakPantaila.png", "HobespenakPantaila.png"]
     
     private let contentTituloa = ["Berriak", "Agenda", "Elkarteak", "Abisuak", "Hobespenak"]
-    
-    private let contentDeskribapena = ["Larrabetzuko azken albisteak #eskura",
-        "Herriko ekitaldi guztiei buruzko informazioa, ordutegia, lekua eta kartelak #eskura",
-        "Larrabetzuko elkarteen informazioa eta kontaktua #eskura",
-        "Herriko mezu garrantzitsuak, azkarrak, labur laburrak mugikorrean jasotzeko. Kanal ezberdinak daudenez, aukeratzeko moduan dituzu #eskura",
-        "Aukeratu nahi dituzun informazio iturriak, eta kopurua. Mezu labur eta azkarrak ere #eskura jasoko dituzu, oso erraz"]
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -52,7 +46,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.grayColor()
         appearance.currentPageIndicatorTintColor = UIColor.darkGrayColor()
-        appearance.backgroundColor = UIColor.whiteColor()
+        appearance.backgroundColor = UIColor(red: 215/255, green: 219/255, blue: 215/255, alpha: 1)
     }
     
     // MARK: Delegates
@@ -99,7 +93,6 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
             pageItemController.itemIndex = itemIndex
             pageItemController.argazkiaName = contentArgazkia[itemIndex]
             pageItemController.tituloaName = contentTituloa [itemIndex]
-            pageItemController.deskribapenaName = contentDeskribapena[itemIndex]
             
             return pageItemController
         }
