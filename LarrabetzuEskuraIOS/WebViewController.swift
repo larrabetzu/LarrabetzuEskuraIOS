@@ -13,7 +13,7 @@ class WebViewController: GAITrackedViewController, UIWebViewDelegate{
         let activityViewController = UIActivityViewController(
             activityItems: [someText, url],
             applicationActivities: nil)
-        self.navigationController?.presentViewController(activityViewController,
+        self.presentViewController(activityViewController,
             animated: true, 
             completion: nil)
     }
