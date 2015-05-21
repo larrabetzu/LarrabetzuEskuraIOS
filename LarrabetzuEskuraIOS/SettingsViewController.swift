@@ -5,17 +5,12 @@ class SettingsViewController: GAITrackedViewController {
     // MARK: Constants and Variables
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     var blogLarrabetzutik  = true
+    var blogUdala = true
     var blogEskola  = true
     var blogHoribai  = true
     var blogLarrabetzuZeroZabor  = true
     
     @IBOutlet weak var labelNumeroPost: UILabel!
-    
-    @IBAction func nortzuk(sender: UIButton, forEvent event: UIEvent) {
-        let nortzukView : NortzukViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NortzukViewController") as! NortzukViewController
-        nortzukView.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(nortzukView, animated: true)
-    }
     
     // MARK: Berriak
     @IBAction func stepper(sender: UIStepper) {
@@ -36,6 +31,17 @@ class SettingsViewController: GAITrackedViewController {
         postNumeroaNS.synchronize()
         self.blogGuztiakKendutaDauz()
     }
+    @IBOutlet weak var switchUdala: UISwitch!
+    @IBAction func switchUdala(sender: UISwitch) {
+        let position = sender.on
+        self.blogUdala = position
+        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        postNumeroaNS.setBool(position, forKey:"blogUdala")
+        postNumeroaNS.synchronize()
+        self.blogGuztiakKendutaDauz()
+    }
+    
+    
     @IBOutlet weak var switchEskola: UISwitch!
     @IBAction func switchEskola(sender: UISwitch) {
         let position = sender.on
@@ -128,10 +134,12 @@ class SettingsViewController: GAITrackedViewController {
             self.stepperUI?.value = Double (postNumeroa)
         }
         let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
+        let blogUdala: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogUdala")
         let blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
         let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         self.switchLarrabetzutik.setOn(blogLarrabetzutik, animated: true)
+        self.switchUdala.setOn(blogUdala, animated: true)
         self.switchEskola.setOn(blogEskola, animated: true)
         self.switchHoriBai.setOn(blogHoriBai, animated: true)
         self.switchLarrabetzuZeroZabor.setOn(blogLarrabetzuZeroZabor, animated: true)
@@ -160,7 +168,7 @@ class SettingsViewController: GAITrackedViewController {
     }
     
     private func blogGuztiakKendutaDauz(){
-        if(!self.blogLarrabetzutik && !self.blogEskola && !self.blogHoribai && !self.blogLarrabetzuZeroZabor){
+        if(!self.blogLarrabetzutik && !self.blogUdala && !self.blogEskola && !self.blogHoribai && !self.blogLarrabetzuZeroZabor){
             let alertBlogAukerak = UIAlertController(
                 title: "Blog Aukerak",
                 message: "Denak kentzen badozuz ez da blogarik agertuko.",

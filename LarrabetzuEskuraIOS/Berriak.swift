@@ -40,6 +40,7 @@ class Berriak{
         let call = googleApi + "&num=\(postNumeroa)&q="
         
         var blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
+        var blogUdala: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogUdala")
         var blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
         var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
@@ -48,6 +49,9 @@ class Berriak{
         
         if(blogLarrabetzutik){
             urlBlog.append("http://larrabetzutik.org/feed/")
+        }
+        if(blogUdala){
+            urlBlog.append("http:%2F%2Fwww.larrabetzuko-udala.com%2F_layouts%2Ffeed.aspx%3Fxsl%3D1%26web%3D%252Feu-ES%26page%3D80690b0d-69fd-4e54-901d-309ace29e156%26wp%3De062f3df-e82b-4a0f-9365-2aefefa7a8a5")
         }
         if(blogEskola){
             urlBlog.append("http://www.horibai.org/feed/")
