@@ -125,7 +125,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
             
             var actualVersionInt: Int! = text.toInt()
-            if(actualVersionInt != previousAppVersion   ){
+            if( previousAppVersion == 0){
                 let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
                 pageView.hidesBottomBarWhenPushed = true

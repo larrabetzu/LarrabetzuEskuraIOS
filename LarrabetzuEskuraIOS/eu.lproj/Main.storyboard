@@ -24,6 +24,7 @@
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andramari" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-gB-Oj2">
                                 <rect key="frame" x="0.0" y="65" width="600" height="338"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="16:9" id="Y2Q-J7-Gma"/>
                                 </constraints>
