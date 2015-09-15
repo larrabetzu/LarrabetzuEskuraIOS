@@ -12,7 +12,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("viewDidLoad")
+        print("viewDidLoad")
         
         //NabigationBar
         navigationController?.navigationBar.barTintColor = grisaColor
@@ -44,7 +44,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as! EkintzakTableViewCell
+        let cell:EkintzakTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("EkintzakCustomTableViewCell") as! EkintzakTableViewCell
         let ekintza = ekintzakParseatu.getEkintzaCell(indexPath.row)
         cell.loadItem(tituloa: ekintza.tituloa, ordua: ekintza.ordua, eguna: ekintza.eguna, lekua: ekintza.lekua)
         
@@ -65,10 +65,10 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     // MARK: Functions
     func getData(){
         if Internet.isConnectedToNetwork() {
-            println("Interneta badago!")
+            print("Interneta badago!")
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-                println("gcd")
+                print("gcd")
                 self.ekintzakParseatu.getEkintzak()
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
@@ -78,13 +78,13 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
                 })
             })
         } else {
-            println("Ez dago internetik")
+            print("Ez dago internetik")
             self.activityIndicator.stopAnimating()
         }
     }
     
     func hiddenEmptyCell(){
-        var tblView =  UIView(frame: CGRectZero)
+        let tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()

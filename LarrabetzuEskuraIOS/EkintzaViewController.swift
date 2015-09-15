@@ -99,7 +99,7 @@ class EkintzaViewController: GAITrackedViewController {
         self.activityIndicator.startAnimating()
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-            println("gcd")
+            print("gcd")
             var urlString: NSString = self.kartelaLink
             
             if("peg" == urlString.substringFromIndex(urlString.length-3)){
@@ -114,14 +114,14 @@ class EkintzaViewController: GAITrackedViewController {
             var imgURL: NSURL = NSURL(string: urlString as String)!
             var request: NSURLRequest = NSURLRequest(URL: imgURL)
             var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)!
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?,data: NSData?,error: NSError?) -> Void in
                 if !(error != nil) {
-                    var image: UIImage? = UIImage(data: data)
+                    var image: UIImage? = UIImage(data: data!)
                     self.kartelaUI.image = image
                     self.activityIndicator.stopAnimating()
                     
                 }else {
-                    println("Error: \(error.localizedDescription)")
+                    print("Error: \(error!.localizedDescription)")
                 }
             })
        })

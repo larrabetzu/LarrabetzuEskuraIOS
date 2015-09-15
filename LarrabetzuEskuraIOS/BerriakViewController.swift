@@ -16,7 +16,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Larrabetzu #eskura"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
         tabBarController?.tabBar.tintColor = UIColor.blackColor()
         
         self.refreshControl = UIRefreshControl()
@@ -32,7 +32,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             self.hiddenEmptyCell()
             
         } else {
-            println("Ez dago internetik")
+            print("Ez dago internetik")
             var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
             alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
             self.presentViewController(alertInterneta, animated: true, completion: nil)
@@ -46,7 +46,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        println("viewWillAppear")
+        print("viewWillAppear")
         navigationItem.title = "Larrabetzu #eskura"
         self.screenName = "Berriak"
     }
@@ -99,8 +99,8 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             })
             
         } else {
-            println("Ez dago internetik")
-            var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
+            print("Ez dago internetik")
+            let alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
             alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
             self.presentViewController(alertInterneta, animated: true, completion: nil)
         }
@@ -109,7 +109,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     }
     
     private func hiddenEmptyCell(){
-        var tblView =  UIView(frame: CGRectZero)
+        let tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()
@@ -124,7 +124,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         let previousAppVersion: Int = NSUserDefaults.standardUserDefaults().integerForKey("instaledAppVersion")
         if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
             
-            var actualVersionInt: Int! = text.toInt()
+            var actualVersionInt: Int! = Int(text)
             if( previousAppVersion == 0){
                 let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)

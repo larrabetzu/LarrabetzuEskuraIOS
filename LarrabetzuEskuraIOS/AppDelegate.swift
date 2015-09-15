@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         application.statusBarStyle = .LightContent
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.whiteColor()
         
         
@@ -61,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //https://github.com/ArtSabintsev/Siren
         let siren = Siren.sharedInstance
         siren.appID = valueForAPIKey(keyname: "APP_ID")
-        siren.presentingViewController = window?.rootViewController
         siren.alertType = .Option
         siren.forceLanguageLocalization = .Basque
         siren.checkVersion(.Weekly)
@@ -98,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("didRegisterForRemoteNotificationsWithDeviceToken")
+        print("didRegisterForRemoteNotificationsWithDeviceToken")
         
         let currentInstallation = PFInstallation.currentInstallation()
         
@@ -109,18 +108,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println("failed to register for remote notifications:  \(error)")
+        print("failed to register for remote notifications:  \(error)")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
-        println("didReceiveRemoteNotification")
+        print("didReceiveRemoteNotification")
         PFPush.handlePush(userInfo)
         if ( application.applicationState == UIApplicationState.Inactive || application.applicationState == UIApplicationState.Background ){
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo )
             
-            println("\(userInfo)")
-            if var url: String = userInfo["url"] as? String{
-                println("\(url)")
+            print("\(userInfo)")
+            if let url: String = userInfo["url"] as? String{
+                print("\(url)")
                 let urlNSURL = NSURL(string: url)!
                 dispatch_async(dispatch_get_main_queue(), {
                     if (UIApplication.sharedApplication().canOpenURL(urlNSURL)){

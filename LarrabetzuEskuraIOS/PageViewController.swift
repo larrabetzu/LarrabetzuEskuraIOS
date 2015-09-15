@@ -33,7 +33,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         if contentArgazkia.count > 0 {
             let firstController = getItemController(0)!
             let startingViewControllers: NSArray = [firstController]
-            pageController.setViewControllers(startingViewControllers as [AnyObject] , direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            pageController.setViewControllers(startingViewControllers as! [UIViewController] , direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
         
         pageViewController = pageController
@@ -103,7 +103,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     func registerUserNotificationSettings(){
         let application = UIApplication.sharedApplication()
         if application.respondsToSelector("registerUserNotificationSettings:") {
-            let types:UIUserNotificationType = (.Alert | .Badge | .Sound)
+            let types:UIUserNotificationType = ([.Alert, .Badge, .Sound])
             let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
             
             application.registerUserNotificationSettings(settings)
@@ -115,8 +115,8 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     func dismissViews(){
         if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
             
-            var appVersionInt: Int! = text.toInt()
-            var instaledAppVersion = NSUserDefaults.standardUserDefaults()
+            let appVersionInt: Int! = Int(text)
+            let instaledAppVersion = NSUserDefaults.standardUserDefaults()
                 instaledAppVersion.setInteger(appVersionInt, forKey: "instaledAppVersion")
                 instaledAppVersion.synchronize()
         }

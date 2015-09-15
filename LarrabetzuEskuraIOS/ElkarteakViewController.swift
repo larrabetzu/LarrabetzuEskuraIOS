@@ -18,13 +18,13 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Elkarteak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
         
         activityIndicator.startAnimating()
         tableView.hidden = true
         
         if Internet.isConnectedToNetwork() {
-            println("Interneta badago!")
+            print("Interneta badago!")
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 self.ElkarteakParser.getElkarteak()
@@ -36,7 +36,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
                 })
             })
         } else {
-            println("Ez dago internetik")
+            print("Ez dago internetik")
             self.activityIndicator.stopAnimating()
         }
 
@@ -97,13 +97,13 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
     
     // MARK: Functions
     private func hiddenEmptyCell(){
-        var tblView =  UIView(frame: CGRectZero)
+        let tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
         self.tableView.tableFooterView?.hidden = true
         self.tableView.backgroundColor = UIColor.clearColor()
     }
     
-    private func alertElkarteInfo(#email: String, webgunea: String)->UIAlertController{
+    private func alertElkarteInfo(email email: String, webgunea: String)->UIAlertController{
         
         var alertController = UIAlertController(title: "Elkartean informazioa",
             message: "",
@@ -137,7 +137,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
     }
     
     private func reciseImage(image: UIImage)->UIImage{
-        var newSize:CGSize = CGSize(width: 30, height: 30)
+        let newSize:CGSize = CGSize(width: 30, height: 30)
         let rect = CGRectMake(0,0, newSize.width, newSize.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
         image.drawInRect(rect)

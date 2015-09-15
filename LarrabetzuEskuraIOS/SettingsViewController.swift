@@ -16,7 +16,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBAction func stepper(sender: UIStepper) {
         let postNumeroa: Int = Int(sender.value)
         self.labelNumeroPost.text = "\(postNumeroa)"
-        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
         postNumeroaNS.setObject(postNumeroa, forKey:"postNumeroa")
         postNumeroaNS.synchronize()
     }
@@ -26,7 +26,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBAction func switchLarrabetzutik(sender: UISwitch) {
         let position = sender.on
         self.blogLarrabetzutik = position
-        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
         postNumeroaNS.setBool(position, forKey:"blogLarrabetzutik")
         postNumeroaNS.synchronize()
         self.blogGuztiakKendutaDauz()
@@ -35,7 +35,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBAction func switchUdala(sender: UISwitch) {
         let position = sender.on
         self.blogUdala = position
-        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
         postNumeroaNS.setBool(position, forKey:"blogUdala")
         postNumeroaNS.synchronize()
         self.blogGuztiakKendutaDauz()
@@ -46,7 +46,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBAction func switchEskola(sender: UISwitch) {
         let position = sender.on
         self.blogEskola = position
-        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
         postNumeroaNS.setBool(position, forKey:"blogEskola")
         postNumeroaNS.synchronize()
         self.blogGuztiakKendutaDauz()
@@ -55,7 +55,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBAction func switchHoriBai(sender: UISwitch) {
         let position = sender.on
         self.blogHoribai = position
-        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
         postNumeroaNS.setBool(position, forKey:"blogHoriBai")
         postNumeroaNS.synchronize()
         self.blogGuztiakKendutaDauz()
@@ -64,7 +64,7 @@ class SettingsViewController: GAITrackedViewController {
     @IBAction func switchLarrabetzuZeroZabor(sender: UISwitch) {
         let position = sender.on
         self.blogLarrabetzuZeroZabor = position
-        var postNumeroaNS = NSUserDefaults.standardUserDefaults()
+        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
         postNumeroaNS.setBool(position, forKey:"blogLarrabetzuZeroZabor")
         postNumeroaNS.synchronize()
         self.blogGuztiakKendutaDauz()
@@ -117,7 +117,7 @@ class SettingsViewController: GAITrackedViewController {
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Hobespenak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
         
         
         
@@ -128,7 +128,7 @@ class SettingsViewController: GAITrackedViewController {
         self.screenName = "Hobespenak"
         
         let postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
-        println("\(postNumeroa)")
+        print("\(postNumeroa)")
         if(postNumeroa != 0){
             self.labelNumeroPost.text = "\(postNumeroa)"
             self.stepperUI?.value = Double (postNumeroa)
@@ -145,7 +145,7 @@ class SettingsViewController: GAITrackedViewController {
         self.switchLarrabetzuZeroZabor.setOn(blogLarrabetzuZeroZabor, animated: true)
         
         if let channels = PFInstallation.currentInstallation().channels as? [String]{
-            println("\(channels)")
+            print("\(channels)")
             
             for item in channels{
                 switch(item){

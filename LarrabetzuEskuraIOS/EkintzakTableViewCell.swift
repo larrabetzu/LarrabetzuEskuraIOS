@@ -8,7 +8,7 @@ class EkintzakTableViewCell : UITableViewCell {
     @IBOutlet var eguna: UILabel!
     @IBOutlet var lekua: UILabel!
     
-    func loadItem(#tituloa: String, ordua: String, eguna: String, lekua: String) {
+    func loadItem(tituloa tituloa: String, ordua: String, eguna: String, lekua: String) {
         self.tituloa.text = tituloa
         self.ordua.text = ordua
         self.eguna.text = eguna

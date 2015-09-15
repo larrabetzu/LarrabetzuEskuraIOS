@@ -10,8 +10,7 @@ class Berriak{
     }
     
     private func parseJSON(inputData: NSData) -> NSDictionary{
-        var error: NSError?
-        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+        let boardsDictionary: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
         return boardsDictionary
     }
     
@@ -19,8 +18,8 @@ class Berriak{
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss xx" //Thu, 22 May 2014 11:36:45 -0700
-        var data1 = dateFormatter.dateFromString(lehenengoData)
-        var data2 = dateFormatter.dateFromString(bigarrenData)
+        let data1 = dateFormatter.dateFromString(lehenengoData)
+        let data2 = dateFormatter.dateFromString(bigarrenData)
         if data1?.compare(data2!) == NSComparisonResult.OrderedDescending{
             return true
         }
@@ -39,11 +38,11 @@ class Berriak{
         }
         let call = googleApi + "&num=\(postNumeroa)&q="
         
-        var blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
-        var blogUdala: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogUdala")
-        var blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
-        var blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
-        var blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
+        let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
+        let blogUdala: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogUdala")
+        let blogEskola: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogEskola")
+        let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
+        let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
         urlBlog.append("http://medium.com/feed/@larrabetzu")
         
@@ -65,7 +64,7 @@ class Berriak{
         
         let countUrleBlog = urlBlog.count
         for var idex = 0; idex < countUrleBlog; ++idex{
-            var parsedJSON = parseJSON(getJSON(call+urlBlog[idex]))
+            let parsedJSON = parseJSON(getJSON(call+urlBlog[idex]))
             if let dictionaryResponseData = parsedJSON["responseData"] as? NSDictionary, dictionaryFeed = dictionaryResponseData["feed"] as? NSDictionary , dictionaryEntries = dictionaryFeed["entries"] as? NSArray{
                 for var idex = 0; idex < dictionaryEntries.count; ++idex{
                     if let una = dictionaryEntries[idex] as? NSDictionary{

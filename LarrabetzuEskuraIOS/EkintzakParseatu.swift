@@ -33,9 +33,9 @@ class Ekintzak{
             ekintzaDic["kartela"] = urlKartela + kartela
             
             ekintzaDic["deskribapena"] = fields["deskribapena"] as? String
-            ekintzaDic["eguna"] = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2))
-            ekintzaDic["ordua"] = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5))
-            let hileaNumeroa = data.substringFromIndex(advance(data.startIndex, 5)).substringToIndex(advance(data.startIndex, 2))
+            ekintzaDic["eguna"] = data.substringFromIndex(data.startIndex.advancedBy(8)).substringToIndex(data.startIndex.advancedBy(2))
+            ekintzaDic["ordua"] = data.substringFromIndex(data.startIndex.advancedBy(11)).substringToIndex(data.startIndex.advancedBy(5))
+            let hileaNumeroa = data.substringFromIndex(data.startIndex.advancedBy(5)).substringToIndex(data.startIndex.advancedBy(2))
             ekintzaDic["hilea"] = self.hilea(hileaNumeroa)
         }
         return ekintzaDic
@@ -45,8 +45,8 @@ class Ekintzak{
         let ekintza = self.ekintzanArray[position]
         if let fields: NSDictionary = ekintza["fields"] as? NSDictionary{
             let data: String = fields["egune"] as! String!
-            let ordua = data.substringFromIndex(advance(data.startIndex, 11)).substringToIndex(advance(data.startIndex, 5)) as String
-            let eguna = data.substringFromIndex(advance(data.startIndex, 8)).substringToIndex(advance(data.startIndex, 2)) as String
+            let ordua = data.substringFromIndex(data.startIndex.advancedBy(11)).substringToIndex(data.startIndex.advancedBy(5)) as String
+            let eguna = data.substringFromIndex(data.startIndex.advancedBy(8)).substringToIndex(data.startIndex.advancedBy(2)) as String
             return ((fields["tituloa"] as? String)!, (fields["lekua"] as? String)!, eguna, ordua)
         }
         return ("Ez dago informazioa", "", "", "")
@@ -59,13 +59,13 @@ class Ekintzak{
     
     private func parseJSON(inputData: NSData) -> Array<NSDictionary>{
         var error: NSError?
-        var boardsDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! Array<NSDictionary>
+        let boardsDictionary = (try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)) as! Array<NSDictionary>
         return boardsDictionary
     }
     
     private func hilea(numeroa:String)-> String{
         var hileanizena:String = "Urtarrilak";
-        let hilea : Int = numeroa.toInt()!
+        let hilea : Int = Int(numeroa)!
         
         switch (hilea){
             case 1: hileanizena="Urtarrilak"; break;

@@ -421,7 +421,8 @@
 		9FDBB58D195AE4D3003EFA9E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = gorka;
 				TargetAttributes = {
 					9FDBB594195AE4D4003EFA9E = {
@@ -584,6 +585,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: gorka Ercilla (2CG6DRL7NP)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -662,6 +664,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LarrabetzuEskuraIOS",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
@@ -686,6 +689,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LarrabetzuEskuraIOS",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
@@ -707,6 +711,7 @@
 				INFOPLIST_FILE = LarrabetzuEskuraIOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eskura.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = LarrabetzuTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -723,6 +728,7 @@
 				INFOPLIST_FILE = LarrabetzuEskuraIOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "eskura.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = LarrabetzuTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
