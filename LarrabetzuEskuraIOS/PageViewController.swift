@@ -33,7 +33,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         if contentArgazkia.count > 0 {
             let firstController = getItemController(0)!
             let startingViewControllers: NSArray = [firstController]
-            pageController.setViewControllers(startingViewControllers as! [UIViewController] , direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            pageController.setViewControllers(startingViewControllers as? [UIViewController] , direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
         
         pageViewController = pageController
@@ -71,7 +71,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
             }
             return getItemController(itemController.itemIndex+1)
         }else{
-            var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("dismissViews"), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("dismissViews"), userInfo: nil, repeats: false)
         }
         
         return nil

@@ -18,7 +18,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Elkarteak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         
         activityIndicator.startAnimating()
         tableView.hidden = true

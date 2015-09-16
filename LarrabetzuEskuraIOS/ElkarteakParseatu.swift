@@ -40,7 +40,6 @@ class Elkarteak{
     
     // MARK: Functions
     private func parseJSON(inputData: NSData) -> Array<NSDictionary>{
-        var error: NSError?
         let boardsDictionary = (try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)) as! Array<NSDictionary>
         return boardsDictionary
     }

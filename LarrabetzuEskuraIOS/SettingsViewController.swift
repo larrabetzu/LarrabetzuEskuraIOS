@@ -117,7 +117,7 @@ class SettingsViewController: GAITrackedViewController {
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Hobespenak"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         
         
         

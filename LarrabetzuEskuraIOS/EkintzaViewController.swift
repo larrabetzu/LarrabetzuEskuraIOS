@@ -111,12 +111,11 @@ class EkintzaViewController: GAITrackedViewController {
                 let urlStringFile = urlString.substringFromIndex(urlString.length-3) //jpg png
                 urlString =  urlStringPath + ".medium." + urlStringFile
             }
-            var imgURL: NSURL = NSURL(string: urlString as String)!
-            var request: NSURLRequest = NSURLRequest(URL: imgURL)
-            var urlConnection: NSURLConnection = NSURLConnection(request: request, delegate: self)!
+            let imgURL: NSURL = NSURL(string: urlString as String)!
+            let request: NSURLRequest = NSURLRequest(URL: imgURL)
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?,data: NSData?,error: NSError?) -> Void in
                 if !(error != nil) {
-                    var image: UIImage? = UIImage(data: data!)
+                    let image: UIImage? = UIImage(data: data!)
                     self.kartelaUI.image = image
                     self.activityIndicator.stopAnimating()
                     

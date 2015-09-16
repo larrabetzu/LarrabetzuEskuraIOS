@@ -16,7 +16,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         navigationController?.navigationBar.barTintColor = grisaColor
         navigationItem.title = "Larrabetzu #eskura"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         tabBarController?.tabBar.tintColor = UIColor.blackColor()
         
         self.refreshControl = UIRefreshControl()
@@ -33,7 +33,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             
         } else {
             print("Ez dago internetik")
-            var alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
+            let alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
             alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
             self.presentViewController(alertInterneta, animated: true, completion: nil)
         }
@@ -122,16 +122,14 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     
     private func appPresentation(){
         let previousAppVersion: Int = NSUserDefaults.standardUserDefaults().integerForKey("instaledAppVersion")
-        if let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
             
-            var actualVersionInt: Int! = Int(text)
-            if( previousAppVersion == 0){
-                let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
-                self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
-                pageView.hidesBottomBarWhenPushed = true
-                self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
-            }
+        if (previousAppVersion == 0){
+            let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
+            pageView.hidesBottomBarWhenPushed = true
+            self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
         }
+        
     }
 }
 
