@@ -75,6 +75,10 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
                     self.hiddenEmptyCell()
                     self.tableView.hidden = false
                     self.activityIndicator.stopAnimating()
+                    let rows = self.tableView.numberOfRowsInSection(self.tableView.numberOfSections)
+                    if(rows == 0){
+                        self.addEmptyView()
+                    }
                 })
             })
         } else {
@@ -93,6 +97,37 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     func refresh(sender:AnyObject){
         getData()
         self.refreshControl.endRefreshing()
+    }
+    
+    
+    private func addEmptyView(){
+        
+        
+        let emptyView = UIView()
+        emptyView.frame = view.bounds
+        emptyView.tag = 99
+        view.addSubview(emptyView)
+        
+        let image = UIImage(named: "Agenda")
+        let agendaImageView = UIImageView(image: image)
+        agendaImageView.frame = CGRectMake(
+            (view.frame.size.width/2) - (image!.size.width),
+            (view.frame.size.height / 3) - (image!.size.height),
+            image!.size.width * 2,
+            image!.size.height * 2)
+        emptyView.addSubview(agendaImageView)
+        
+        // Label for vibrant text
+        let agendaLabel = UILabel(frame: CGRectMake(0, 0, view.frame.width-20, view.frame.height-20))
+        agendaLabel.text = "Ez dago ezer agendan"
+        agendaLabel.numberOfLines = 2
+        agendaLabel.textAlignment = NSTextAlignment.Center
+        agendaLabel.sizeToFit()
+        agendaLabel.center = view.center
+        
+        // Add label to the vibrancy view
+        emptyView.addSubview(agendaLabel)
+        
     }
     
 }

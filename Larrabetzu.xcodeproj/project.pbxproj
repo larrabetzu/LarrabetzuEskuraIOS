@@ -600,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -638,7 +638,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -666,7 +666,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "fed78feb-dc65-491d-8640-fa9a096d4d7b";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
 			};
 			name = Debug;
@@ -691,7 +691,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "fed78feb-dc65-491d-8640-fa9a096d4d7b";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
 			};
 			name = Release;
@@ -744,7 +744,7 @@
 				9FDBB5B2195AE4D4003EFA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		9FDBB5B3195AE4D4003EFA9E /* Build configuration list for PBXNativeTarget "Larrabetzu" */ = {
 			isa = XCConfigurationList;
@@ -753,7 +753,7 @@
 				9FDBB5B5195AE4D4003EFA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		9FDBB5B6195AE4D4003EFA9E /* Build configuration list for PBXNativeTarget "LarrabetzuTests" */ = {
 			isa = XCConfigurationList;
@@ -762,7 +762,7 @@
 				9FDBB5B8195AE4D4003EFA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
