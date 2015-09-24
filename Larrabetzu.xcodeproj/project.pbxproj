@@ -3,16 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9F0ED65A196ADC680037A4D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0ED659196ADC680037A4D3 /* WebViewController.swift */; };
+		9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9F3E43C41973D7FF0060B2FB /* EkintzakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */; };
 		9F403A431A98AF2700155055 /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F403A421A98AF2700155055 /* PageItemController.swift */; };
 		9F403A451A98AF8B00155055 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F403A441A98AF8B00155055 /* PageViewController.swift */; };
 		9F54139C19C9D8840075C6EA /* NortzukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54139B19C9D8840075C6EA /* NortzukViewController.swift */; };
-		9F56BDC119C6EECC00916CA8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56BDC019C6EECC00916CA8 /* SettingsViewController.swift */; };
 		9F5834CB19D1CEA000D6FD51 /* ElkarteakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */; };
 		9F7EE79519768A8800485B79 /* EkintzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EE79419768A8800485B79 /* EkintzaViewController.swift */; };
 		9F829C7F1B0E1EDA00A3596C /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F829C7D1B0E1EDA00A3596C /* libAdIdAccess.a */; };
@@ -28,6 +29,8 @@
 		9FBA16C11AFB606E00185CC8 /* star-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16B91AFB606E00185CC8 /* star-gray@2x.png */; };
 		9FBA16C21AFB606E00185CC8 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16BA1AFB606E00185CC8 /* star.png */; };
 		9FBA16C31AFB606E00185CC8 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16BB1AFB606E00185CC8 /* star@2x.png */; };
+		9FC12A121BB3F67D00B93995 /* AbisuakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9FC42A081A4D8D9E00954105 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC42A071A4D8D9E00954105 /* Internet.swift */; };
 		9FCDDD3B19C746330007B3F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD3A19C746330007B3F2 /* AudioToolbox.framework */; };
 		9FCDDD3D19C7463F0007B3F2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD3C19C7463F0007B3F2 /* CFNetwork.framework */; };
@@ -48,35 +51,26 @@
 		9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */; };
 		9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */; };
 		9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */; };
-		9FDBB5B0195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */; };
 		9FE8C1AD1A95FAE000E350DE /* Siren.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FE8C1AB1A95FAE000E350DE /* Siren.bundle */; };
 		9FE8C1AE1A95FAE000E350DE /* Siren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8C1AC1A95FAE000E350DE /* Siren.swift */; };
 		9FF06DFB1B0A3C20000C76A2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DF71B0A3C20000C76A2 /* Bolts.framework */; };
 		9FF06DFC1B0A3C20000C76A2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DF81B0A3C20000C76A2 /* Parse.framework */; };
 		9FF06DFD1B0A3C20000C76A2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DF91B0A3C20000C76A2 /* ParseCrashReporting.framework */; };
 		9FF06DFE1B0A3C20000C76A2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DFA1B0A3C20000C76A2 /* ParseUI.framework */; };
+		9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904311A73B7EF001E4891 /* PushNotificationController.swift */; };
 		9FF904341A73B912001E4891 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF904331A73B912001E4891 /* ApiKeys.plist */; };
 		9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904351A73B991001E4891 /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9FDBB5AA195AE4D4003EFA9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FDBB58D195AE4D3003EFA9E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9FDBB594195AE4D4003EFA9E;
-			remoteInfo = LarrabetzuEskuraIOS;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		9F0ED659196ADC680037A4D3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakAukeranTableViewController.swift; sourceTree = "<group>"; };
+		9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogakAukeranTableViewController.swift; sourceTree = "<group>"; };
 		9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakTableViewCell.swift; sourceTree = "<group>"; };
 		9F403A421A98AF2700155055 /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageItemController.swift; path = /Users/gorkaercilla/Documents/Cursos/Programacion/xcode/LarrabetzuEskuraIOS/LarrabetzuEskuraIOS/PageItemController.swift; sourceTree = "<absolute>"; };
 		9F403A441A98AF8B00155055 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9F54139B19C9D8840075C6EA /* NortzukViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NortzukViewController.swift; sourceTree = "<group>"; };
-		9F56BDC019C6EECC00916CA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElkarteakViewController.swift; sourceTree = "<group>"; };
 		9F7EE79419768A8800485B79 /* EkintzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzaViewController.swift; sourceTree = "<group>"; };
 		9F829C731B0E1EA300A3596C /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -106,6 +100,8 @@
 		9FBA16B91AFB606E00185CC8 /* star-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray@2x.png"; sourceTree = "<group>"; };
 		9FBA16BA1AFB606E00185CC8 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		9FBA16BB1AFB606E00185CC8 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakTableViewCell.swift; sourceTree = "<group>"; };
+		9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakViewController.swift; sourceTree = "<group>"; };
 		9FC42A071A4D8D9E00954105 /* Internet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
 		9FCDDD3A19C746330007B3F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9FCDDD3C19C7463F0007B3F2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -132,7 +128,6 @@
 		9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerriakViewController.swift; sourceTree = "<group>"; };
 		9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EkintzakViewController.swift; sourceTree = "<group>"; };
 		9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9FDBB5A9195AE4D4003EFA9E /* LarrabetzuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LarrabetzuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB5AE195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LarrabetzuEskuraIOSTests.swift; sourceTree = "<group>"; };
 		9FE8C1AB1A95FAE000E350DE /* Siren.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Siren.bundle; sourceTree = "<group>"; };
@@ -141,6 +136,7 @@
 		9FF06DF81B0A3C20000C76A2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
 		9FF06DF91B0A3C20000C76A2 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "parse-library-1.7.2/ParseCrashReporting.framework"; sourceTree = "<group>"; };
 		9FF06DFA1B0A3C20000C76A2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.7.2/ParseUI.framework"; sourceTree = "<group>"; };
+		9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobespenakTableViewController.swift; sourceTree = "<group>"; };
 		9FF904301A73B5A2001E4891 /* bridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridgingHeader.h; sourceTree = "<group>"; };
 		9FF904311A73B7EF001E4891 /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		9FF904331A73B912001E4891 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
@@ -174,16 +170,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9FDBB5A6195AE4D4003EFA9E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F360E6E1BB29938000A2B40 /* Hobespenak */ = {
+			isa = PBXGroup;
+			children = (
+				9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */,
+				9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */,
+				9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */,
+				9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */,
+			);
+			name = Hobespenak;
+			sourceTree = "<group>";
+		};
 		9F93C06F1AE8DFF600DF004D /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +263,7 @@
 				9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */,
 				9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */,
 				9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */,
-				9F56BDC019C6EECC00916CA8 /* SettingsViewController.swift */,
+				9F360E6E1BB29938000A2B40 /* Hobespenak */,
 				9F0ED659196ADC680037A4D3 /* WebViewController.swift */,
 				9F7EE79419768A8800485B79 /* EkintzaViewController.swift */,
 				9F54139B19C9D8840075C6EA /* NortzukViewController.swift */,
@@ -314,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				9FDBB595195AE4D4003EFA9E /* Larrabetzu.app */,
-				9FDBB5A9195AE4D4003EFA9E /* LarrabetzuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +327,7 @@
 				9FD7B52A19751795009DFFC0 /* ViewController */,
 				9FD7B52C1975192D009DFFC0 /* Parsers */,
 				9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */,
+				9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */,
 				9F93C06F1AE8DFF600DF004D /* Class */,
 				9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */,
 				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
@@ -397,24 +397,6 @@
 			productReference = 9FDBB595195AE4D4003EFA9E /* Larrabetzu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9FDBB5A8195AE4D4003EFA9E /* LarrabetzuTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9FDBB5B6195AE4D4003EFA9E /* Build configuration list for PBXNativeTarget "LarrabetzuTests" */;
-			buildPhases = (
-				9FDBB5A5195AE4D4003EFA9E /* Sources */,
-				9FDBB5A6195AE4D4003EFA9E /* Frameworks */,
-				9FDBB5A7195AE4D4003EFA9E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9FDBB5AB195AE4D4003EFA9E /* PBXTargetDependency */,
-			);
-			name = LarrabetzuTests;
-			productName = LarrabetzuEskuraIOSTests;
-			productReference = 9FDBB5A9195AE4D4003EFA9E /* LarrabetzuTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -437,14 +419,10 @@
 							};
 						};
 					};
-					9FDBB5A8195AE4D4003EFA9E = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 9FDBB594195AE4D4003EFA9E;
-					};
 				};
 			};
 			buildConfigurationList = 9FDBB590195AE4D3003EFA9E /* Build configuration list for PBXProject "Larrabetzu" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -457,7 +435,6 @@
 			projectRoot = "";
 			targets = (
 				9FDBB594195AE4D4003EFA9E /* Larrabetzu */,
-				9FDBB5A8195AE4D4003EFA9E /* LarrabetzuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -477,13 +454,6 @@
 				9FBA16BE1AFB606E00185CC8 /* iRate.bundle in Resources */,
 				9FBA16C01AFB606E00185CC8 /* star-gray.png in Resources */,
 				9FBA16C11AFB606E00185CC8 /* star-gray@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FDBB5A7195AE4D4003EFA9E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +482,9 @@
 			files = (
 				9FBA16BC1AFB606E00185CC8 /* SARate.m in Sources */,
 				9FB3528419631BED00099645 /* Berriak.swift in Sources */,
+				9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */,
+				9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */,
+				9FC12A121BB3F67D00B93995 /* AbisuakTableViewCell.swift in Sources */,
 				9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */,
 				9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */,
 				9FB37E5619D2C63900CAF55F /* ElkarteakParseatu.swift in Sources */,
@@ -527,30 +500,15 @@
 				9F0ED65A196ADC680037A4D3 /* WebViewController.swift in Sources */,
 				9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */,
 				9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */,
+				9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */,
+				9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */,
 				9FBA16BD1AFB606E00185CC8 /* SARateViewController.m in Sources */,
 				9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */,
 				9FC42A081A4D8D9E00954105 /* Internet.swift in Sources */,
-				9F56BDC119C6EECC00916CA8 /* SettingsViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FDBB5A5195AE4D4003EFA9E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FDBB5B0195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9FDBB5AB195AE4D4003EFA9E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9FDBB594195AE4D4003EFA9E /* Larrabetzu */;
-			targetProxy = 9FDBB5AA195AE4D4003EFA9E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */ = {
@@ -696,44 +654,6 @@
 			};
 			name = Release;
 		};
-		9FDBB5B7195AE4D4003EFA9E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LarrabetzuEskuraIOS.app/LarrabetzuEskuraIOS";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LarrabetzuEskuraIOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "eskura.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = LarrabetzuTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		9FDBB5B8195AE4D4003EFA9E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LarrabetzuEskuraIOS.app/LarrabetzuEskuraIOS";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LarrabetzuEskuraIOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "eskura.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = LarrabetzuTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -751,15 +671,6 @@
 			buildConfigurations = (
 				9FDBB5B4195AE4D4003EFA9E /* Debug */,
 				9FDBB5B5195AE4D4003EFA9E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9FDBB5B6195AE4D4003EFA9E /* Build configuration list for PBXNativeTarget "LarrabetzuTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9FDBB5B7195AE4D4003EFA9E /* Debug */,
-				9FDBB5B8195AE4D4003EFA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
