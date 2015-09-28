@@ -8,62 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		9F0ED65A196ADC680037A4D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0ED659196ADC680037A4D3 /* WebViewController.swift */; };
-		9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */; };
+		9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */; };
 		9F3E43C41973D7FF0060B2FB /* EkintzakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */; };
 		9F403A431A98AF2700155055 /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F403A421A98AF2700155055 /* PageItemController.swift */; };
 		9F403A451A98AF8B00155055 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F403A441A98AF8B00155055 /* PageViewController.swift */; };
 		9F54139C19C9D8840075C6EA /* NortzukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54139B19C9D8840075C6EA /* NortzukViewController.swift */; };
 		9F5834CB19D1CEA000D6FD51 /* ElkarteakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */; };
 		9F7EE79519768A8800485B79 /* EkintzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EE79419768A8800485B79 /* EkintzaViewController.swift */; };
-		9F829C7F1B0E1EDA00A3596C /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F829C7D1B0E1EDA00A3596C /* libAdIdAccess.a */; };
-		9F829C801B0E1EDA00A3596C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F829C7E1B0E1EDA00A3596C /* libGoogleAnalyticsServices.a */; };
 		9FB3528419631BED00099645 /* Berriak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3528319631BED00099645 /* Berriak.swift */; };
 		9FB37E5619D2C63900CAF55F /* ElkarteakParseatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB37E5519D2C63900CAF55F /* ElkarteakParseatu.swift */; };
 		9FB577BF1A4C4917006137C0 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB577BE1A4C4917006137C0 /* Launch Screen.xib */; };
-		9FBA16BC1AFB606E00185CC8 /* SARate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA16B11AFB606E00185CC8 /* SARate.m */; };
-		9FBA16BD1AFB606E00185CC8 /* SARateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA16B31AFB606E00185CC8 /* SARateViewController.m */; };
-		9FBA16BE1AFB606E00185CC8 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16B51AFB606E00185CC8 /* iRate.bundle */; };
-		9FBA16BF1AFB606E00185CC8 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA16B71AFB606E00185CC8 /* iRate.m */; };
-		9FBA16C01AFB606E00185CC8 /* star-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16B81AFB606E00185CC8 /* star-gray.png */; };
-		9FBA16C11AFB606E00185CC8 /* star-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16B91AFB606E00185CC8 /* star-gray@2x.png */; };
-		9FBA16C21AFB606E00185CC8 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16BA1AFB606E00185CC8 /* star.png */; };
-		9FBA16C31AFB606E00185CC8 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA16BB1AFB606E00185CC8 /* star@2x.png */; };
-		9FC12A121BB3F67D00B93995 /* AbisuakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9FC12A121BB3F67D00B93995 /* AbisuakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */; };
+		9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */; };
 		9FC42A081A4D8D9E00954105 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC42A071A4D8D9E00954105 /* Internet.swift */; };
-		9FCDDD3B19C746330007B3F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD3A19C746330007B3F2 /* AudioToolbox.framework */; };
-		9FCDDD3D19C7463F0007B3F2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD3C19C7463F0007B3F2 /* CFNetwork.framework */; };
-		9FCDDD3F19C7464B0007B3F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD3E19C7464B0007B3F2 /* CoreGraphics.framework */; };
-		9FCDDD4119C746580007B3F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4019C746580007B3F2 /* CoreLocation.framework */; };
-		9FCDDD4319C7466A0007B3F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4219C7466A0007B3F2 /* libz.dylib */; };
-		9FCDDD4519C746770007B3F2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4419C746770007B3F2 /* MobileCoreServices.framework */; };
-		9FCDDD4719C746820007B3F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4619C746820007B3F2 /* QuartzCore.framework */; };
-		9FCDDD4919C7468A0007B3F2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4819C7468A0007B3F2 /* Security.framework */; };
-		9FCDDD4D19C746CB0007B3F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCDDD4C19C746CB0007B3F2 /* SystemConfiguration.framework */; };
-		9FD791B51A73C79600E205EC /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791B41A73C79600E205EC /* libstdc++.6.dylib */; };
-		9FD791B71A73C7A600E205EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD791B61A73C7A600E205EC /* libsqlite3.dylib */; };
 		9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */; };
-		9FD7EA241A9343B800979903 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7EA231A9343B800979903 /* AdSupport.framework */; };
-		9FD7EA261A9343C600979903 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7EA251A9343C600979903 /* CoreData.framework */; };
 		9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */; };
 		9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */; };
 		9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */; };
 		9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */; };
 		9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */; };
-		9FE8C1AD1A95FAE000E350DE /* Siren.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FE8C1AB1A95FAE000E350DE /* Siren.bundle */; };
-		9FE8C1AE1A95FAE000E350DE /* Siren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8C1AC1A95FAE000E350DE /* Siren.swift */; };
-		9FF06DFB1B0A3C20000C76A2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DF71B0A3C20000C76A2 /* Bolts.framework */; };
-		9FF06DFC1B0A3C20000C76A2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DF81B0A3C20000C76A2 /* Parse.framework */; };
-		9FF06DFD1B0A3C20000C76A2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DF91B0A3C20000C76A2 /* ParseCrashReporting.framework */; };
-		9FF06DFE1B0A3C20000C76A2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF06DFA1B0A3C20000C76A2 /* ParseUI.framework */; };
-		9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */; };
 		9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904311A73B7EF001E4891 /* PushNotificationController.swift */; };
 		9FF904341A73B912001E4891 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF904331A73B912001E4891 /* ApiKeys.plist */; };
 		9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904351A73B991001E4891 /* ApiKeys.swift */; };
+		BA2A04D4EC1FA1993260B4F6 /* Pods_Larrabetzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1793CE20AD476C1C36135709 /* Pods-Larrabetzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Larrabetzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu.release.xcconfig"; sourceTree = "<group>"; };
+		61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Larrabetzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0ED659196ADC680037A4D3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakAukeranTableViewController.swift; sourceTree = "<group>"; };
 		9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogakAukeranTableViewController.swift; sourceTree = "<group>"; };
@@ -73,74 +47,26 @@
 		9F54139B19C9D8840075C6EA /* NortzukViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NortzukViewController.swift; sourceTree = "<group>"; };
 		9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElkarteakViewController.swift; sourceTree = "<group>"; };
 		9F7EE79419768A8800485B79 /* EkintzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzaViewController.swift; sourceTree = "<group>"; };
-		9F829C731B0E1EA300A3596C /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		9F829C741B0E1EA300A3596C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		9F829C751B0E1EA300A3596C /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
-		9F829C761B0E1EA300A3596C /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
-		9F829C771B0E1EA300A3596C /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
-		9F829C781B0E1EA300A3596C /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
-		9F829C791B0E1EA300A3596C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		9F829C7A1B0E1EA300A3596C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		9F829C7B1B0E1EA300A3596C /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		9F829C7C1B0E1EA300A3596C /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		9F829C7D1B0E1EDA00A3596C /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
-		9F829C7E1B0E1EDA00A3596C /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		9F9FA98B19878F5300868658 /* eu */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = eu; path = eu.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FB3528319631BED00099645 /* Berriak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Berriak.swift; sourceTree = "<group>"; };
 		9FB37E5519D2C63900CAF55F /* ElkarteakParseatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElkarteakParseatu.swift; sourceTree = "<group>"; };
 		9FB577BE1A4C4917006137C0 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
-		9FBA16B01AFB606E00185CC8 /* SARate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARate.h; sourceTree = "<group>"; };
-		9FBA16B11AFB606E00185CC8 /* SARate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARate.m; sourceTree = "<group>"; };
-		9FBA16B21AFB606E00185CC8 /* SARateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARateViewController.h; sourceTree = "<group>"; };
-		9FBA16B31AFB606E00185CC8 /* SARateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARateViewController.m; sourceTree = "<group>"; };
-		9FBA16B51AFB606E00185CC8 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
-		9FBA16B61AFB606E00185CC8 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
-		9FBA16B71AFB606E00185CC8 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
-		9FBA16B81AFB606E00185CC8 /* star-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray.png"; sourceTree = "<group>"; };
-		9FBA16B91AFB606E00185CC8 /* star-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-gray@2x.png"; sourceTree = "<group>"; };
-		9FBA16BA1AFB606E00185CC8 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		9FBA16BB1AFB606E00185CC8 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakTableViewCell.swift; sourceTree = "<group>"; };
 		9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakViewController.swift; sourceTree = "<group>"; };
 		9FC42A071A4D8D9E00954105 /* Internet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
-		9FCDDD3A19C746330007B3F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9FCDDD3C19C7463F0007B3F2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		9FCDDD3E19C7464B0007B3F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9FCDDD4019C746580007B3F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9FCDDD4219C7466A0007B3F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		9FCDDD4419C746770007B3F2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		9FCDDD4619C746820007B3F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9FCDDD4819C7468A0007B3F2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		9FCDDD4C19C746CB0007B3F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9FD791AA1A73C60100E205EC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		9FD791AB1A73C60100E205EC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		9FD791AC1A73C60100E205EC /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		9FD791AD1A73C60100E205EC /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		9FD791AE1A73C60100E205EC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		9FD791B41A73C79600E205EC /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
-		9FD791B61A73C7A600E205EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9FD7B5281975176C009DFFC0 /* EkintzakParseatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakParseatu.swift; sourceTree = "<group>"; };
-		9FD7EA231A9343B800979903 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		9FD7EA251A9343C600979903 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9FDBB595195AE4D4003EFA9E /* Larrabetzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Larrabetzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDBB599195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerriakViewController.swift; sourceTree = "<group>"; };
 		9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EkintzakViewController.swift; sourceTree = "<group>"; };
 		9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9FDBB5AE195AE4D4003EFA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LarrabetzuEskuraIOSTests.swift; sourceTree = "<group>"; };
-		9FE8C1AB1A95FAE000E350DE /* Siren.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Siren.bundle; sourceTree = "<group>"; };
-		9FE8C1AC1A95FAE000E350DE /* Siren.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Siren.swift; sourceTree = "<group>"; };
-		9FF06DF71B0A3C20000C76A2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
-		9FF06DF81B0A3C20000C76A2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
-		9FF06DF91B0A3C20000C76A2 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "parse-library-1.7.2/ParseCrashReporting.framework"; sourceTree = "<group>"; };
-		9FF06DFA1B0A3C20000C76A2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.7.2/ParseUI.framework"; sourceTree = "<group>"; };
 		9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobespenakTableViewController.swift; sourceTree = "<group>"; };
 		9FF904301A73B5A2001E4891 /* bridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridgingHeader.h; sourceTree = "<group>"; };
 		9FF904311A73B7EF001E4891 /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		9FF904331A73B912001E4891 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		9FF904351A73B991001E4891 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		A314DA2C15E01F143B099B77 /* Pods-Larrabetzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Larrabetzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,31 +74,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF06DFB1B0A3C20000C76A2 /* Bolts.framework in Frameworks */,
-				9FF06DFC1B0A3C20000C76A2 /* Parse.framework in Frameworks */,
-				9FF06DFD1B0A3C20000C76A2 /* ParseCrashReporting.framework in Frameworks */,
-				9FF06DFE1B0A3C20000C76A2 /* ParseUI.framework in Frameworks */,
-				9FD7EA261A9343C600979903 /* CoreData.framework in Frameworks */,
-				9FD7EA241A9343B800979903 /* AdSupport.framework in Frameworks */,
-				9FD791B71A73C7A600E205EC /* libsqlite3.dylib in Frameworks */,
-				9FD791B51A73C79600E205EC /* libstdc++.6.dylib in Frameworks */,
-				9FCDDD4D19C746CB0007B3F2 /* SystemConfiguration.framework in Frameworks */,
-				9FCDDD4919C7468A0007B3F2 /* Security.framework in Frameworks */,
-				9FCDDD4719C746820007B3F2 /* QuartzCore.framework in Frameworks */,
-				9FCDDD4519C746770007B3F2 /* MobileCoreServices.framework in Frameworks */,
-				9FCDDD4319C7466A0007B3F2 /* libz.dylib in Frameworks */,
-				9F829C7F1B0E1EDA00A3596C /* libAdIdAccess.a in Frameworks */,
-				9F829C801B0E1EDA00A3596C /* libGoogleAnalyticsServices.a in Frameworks */,
-				9FCDDD4119C746580007B3F2 /* CoreLocation.framework in Frameworks */,
-				9FCDDD3F19C7464B0007B3F2 /* CoreGraphics.framework in Frameworks */,
-				9FCDDD3D19C7463F0007B3F2 /* CFNetwork.framework in Frameworks */,
-				9FCDDD3B19C746330007B3F2 /* AudioToolbox.framework in Frameworks */,
+				BA2A04D4EC1FA1993260B4F6 /* Pods_Larrabetzu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17A1E5A8948ED7B2B8777F47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F360E6E1BB29938000A2B40 /* Hobespenak */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,69 +108,6 @@
 				9FF904311A73B7EF001E4891 /* PushNotificationController.swift */,
 			);
 			name = Class;
-			sourceTree = "<group>";
-		};
-		9FBA16AF1AFB606E00185CC8 /* SARate */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA16B01AFB606E00185CC8 /* SARate.h */,
-				9FBA16B11AFB606E00185CC8 /* SARate.m */,
-				9FBA16B21AFB606E00185CC8 /* SARateViewController.h */,
-				9FBA16B31AFB606E00185CC8 /* SARateViewController.m */,
-				9FBA16B41AFB606E00185CC8 /* iRate */,
-				9FBA16B81AFB606E00185CC8 /* star-gray.png */,
-				9FBA16B91AFB606E00185CC8 /* star-gray@2x.png */,
-				9FBA16BA1AFB606E00185CC8 /* star.png */,
-				9FBA16BB1AFB606E00185CC8 /* star@2x.png */,
-			);
-			path = SARate;
-			sourceTree = "<group>";
-		};
-		9FBA16B41AFB606E00185CC8 /* iRate */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA16B51AFB606E00185CC8 /* iRate.bundle */,
-				9FBA16B61AFB606E00185CC8 /* iRate.h */,
-				9FBA16B71AFB606E00185CC8 /* iRate.m */,
-			);
-			path = iRate;
-			sourceTree = "<group>";
-		};
-		9FCDDD3119C745350007B3F2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FF06DF71B0A3C20000C76A2 /* Bolts.framework */,
-				9FF06DF81B0A3C20000C76A2 /* Parse.framework */,
-				9FF06DF91B0A3C20000C76A2 /* ParseCrashReporting.framework */,
-				9FF06DFA1B0A3C20000C76A2 /* ParseUI.framework */,
-				9FD7EA251A9343C600979903 /* CoreData.framework */,
-				9FD7EA231A9343B800979903 /* AdSupport.framework */,
-				9FD791A91A73C5CC00E205EC /* parse-library-1.6.2 */,
-				9FCDDD4C19C746CB0007B3F2 /* SystemConfiguration.framework */,
-				9FCDDD4819C7468A0007B3F2 /* Security.framework */,
-				9FCDDD4619C746820007B3F2 /* QuartzCore.framework */,
-				9FCDDD4419C746770007B3F2 /* MobileCoreServices.framework */,
-				9FCDDD4219C7466A0007B3F2 /* libz.dylib */,
-				9FD791B61A73C7A600E205EC /* libsqlite3.dylib */,
-				9FD791B41A73C79600E205EC /* libstdc++.6.dylib */,
-				9FCDDD4019C746580007B3F2 /* CoreLocation.framework */,
-				9FCDDD3E19C7464B0007B3F2 /* CoreGraphics.framework */,
-				9FCDDD3C19C7463F0007B3F2 /* CFNetwork.framework */,
-				9FCDDD3A19C746330007B3F2 /* AudioToolbox.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9FD791A91A73C5CC00E205EC /* parse-library-1.6.2 */ = {
-			isa = PBXGroup;
-			children = (
-				9FD791AA1A73C60100E205EC /* Bolts.framework */,
-				9FD791AB1A73C60100E205EC /* Parse.framework */,
-				9FD791AC1A73C60100E205EC /* ParseCrashReporting.framework */,
-				9FD791AD1A73C60100E205EC /* ParseFacebookUtils.framework */,
-				9FD791AE1A73C60100E205EC /* ParseUI.framework */,
-			);
-			path = "parse-library-1.6.2";
 			sourceTree = "<group>";
 		};
 		9FD7B52A19751795009DFFC0 /* ViewController */ = {
@@ -282,31 +135,13 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
-		9FD7EA1A1A93429600979903 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				9F829C7D1B0E1EDA00A3596C /* libAdIdAccess.a */,
-				9F829C7E1B0E1EDA00A3596C /* libGoogleAnalyticsServices.a */,
-				9F829C731B0E1EA300A3596C /* GAI.h */,
-				9F829C741B0E1EA300A3596C /* GAIDictionaryBuilder.h */,
-				9F829C751B0E1EA300A3596C /* GAIEcommerceFields.h */,
-				9F829C761B0E1EA300A3596C /* GAIEcommerceProduct.h */,
-				9F829C771B0E1EA300A3596C /* GAIEcommerceProductAction.h */,
-				9F829C781B0E1EA300A3596C /* GAIEcommercePromotion.h */,
-				9F829C791B0E1EA300A3596C /* GAIFields.h */,
-				9F829C7A1B0E1EA300A3596C /* GAILogger.h */,
-				9F829C7B1B0E1EA300A3596C /* GAITrackedViewController.h */,
-				9F829C7C1B0E1EA300A3596C /* GAITracker.h */,
-			);
-			name = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
 		9FDBB58C195AE4D3003EFA9E = {
 			isa = PBXGroup;
 			children = (
 				9FDBB597195AE4D4003EFA9E /* LarrabetzuEskuraIOS */,
-				9FDBB5AC195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests */,
 				9FDBB596195AE4D4003EFA9E /* Products */,
+				F40673DB4200F4057871A5E6 /* Pods */,
+				17A1E5A8948ED7B2B8777F47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,10 +168,6 @@
 				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
 				9FF904331A73B912001E4891 /* ApiKeys.plist */,
 				9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */,
-				9FBA16AF1AFB606E00185CC8 /* SARate */,
-				9FE8C1AA1A95FAE000E350DE /* Siren */,
-				9FD7EA1A1A93429600979903 /* GoogleAnalytics */,
-				9FCDDD3119C745350007B3F2 /* Frameworks */,
 				9FDBB598195AE4D4003EFA9E /* Supporting Files */,
 			);
 			path = LarrabetzuEskuraIOS;
@@ -350,30 +181,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9FDBB5AC195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests */ = {
+		F40673DB4200F4057871A5E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9FDBB5AF195AE4D4003EFA9E /* LarrabetzuEskuraIOSTests.swift */,
-				9FDBB5AD195AE4D4003EFA9E /* Supporting Files */,
+				A314DA2C15E01F143B099B77 /* Pods-Larrabetzu.debug.xcconfig */,
+				1793CE20AD476C1C36135709 /* Pods-Larrabetzu.release.xcconfig */,
 			);
-			path = LarrabetzuEskuraIOSTests;
-			sourceTree = "<group>";
-		};
-		9FDBB5AD195AE4D4003EFA9E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9FDBB5AE195AE4D4003EFA9E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9FE8C1AA1A95FAE000E350DE /* Siren */ = {
-			isa = PBXGroup;
-			children = (
-				9FE8C1AB1A95FAE000E350DE /* Siren.bundle */,
-				9FE8C1AC1A95FAE000E350DE /* Siren.swift */,
-			);
-			path = Siren;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,10 +197,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FDBB5B3195AE4D4003EFA9E /* Build configuration list for PBXNativeTarget "Larrabetzu" */;
 			buildPhases = (
+				8AE2839F19D29B700A3C31B3 /* Check Pods Manifest.lock */,
 				9FDBB591195AE4D4003EFA9E /* Sources */,
 				9FDBB592195AE4D4003EFA9E /* Frameworks */,
 				9FDBB593195AE4D4003EFA9E /* Resources */,
 				9FB8ABC61A73E82F0076C60C /* ShellScript */,
+				95EDAC1489E37BE2ADCC10D7 /* Copy Pods Resources */,
+				A559618F688C738B28157A0C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,20 +263,44 @@
 			files = (
 				9FF904341A73B912001E4891 /* ApiKeys.plist in Resources */,
 				9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */,
-				9FBA16C21AFB606E00185CC8 /* star.png in Resources */,
-				9FE8C1AD1A95FAE000E350DE /* Siren.bundle in Resources */,
 				9FB577BF1A4C4917006137C0 /* Launch Screen.xib in Resources */,
 				9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */,
-				9FBA16C31AFB606E00185CC8 /* star@2x.png in Resources */,
-				9FBA16BE1AFB606E00185CC8 /* iRate.bundle in Resources */,
-				9FBA16C01AFB606E00185CC8 /* star-gray.png in Resources */,
-				9FBA16C11AFB606E00185CC8 /* star-gray@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8AE2839F19D29B700A3C31B3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95EDAC1489E37BE2ADCC10D7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9FB8ABC61A73E82F0076C60C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -473,6 +314,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=/usr/local/bin:$PATH\ncd /Users/gorkaercilla/Documents/Cursos/Programacion/Parse:CloudCode/larrabetzuEskura/cloud\n\nparse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nTAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
 		};
+		A559618F688C738B28157A0C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -480,7 +336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBA16BC1AFB606E00185CC8 /* SARate.m in Sources */,
 				9FB3528419631BED00099645 /* Berriak.swift in Sources */,
 				9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */,
 				9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */,
@@ -491,8 +346,6 @@
 				9F7EE79519768A8800485B79 /* EkintzaViewController.swift in Sources */,
 				9F54139C19C9D8840075C6EA /* NortzukViewController.swift in Sources */,
 				9F3E43C41973D7FF0060B2FB /* EkintzakTableViewCell.swift in Sources */,
-				9FE8C1AE1A95FAE000E350DE /* Siren.swift in Sources */,
-				9FBA16BF1AFB606E00185CC8 /* iRate.m in Sources */,
 				9F403A431A98AF2700155055 /* PageItemController.swift in Sources */,
 				9F5834CB19D1CEA000D6FD51 /* ElkarteakViewController.swift in Sources */,
 				9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */,
@@ -502,7 +355,6 @@
 				9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */,
 				9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */,
 				9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */,
-				9FBA16BD1AFB606E00185CC8 /* SARateViewController.m in Sources */,
 				9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */,
 				9FC42A081A4D8D9E00954105 /* Internet.swift in Sources */,
 			);
@@ -525,7 +377,7 @@
 		9FDBB5B1195AE4D4003EFA9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -558,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -570,7 +422,7 @@
 		9FDBB5B2195AE4D4003EFA9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -596,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -606,50 +458,36 @@
 		};
 		9FDBB5B4195AE4D4003EFA9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A314DA2C15E01F143B099B77 /* Pods-Larrabetzu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LarrabetzuEskuraIOS/parse-library-1.6.2",
-					"$(PROJECT_DIR)/LarrabetzuEskuraIOS/parse-library-1.7.2",
-				);
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LarrabetzuEskuraIOS",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
-				PROVISIONING_PROFILE = "fed78feb-dc65-491d-8640-fa9a096d4d7b";
+				PROVISIONING_PROFILE = "99a3bd8c-7e4e-4a80-854e-85743f7ff7b4";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
 			};
 			name = Debug;
 		};
 		9FDBB5B5195AE4D4003EFA9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1793CE20AD476C1C36135709 /* Pods-Larrabetzu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LarrabetzuEskuraIOS/parse-library-1.6.2",
-					"$(PROJECT_DIR)/LarrabetzuEskuraIOS/parse-library-1.7.2",
-				);
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LarrabetzuEskuraIOS",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
-				PROVISIONING_PROFILE = "fed78feb-dc65-491d-8640-fa9a096d4d7b";
+				PROVISIONING_PROFILE = "fbe76b36-4018-4bd6-88b1-d5dabb977d62";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
 			};
 			name = Release;

@@ -1,4 +1,6 @@
 import UIKit
+import Parse
+
 
 class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Constants and Variables
@@ -62,19 +64,16 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
         let query = PFQuery(className:"Abisuak")
         query.orderByAscending("createdAt")
         query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            
+            (objects:[PFObject]?, error:NSError?) -> Void in
             if error == nil {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
-                if let objects = objects as? [PFObject] {
-                    self.abisuak = objects
-                    self.tableView.reloadData()
-                    self.tableView.hidden = false
-                    self.activityIndicator.removeFromSuperview()
-                    self.hiddenEmptyCell()
-                }
+                self.abisuak = objects!
+                self.tableView.reloadData()
+                self.tableView.hidden = false
+                self.activityIndicator.removeFromSuperview()
+                self.hiddenEmptyCell()
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")

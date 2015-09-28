@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9052" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9040"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,14 +25,14 @@
                                 <items/>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andramari" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-gB-Oj2">
-                                <rect key="frame" x="0.0" y="65" width="600" height="338"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="338"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="16:9" id="Y2Q-J7-Gma"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VBS-7e-ff2">
-                                <rect key="frame" x="0.0" y="403" width="600" height="148"/>
+                                <rect key="frame" x="0.0" y="382" width="600" height="169"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="164" width="640" height="419"/>
@@ -53,7 +53,7 @@
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="width" secondItem="N5E-gB-Oj2" secondAttribute="height" multiplier="300:137" id="L47-6T-P3x"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="leading" secondItem="iQr-d4-Ar2" secondAttribute="leading" id="YHa-Do-Y9A"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="trailing" secondItem="iQr-d4-Ar2" secondAttribute="trailing" id="bzE-bx-tba"/>
-                            <constraint firstItem="N5E-gB-Oj2" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="21" id="kOH-3C-mCK"/>
+                            <constraint firstItem="iQr-d4-Ar2" firstAttribute="bottom" secondItem="N5E-gB-Oj2" secondAttribute="top" id="kOH-3C-mCK"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="top" secondItem="N5E-gB-Oj2" secondAttribute="bottom" id="mGE-mG-wmf"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="VBS-7e-ff2" secondAttribute="bottom" id="tnm-Bt-SLQ"/>
                             <constraint firstItem="VBS-7e-ff2" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="zz2-Mc-C6Z"/>
@@ -1331,7 +1331,7 @@ Cg
         <image name="Berrriak" width="30" height="30"/>
         <image name="Elkarteak" width="30" height="30"/>
         <image name="Hobespenak" width="30" height="30"/>
-        <image name="andramari" width="527" height="298"/>
+        <image name="andramari" width="1054" height="596"/>
         <image name="mapa" width="30" height="30"/>
         <image name="ordua" width="30" height="30"/>
     </resources>

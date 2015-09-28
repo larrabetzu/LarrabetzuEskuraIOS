@@ -40,8 +40,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.hiddenEmptyCell()
         
         
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -129,7 +127,8 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             pageView.hidesBottomBarWhenPushed = true
             self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
         }
-        
     }
+    
+    
 }
 

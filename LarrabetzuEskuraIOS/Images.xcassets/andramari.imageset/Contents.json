@@ -2,17 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "andramari-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "andramari-1.png"
+      "filename" : "andramari-1.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "andramari.png"
+      "filename" : "andramari.png",
+      "scale" : "3x"
     }
   ],
   "info" : {
