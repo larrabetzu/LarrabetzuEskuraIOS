@@ -62,20 +62,24 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
 
     }
     
-    // MARK: Functions
+    // MARK: - Functions
     func getData(){
         if Internet.isConnectedToNetwork() {
             print("Interneta badago!")
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-                print("gcd")
                 self.ekintzakParseatu.getEkintzak()
+                for view in self.tableView.subviews{
+                    if view.tag == 99{
+                        view.removeFromSuperview()
+                    }
+                }
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                     self.hiddenEmptyCell()
                     self.tableView.hidden = false
                     self.activityIndicator.stopAnimating()
-                    let rows = self.tableView.numberOfRowsInSection(self.tableView.numberOfSections)
+                    let rows = self.tableView.numberOfRowsInSection(0)
                     if(rows == 0){
                         self.addEmptyView()
                     }
@@ -102,11 +106,10 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     
     private func addEmptyView(){
         
-        
         let emptyView = UIView()
         emptyView.frame = view.bounds
         emptyView.tag = 99
-        view.addSubview(emptyView)
+        self.tableView.addSubview(emptyView)
         
         let image = UIImage(named: "Agenda")
         let agendaImageView = UIImageView(image: image)
@@ -117,7 +120,6 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
             image!.size.height * 2)
         emptyView.addSubview(agendaImageView)
         
-        // Label for vibrant text
         let agendaLabel = UILabel(frame: CGRectMake(0, 0, view.frame.width-20, view.frame.height-20))
         agendaLabel.text = "Ez dago ezer agendan"
         agendaLabel.numberOfLines = 2
@@ -125,7 +127,6 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         agendaLabel.sizeToFit()
         agendaLabel.center = view.center
         
-        // Add label to the vibrancy view
         emptyView.addSubview(agendaLabel)
         
     }
