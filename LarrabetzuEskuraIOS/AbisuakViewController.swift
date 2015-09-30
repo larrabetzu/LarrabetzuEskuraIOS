@@ -26,6 +26,7 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
         let currentInstallation = PFInstallation.currentInstallation()
         if(currentInstallation.badge != 0){
             currentInstallation.badge = 0
+            (tabBarController!.tabBar.items![3]).badgeValue = nil
             currentInstallation.saveEventually()
         }
     }

@@ -28,14 +28,20 @@ class HobespenakTableViewController: UITableViewController {
             postNumeroaLabel.text = String(postNumeroa)
         }
         
-        let currentInstallation = PFInstallation.currentInstallation()
-        self.abisuakIrakurriBarik.text = "\(currentInstallation.badge)"
-        
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let currentInstallation = PFInstallation.currentInstallation()
+        self.abisuakIrakurriBarik.text = "\(currentInstallation.badge)"
+        if(currentInstallation.badge != 0){
+            self.abisuakIrakurriBarik.textColor = UIColor.redColor()
+        }else{
+            self.abisuakIrakurriBarik.textColor = UIColor.lightGrayColor()
+        }
+        
         
     }
     

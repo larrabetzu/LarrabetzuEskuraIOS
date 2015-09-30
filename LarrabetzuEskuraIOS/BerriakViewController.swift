@@ -1,4 +1,5 @@
 import UIKit
+import Parse
 
 class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -25,8 +26,9 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
+        self.setBadge()
+        
         if Internet.isConnectedToNetwork() {
-            
             berriakParseatu.getPostak()
             self.tableView.reloadData()
             self.hiddenEmptyCell()
@@ -127,6 +129,16 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             pageView.hidesBottomBarWhenPushed = true
             self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
         }
+    }
+    
+    private func setBadge(){
+        let currentInstallation = PFInstallation.currentInstallation()
+        if(currentInstallation.badge != 0){
+            (tabBarController!.tabBar.items![3]).badgeValue = String(currentInstallation.badge)
+        }else{
+            (tabBarController!.tabBar.items![3]).badgeValue = nil
+        }
+        
     }
     
     
