@@ -461,15 +461,15 @@
 			baseConfigurationReference = A314DA2C15E01F143B099B77 /* Pods-Larrabetzu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gorka Ercilla (2CG6DRL7NP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gorka Ercilla (2CG6DRL7NP)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
-				PROVISIONING_PROFILE = "99a3bd8c-7e4e-4a80-854e-85743f7ff7b4";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
 			};
 			name = Debug;
@@ -479,15 +479,15 @@
 			baseConfigurationReference = 1793CE20AD476C1C36135709 /* Pods-Larrabetzu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gorka Ercilla (T355TDU55C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gorka Ercilla (T355TDU55C)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
-				PROVISIONING_PROFILE = "fbe76b36-4018-4bd6-88b1-d5dabb977d62";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LarrabetzuEskuraIOS/bridgingHeader.h";
 			};
 			name = Release;

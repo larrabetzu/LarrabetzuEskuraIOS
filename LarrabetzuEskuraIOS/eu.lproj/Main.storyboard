@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -715,7 +715,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HA-Rn-IHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5979" y="5105"/>
+            <point key="canvasLocation" x="4731" y="5077"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="x1Y-Qu-bkB">
@@ -850,7 +850,7 @@ Cg
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="8Vd-t0-KqJ" kind="show" id="01x-aX-PG2"/>
+                                            <segue destination="G6L-y5-Kco" kind="show" id="Ohq-69-OSZ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="tiq-9c-at5" detailTextLabel="EPg-9Y-3bB" style="IBUITableViewCellStyleValue1" id="P8I-R4-dlR">
@@ -877,7 +877,7 @@ Cg
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="bRB-wH-9dZ" kind="show" id="NKd-LW-scB"/>
+                                            <segue destination="2iW-K4-Xxp" kind="show" id="YH0-YY-ryp"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -925,7 +925,7 @@ Cg
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="HaZ-ye-9Lg" kind="show" id="wd2-m5-BIT"/>
+                                            <segue destination="kg0-u6-f3Y" kind="show" id="Qo4-Ud-6v2"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -949,7 +949,7 @@ Cg
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ZpO-tU-nai" kind="show" id="3yf-AF-47Q"/>
+                                            <segue destination="mVc-kf-67W" kind="show" id="Tsd-wB-Rex"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" textLabel="xHC-S0-CRl" style="IBUITableViewCellStyleDefault" id="h37-Wm-A4S">
@@ -1085,7 +1085,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKG-kW-bQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5971" y="2571"/>
+            <point key="canvasLocation" x="4723" y="2543"/>
         </scene>
         <!--Elkarteak-->
         <scene sceneID="vHk-RY-C8P">
@@ -1125,24 +1125,6 @@ Cg
             </objects>
             <point key="canvasLocation" x="2723" y="3476"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TD7-HU-TcO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Vd-t0-KqJ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CS0-B8-zj5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="G6L-y5-Kco" kind="relationship" relationship="rootViewController" id="5Oy-Ae-IUk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B9V-eJ-9fG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5159" y="2571"/>
-        </scene>
         <!--Abisuak View Controller-->
         <scene sceneID="v3a-Ko-YMn">
             <objects>
@@ -1158,7 +1140,7 @@ Cg
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vlc-Tn-7lv">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iCl-FD-kSf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iCl-FD-kSf">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1171,7 +1153,7 @@ Cg
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zn0-2x-iHN">
                                                     <rect key="frame" x="8" y="10" width="584" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1234,7 +1216,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLj-NK-kwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5971" y="3409"/>
+            <point key="canvasLocation" x="4723" y="3381"/>
         </scene>
         <!--Blogak Aukeran Table View Controller-->
         <scene sceneID="Lhr-Y6-YFT">
@@ -1263,61 +1245,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vck-2R-TMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5960" y="4267"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tBa-sf-1pG">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HaZ-ye-9Lg" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZQm-qa-pKU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kg0-u6-f3Y" kind="relationship" relationship="rootViewController" id="BBL-ud-HXM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vv-J0-JLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5148" y="4267"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hdL-FI-vUv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZpO-tU-nai" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tML-3d-ynm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="mVc-kf-67W" kind="relationship" relationship="rootViewController" id="27Q-6W-z3b"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oXX-KB-Dby" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5167" y="5105"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="itT-0v-BQL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bRB-wH-9dZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gWI-aG-KzV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2iW-K4-Xxp" kind="relationship" relationship="rootViewController" id="xLq-yE-XgF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vtr-QL-glP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5159" y="3409"/>
+            <point key="canvasLocation" x="4712" y="4239"/>
         </scene>
     </scenes>
     <resources>

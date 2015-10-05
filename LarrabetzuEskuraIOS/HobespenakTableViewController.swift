@@ -41,8 +41,13 @@ class HobespenakTableViewController: UITableViewController {
         }else{
             self.abisuakIrakurriBarik.textColor = UIColor.lightGrayColor()
         }
+        self.hidesBottomBarWhenPushed = true
         
-        
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.hidesBottomBarWhenPushed = false
     }
     
     // MARK: - Delegates
