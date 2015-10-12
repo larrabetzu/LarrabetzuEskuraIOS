@@ -1,7 +1,8 @@
 import UIKit
+import SafariServices
 import Parse
 
-class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
+class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate{
 
     // MARK: Constants and Variables
     @IBOutlet var tableView: UITableView!
@@ -55,7 +56,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.appPresentation()
     }
     
-    // MARK: Delegates
+    // MARK: - Delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return berriakParseatu.getPostNumeroa()
     }
@@ -63,7 +64,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         let postBat = berriakParseatu.getPostBat(indexPath.row)
             
@@ -75,14 +75,25 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-        webView.hidesBottomBarWhenPushed = true
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
-        self.navigationController?.pushViewController(webView, animated: true)
-        webView.postLink = berriakParseatu.getLink(indexPath.row)
+        if #available(iOS 9.0, *) {
+            let svc = SFSafariViewController(URL: NSURL(string: berriakParseatu.getLink(indexPath.row))!)
+            svc.delegate = self
+            self.presentViewController(svc, animated: true, completion: nil)
+        } else {
+            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
+            webView.hidesBottomBarWhenPushed = true
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
+            self.navigationController?.pushViewController(webView, animated: true)
+            webView.postLink = berriakParseatu.getLink(indexPath.row)
+        }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    @available(iOS 9.0, *)
+    func safariViewControllerDidFinish(controller: SFSafariViewController){
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: Functions

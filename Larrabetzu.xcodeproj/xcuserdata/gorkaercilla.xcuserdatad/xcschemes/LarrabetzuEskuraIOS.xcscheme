@@ -60,7 +60,9 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "NO">
+      allowLocationSimulation = "NO"
+      language = "eu"
+      region = "ES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
