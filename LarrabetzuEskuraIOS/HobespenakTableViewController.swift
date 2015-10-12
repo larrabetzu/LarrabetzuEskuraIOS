@@ -28,7 +28,6 @@ class HobespenakTableViewController: UITableViewController {
             postNumeroaLabel.text = String(postNumeroa)
         }
         
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,8 +40,11 @@ class HobespenakTableViewController: UITableViewController {
         }else{
             self.abisuakIrakurriBarik.textColor = UIColor.lightGrayColor()
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.hidesBottomBarWhenPushed = true
-        
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -110,6 +112,5 @@ class HobespenakTableViewController: UITableViewController {
         let url = NSURL(string: "mailto:\(email)")
         UIApplication.sharedApplication().openURL(url!)
     }
-    
     
 }
