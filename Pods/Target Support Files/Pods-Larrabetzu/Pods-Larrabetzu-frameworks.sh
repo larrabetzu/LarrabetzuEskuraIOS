@@ -53,11 +53,13 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Larrabetzu/Bolts.framework'
+  install_framework 'Pods-Larrabetzu/Magic.framework'
   install_framework 'Pods-Larrabetzu/Parse.framework'
   install_framework 'Pods-Larrabetzu/Siren.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Larrabetzu/Bolts.framework'
+  install_framework 'Pods-Larrabetzu/Magic.framework'
   install_framework 'Pods-Larrabetzu/Parse.framework'
   install_framework 'Pods-Larrabetzu/Siren.framework'
 fi

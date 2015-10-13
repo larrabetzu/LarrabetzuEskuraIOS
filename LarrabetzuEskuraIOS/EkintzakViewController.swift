@@ -1,4 +1,5 @@
 import UIKit
+import Magic
 
 class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , UITableViewDataSource {
     
@@ -12,7 +13,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        magic("viewDidLoad")
         
         //NabigationBar
         navigationController?.navigationBar.barTintColor = grisaColor
@@ -65,7 +66,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     // MARK: - Functions
     func getData(){
         if Internet.isConnectedToNetwork() {
-            print("Interneta badago!")
+            magic("Interneta badago!")
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 self.ekintzakParseatu.getEkintzak()
@@ -86,7 +87,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
                 })
             })
         } else {
-            print("Ez dago internetik")
+            magic("Ez dago internetik")
             self.activityIndicator.stopAnimating()
         }
     }

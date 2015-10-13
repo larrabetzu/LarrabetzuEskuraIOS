@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Magic.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23CFEEF60B6287B57B067C717C565855</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>294DC2682DDF4C2EB731807977D12511</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6197A77D5CD6925076AB1230150D561</key>
+		<key>2FC4E0D3000EC8E38ADA863FEAB1A76C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6CD61CB1CD6AC64D62453FAEAC9E6F4</key>
+		<key>666D08558561D1907519D0A75DA01E4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B161C8977AA8A5DF040E91E81E1B0D9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F37A81EDAE3BF5853764F17BCBCC014F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

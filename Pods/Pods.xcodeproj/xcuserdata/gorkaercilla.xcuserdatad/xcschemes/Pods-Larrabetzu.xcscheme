@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B67EB61DB08F4F29B4D7FC5"
+               BlueprintIdentifier = "034220B6399C492FFC6871EF"
                BuildableName = "Pods_Larrabetzu.framework"
                BlueprintName = "Pods-Larrabetzu"
                ReferencedContainer = "container:Pods.xcodeproj">

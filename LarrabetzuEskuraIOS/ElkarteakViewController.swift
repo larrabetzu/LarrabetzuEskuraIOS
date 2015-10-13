@@ -1,4 +1,5 @@
 import UIKit
+import Magic
 
 class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -24,7 +25,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         tableView.hidden = true
         
         if Internet.isConnectedToNetwork() {
-            print("Interneta badago!")
+            magic("Interneta badago!")
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 self.ElkarteakParser.getElkarteak()
@@ -36,7 +37,7 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
                 })
             })
         } else {
-            print("Ez dago internetik")
+            magic("Ez dago internetik")
             self.activityIndicator.stopAnimating()
         }
 

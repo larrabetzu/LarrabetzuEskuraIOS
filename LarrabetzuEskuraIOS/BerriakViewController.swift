@@ -1,6 +1,8 @@
 import UIKit
 import SafariServices
 import Parse
+import Magic
+
 
 class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate{
 
@@ -35,7 +37,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             self.hiddenEmptyCell()
             
         } else {
-            print("Ez dago internetik")
+            magic("Ez dago internetik")
             let alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
             alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
             self.presentViewController(alertInterneta, animated: true, completion: nil)
@@ -47,7 +49,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
+        magic("viewWillAppear")
         navigationItem.title = "Larrabetzu #eskura"
         self.screenName = "Berriak"
     }
@@ -110,7 +112,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             })
             
         } else {
-            print("Ez dago internetik")
+            magic("Ez dago internetik")
             let alertInterneta = UIAlertController(title: "Ez daukazu internet konexiorik", message: "Aplikaziok internet konexioa behar du. Begiratu ondo dagoela.", preferredStyle: .Alert)
             alertInterneta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default , handler: nil))
             self.presentViewController(alertInterneta, animated: true, completion: nil)

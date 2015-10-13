@@ -1,6 +1,7 @@
 import UIKit
 import Siren
 import Parse
+import Magic
 
 
 @UIApplicationMain
@@ -61,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        print("didRegisterForRemoteNotificationsWithDeviceToken")
+        magic("didRegisterForRemoteNotificationsWithDeviceToken")
         
         let currentInstallation = PFInstallation.currentInstallation()
         
@@ -72,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print("failed to register for remote notifications:  \(error)")
+        magic("failed to register for remote notifications:  \(error)")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
@@ -81,9 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if ( application.applicationState == UIApplicationState.Inactive || application.applicationState == UIApplicationState.Background ){
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo )
             
-            print("\(userInfo)")
+            magic("\(userInfo)")
             if let url: String = userInfo["url"] as? String{
-                print("\(url)")
+                magic("\(url)")
                 let urlNSURL = NSURL(string: url)!
                 dispatch_async(dispatch_get_main_queue(), {
                     if (UIApplication.sharedApplication().canOpenURL(urlNSURL)){

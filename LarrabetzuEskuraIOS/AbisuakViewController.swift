@@ -1,5 +1,6 @@
 import UIKit
 import Parse
+import Magic
 
 
 class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
@@ -68,7 +69,7 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
             (objects:[PFObject]?, error:NSError?) -> Void in
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) scores.")
+                magic("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
                 self.abisuak = objects!
                 self.tableView.reloadData()
@@ -77,7 +78,7 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
                 self.hiddenEmptyCell()
             } else {
                 // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
+                magic("Error: \(error!) \(error!.userInfo)")
             }
         }
     }

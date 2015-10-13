@@ -6,6 +6,7 @@ target 'Larrabetzu' do
 pod 'Parse', '~> 1.8.5'
 pod 'GoogleAnalytics','~>3.13.0'
 pod 'Siren'
+pod 'Magic'
 
 use_frameworks!
 

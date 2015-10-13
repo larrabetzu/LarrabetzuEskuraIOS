@@ -1,5 +1,6 @@
 import UIKit
 import Parse
+import Magic
 
 class AbisuakAukeranTableViewController: UITableViewController {
 
@@ -18,7 +19,7 @@ class AbisuakAukeranTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let channels = PFInstallation.currentInstallation().channels as? [String]{
-            print("\(channels)")
+            magic("\(channels)")
             
             for item in channels{
                 switch(item){

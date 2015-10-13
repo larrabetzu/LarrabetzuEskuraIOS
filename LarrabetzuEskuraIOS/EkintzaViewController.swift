@@ -1,4 +1,5 @@
 import UIKit
+import Magic
 
 class EkintzaViewController: GAITrackedViewController {
     
@@ -99,7 +100,7 @@ class EkintzaViewController: GAITrackedViewController {
         self.activityIndicator.startAnimating()
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
-            print("gcd")
+            magic("gcd")
             var urlString: NSString = self.kartelaLink
             
             if("peg" == urlString.substringFromIndex(urlString.length-3)){
@@ -120,7 +121,7 @@ class EkintzaViewController: GAITrackedViewController {
                     self.activityIndicator.stopAnimating()
                     
                 }else {
-                    print("Error: \(error!.localizedDescription)")
+                    magic("Error: \(error!.localizedDescription)")
                 }
             })
        })
