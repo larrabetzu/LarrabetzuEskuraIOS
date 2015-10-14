@@ -1,7 +1,8 @@
 import UIKit
 import Parse
+import MessageUI
 
-class HobespenakTableViewController: UITableViewController {
+class HobespenakTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     // MARK: - Constants and Variables
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -64,6 +65,12 @@ class HobespenakTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    // MARK: MFMailComposeViewControllerDelegate
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     // MARK: - Functions
     private func setPostNumeroa(){
         let alert = UIAlertController(
@@ -108,9 +115,37 @@ class HobespenakTableViewController: UITableViewController {
     }
     
     private func emailaBidali(){
-        let email = "ercillagorka@gmail.com"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
     }
+    
+    private func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.navigationBar.tintColor = UIColor.whiteColor()
+        mailComposerVC.navigationBar.barTintColor = grisaColor
+        mailComposerVC.navigationItem.title = "Iritzi emaila"
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        mailComposerVC.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        mailComposerVC.setToRecipients(["ercillagorka@gmail.com"])
+        mailComposerVC.setSubject("Larrabetzu #eskura")
+        
+        return mailComposerVC
+    }
+    
+    private func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(
+            title: "Ezin da emailik bidali",
+            message: "Mesedez egiaztatu email konfigurazio ondo dagoela eta saiatu berriro.",
+            delegate: self,
+            cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    
     
 }

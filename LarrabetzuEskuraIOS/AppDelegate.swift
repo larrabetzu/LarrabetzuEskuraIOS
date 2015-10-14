@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
-        print("didReceiveRemoteNotification")
+        magic("didReceiveRemoteNotification")
         PFPush.handlePush(userInfo)
         if ( application.applicationState == UIApplicationState.Inactive || application.applicationState == UIApplicationState.Background ){
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo )
