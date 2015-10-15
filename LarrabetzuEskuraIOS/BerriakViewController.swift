@@ -6,13 +6,16 @@ import Magic
 
 class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate{
 
+    
     // MARK: Constants and Variables
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var argazkiaUIImageView: UIImageView!
     private var refreshControl:UIRefreshControl!
     private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     private let berriakParseatu : Berriak = Berriak()
+    private var linkConfig : String?
     
-    // MARK: lifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,11 +33,20 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
         
         self.setBadge()
+
+        let gesture = UITapGestureRecognizer()
+        gesture.numberOfTapsRequired = 1
+        gesture.numberOfTouchesRequired = 1
+        gesture.addTarget(self, action: "imageTap")
+        argazkiaUIImageView.addGestureRecognizer(gesture)
+        argazkiaUIImageView.userInteractionEnabled = true
+        
         
         if Internet.isConnectedToNetwork() {
             berriakParseatu.getPostak()
             self.tableView.reloadData()
             self.hiddenEmptyCell()
+            self.getMenukoArgazkia()
             
         } else {
             magic("Ez dago internetik")
@@ -66,7 +78,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellBerria")
-        
         let postBat = berriakParseatu.getPostBat(indexPath.row)
             
         cell.textLabel?.text = postBat.title
@@ -76,19 +87,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if #available(iOS 9.0, *) {
-            let svc = SFSafariViewController(URL: NSURL(string: berriakParseatu.getLink(indexPath.row))!)
-            svc.delegate = self
-            self.presentViewController(svc, animated: true, completion: nil)
-        } else {
-            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-            webView.hidesBottomBarWhenPushed = true
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
-            self.navigationController?.pushViewController(webView, animated: true)
-            webView.postLink = berriakParseatu.getLink(indexPath.row)
-        }
-        
+        self.openWeb(berriakParseatu.getLink(indexPath.row))
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
@@ -98,10 +97,9 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: Functions
+    // MARK: - Functions
     private func getData(){
         if Internet.isConnectedToNetwork() {
-            
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 self.berriakParseatu.getPostak()
@@ -121,6 +119,56 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
 
     }
     
+    func refresh(sender:AnyObject){
+        getData()
+        self.refreshControl.endRefreshing()
+    }
+    
+    func imageTap() {
+        if let link = self.linkConfig{
+            self.openWeb(link)
+        }
+    }
+    
+    private func openWeb(link: String){
+        if #available(iOS 9.0, *) {
+            let svc = SFSafariViewController(URL: NSURL(string: link)!)
+            svc.delegate = self
+            self.presentViewController(svc, animated: true, completion: nil)
+        } else {
+            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
+            webView.hidesBottomBarWhenPushed = true
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
+            self.navigationController?.pushViewController(webView, animated: true)
+            webView.postLink = link
+        }
+    }
+    
+    private func getMenukoArgazkia(){
+        PFConfig.getConfigInBackgroundWithBlock {
+            (config: PFConfig?, error: NSError?) -> Void in
+            let noizArte = config?["noizArte"] as? NSDate
+            let oraingoData = NSDate()
+            
+            let compareResult = noizArte?.compare(oraingoData)
+            if compareResult == NSComparisonResult.OrderedDescending {
+                let link = config?["menukoLinka"] as? String
+                self.linkConfig = link
+                
+                let argazkia = config?["menukoArgazkia"] as? PFFile
+                argazkia?.getDataInBackgroundWithBlock {
+                    (imageData: NSData?, error: NSError?) -> Void in
+                    if error == nil {
+                        if let imageData = imageData {
+                            self.argazkiaUIImageView.image = UIImage(data:imageData)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: - Design Functions
     private func hiddenEmptyCell(){
         let tblView =  UIView(frame: CGRectZero)
         self.tableView.tableFooterView = tblView
@@ -128,14 +176,8 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.tableView.backgroundColor = UIColor.clearColor()
     }
     
-    func refresh(sender:AnyObject){
-        getData()
-        self.refreshControl.endRefreshing()
-    }
-    
     private func appPresentation(){
         let previousAppVersion: Int = NSUserDefaults.standardUserDefaults().integerForKey("instaledAppVersion")
-            
         if (previousAppVersion == 0){
             let pageView  = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
@@ -151,9 +193,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         }else{
             (tabBarController!.tabBar.items![3]).badgeValue = nil
         }
-        
     }
-    
     
 }
 
