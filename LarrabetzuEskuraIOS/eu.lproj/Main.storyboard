@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -498,219 +497,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ka-uP-Uc5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="559"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gnD-h1-d8h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Zer da:">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Larrabetzu eskura, telefono mugikorretarako aplikazio bat da. Herriko informazioa eta ekitaldien agenda modu automatikoan eskaintzen ditu eskura larrabetzu.net gunean.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="16" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Zertarako:">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Aplikazio honek eskura jartzen du gure herrian sortzen den informazio guztia. Informazio dinamikoa. Parte hartzera gonbidatzen zaitu, modu aktiboan.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Zelan erabiltzen da:">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Erraza da. Deskargatu ostean, zure mugikorreko pantailan Larrabetzu aplikazioaren irudia izango duzu, ostean klik egiten duzun bakoitzean herriko informazioa edo kultur ekitaldi guztien berri izango duzu.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Zelan parte hartu:">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Garrantzitsua da elkarteetako lagunek ere informazioa gehitzea aplikazioan, antolatzen den guztiaren berri emanez. Irudiak, deialdiak, orduak, lekua adieraziz.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Hurrengo geltokia:">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Aplikazioa garatzen eta hobetzen jarraitu nahi dugu. Horretarako app hau zenbat eta gehiago erabili, zenbat eta parte hartze handiagoa izan... hobeto jakingo dugu gure beharrizanen gainean, eta horren arabera berritu eta hobetu ahal izango dugu. Guztion eskura dago.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Garapena:">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">2013ko urrian aurkeztu genuen sarean Eskura aplikazioa. Gorka Ercilla eta Patxi Gaztelumendiren artean sortu genuen lehen bertsioa. Aurrerantzean bertsio hobetuak eta irekiak egiten jarraitzea da gure asmoa; gehiago ikusi, ikasi eta berrituz.
-
-2014ko ekainean Sergio Peñak webApp bat garatu du eta sarean eskaini dugu plataforma guztietarako prestatuta: larrabetzu.net/app
-
-2014ko irailean Gorka Ercillak ios App-a garatu du eta App Storean eskaini dugu.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NortzukTableViewCell" rowHeight="100" id="czd-qh-Muw" customClass="NortzukTableViewCell" customModule="Larrabetzu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czd-qh-Muw" id="DO7-T3-JzP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVq-5J-JbH">
+                                                    <rect key="frame" x="8" y="8" width="584" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIh-o7-21b">
+                                                    <rect key="frame" x="8" y="36" width="584" height="55"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zVq-5J-JbH" secondAttribute="trailing" id="JEB-oO-4aq"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="zVq-5J-JbH" secondAttribute="leading" id="LEW-HP-8lH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="nIh-o7-21b" secondAttribute="trailing" id="M2l-8x-Dav"/>
+                                                <constraint firstItem="nIh-o7-21b" firstAttribute="top" secondItem="zVq-5J-JbH" secondAttribute="bottom" constant="8" symbolic="YES" id="Sb6-Rd-56A"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="nIh-o7-21b" secondAttribute="leading" id="VW7-HQ-AEM"/>
+                                                <constraint firstAttribute="topMargin" secondItem="zVq-5J-JbH" secondAttribute="top" id="X8e-UF-WLx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nIh-o7-21b" secondAttribute="bottom" id="yLk-vN-ok8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="erantzuna" destination="nIh-o7-21b" id="EfD-Lr-q8q"/>
+                                            <outlet property="galdera" destination="zVq-5J-JbH" id="IuI-07-tQX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mVc-kf-67W" id="vEA-9h-T9f"/>
+                                    <outlet property="delegate" destination="mVc-kf-67W" id="MAy-Ox-ZVg"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RbT-tC-5ni" firstAttribute="top" secondItem="4Ka-uP-Uc5" secondAttribute="bottomMargin" id="ECf-oC-oMk"/>
-                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="leading" secondItem="ruF-j3-ZdC" secondAttribute="leading" id="KnX-q9-61S"/>
-                            <constraint firstItem="4Ka-uP-Uc5" firstAttribute="top" secondItem="ruF-j3-ZdC" secondAttribute="top" id="bh3-Fo-afz"/>
-                            <constraint firstAttribute="trailing" secondItem="4Ka-uP-Uc5" secondAttribute="trailing" id="s9E-Np-f41"/>
+                            <constraint firstItem="gnD-h1-d8h" firstAttribute="leading" secondItem="ruF-j3-ZdC" secondAttribute="leading" id="A7G-dg-WIn"/>
+                            <constraint firstItem="gnD-h1-d8h" firstAttribute="top" secondItem="ruF-j3-ZdC" secondAttribute="top" id="GNq-CT-fEX"/>
+                            <constraint firstAttribute="bottom" secondItem="gnD-h1-d8h" secondAttribute="bottom" id="aQb-vp-WD4"/>
+                            <constraint firstAttribute="trailing" secondItem="gnD-h1-d8h" secondAttribute="trailing" id="bz9-CP-Wjx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A6q-10-Lzv"/>
                     <connections>
-                        <outlet property="nortzukTextView" destination="4Ka-uP-Uc5" id="5iI-bH-XcQ"/>
+                        <outlet property="tableView" destination="gnD-h1-d8h" id="i1F-sd-4hc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HA-Rn-IHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
