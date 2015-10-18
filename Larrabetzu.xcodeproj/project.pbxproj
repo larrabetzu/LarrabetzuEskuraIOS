@@ -33,7 +33,7 @@
 		9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904311A73B7EF001E4891 /* PushNotificationController.swift */; };
 		9FF904341A73B912001E4891 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF904331A73B912001E4891 /* ApiKeys.plist */; };
 		9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904351A73B991001E4891 /* ApiKeys.swift */; };
-		BA2A04D4EC1FA1993260B4F6 /* Pods_Larrabetzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BA2A04D4EC1FA1993260B4F6 /* Pods_Larrabetzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
