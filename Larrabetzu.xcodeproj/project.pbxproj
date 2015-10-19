@@ -30,7 +30,6 @@
 		9FDBB5A2195AE4D4003EFA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */; };
 		9FDBB5A4195AE4D4003EFA9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */; };
 		9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */; };
-		9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904311A73B7EF001E4891 /* PushNotificationController.swift */; };
 		9FF904341A73B912001E4891 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF904331A73B912001E4891 /* ApiKeys.plist */; };
 		9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904351A73B991001E4891 /* ApiKeys.swift */; };
 		BA2A04D4EC1FA1993260B4F6 /* Pods_Larrabetzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */; };
@@ -65,7 +64,6 @@
 		9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobespenakTableViewController.swift; sourceTree = "<group>"; };
 		9FF904301A73B5A2001E4891 /* bridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridgingHeader.h; sourceTree = "<group>"; };
-		9FF904311A73B7EF001E4891 /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		9FF904331A73B912001E4891 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		9FF904351A73B991001E4891 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		A314DA2C15E01F143B099B77 /* Pods-Larrabetzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Larrabetzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			children = (
 				9F403A421A98AF2700155055 /* PageItemController.swift */,
 				9FC42A071A4D8D9E00954105 /* Internet.swift */,
-				9FF904311A73B7EF001E4891 /* PushNotificationController.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -359,7 +356,6 @@
 				9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */,
 				9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */,
 				9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */,
-				9FF904321A73B7EF001E4891 /* PushNotificationController.swift in Sources */,
 				9FC42A081A4D8D9E00954105 /* Internet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

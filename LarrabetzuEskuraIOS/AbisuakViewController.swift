@@ -22,6 +22,7 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
         super.viewWillAppear(animated)
         self.screenName = "AbisuakView"
     }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let currentInstallation = PFInstallation.currentInstallation()

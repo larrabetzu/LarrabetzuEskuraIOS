@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.whiteColor()
         
+        //Parse.com config
+        let parseApplicationId = valueForAPIKey(keyname: "PARSE_APPLICATION_ID")
+        let parseClientKey     = valueForAPIKey(keyname: "PARSE_CLIENT_KEY")
+        Parse.setApplicationId(parseApplicationId, clientKey: parseClientKey)
+        
         if application.applicationState != UIApplicationState.Background {
             let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
             let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
