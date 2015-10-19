@@ -8,19 +8,24 @@ import Magic
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
-
-    var pushNotificationController:PushNotificationController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
         application.statusBarStyle = .LightContent
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.whiteColor()
         
-        
-        self.pushNotificationController = PushNotificationController()
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        if application.applicationState != UIApplicationState.Background {
+            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
+            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
+            var pushPayload = false
+            if let options = launchOptions {
+                pushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil
+            }
+            if (preBackgroundPush || oldPushHandlerOnly || pushPayload) {
+                PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+            }
+        }
         
         //Google Analytics
         GAI.sharedInstance().trackerWithTrackingId(valueForAPIKey(keyname: "GOOGLE_ANALYTICS-ID"))
@@ -34,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         siren.alertType = .Option
         siren.forceLanguageLocalization = .Basque
         siren.checkVersion(.Weekly)
-        
         
         return true
     }
@@ -67,13 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currentInstallation = PFInstallation.currentInstallation()
         
         currentInstallation.setDeviceTokenFromData(deviceToken)
-        currentInstallation.saveInBackgroundWithBlock { (succeeded, e) -> Void in
-            //code
-        }
+        currentInstallation.saveInBackground()
+        
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        magic("failed to register for remote notifications:  \(error)")
+        if error.code == 3010 {
+            magic("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+        }
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {

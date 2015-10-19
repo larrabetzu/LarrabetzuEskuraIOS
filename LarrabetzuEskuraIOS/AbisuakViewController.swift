@@ -64,20 +64,17 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
     // MARK: - Functions
     private func getAbisuak(){
         let query = PFQuery(className:"Abisuak")
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
             (objects:[PFObject]?, error:NSError?) -> Void in
             if error == nil {
-                // The find succeeded.
                 magic("Successfully retrieved \(objects!.count) scores.")
-                // Do something with the found objects
                 self.abisuak = objects!
                 self.tableView.reloadData()
                 self.tableView.hidden = false
                 self.activityIndicator.removeFromSuperview()
                 self.hiddenEmptyCell()
             } else {
-                // Log details of the failure
                 magic("Error: \(error!) \(error!.userInfo)")
             }
         }
