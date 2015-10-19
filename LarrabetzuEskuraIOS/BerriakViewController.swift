@@ -133,6 +133,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     private func openWeb(link: String){
         if #available(iOS 9.0, *) {
             let svc = SFSafariViewController(URL: NSURL(string: link)!)
+            svc.view.tintColor = UIColor.darkGrayColor()
             svc.delegate = self
             self.presentViewController(svc, animated: true, completion: nil)
         } else {
