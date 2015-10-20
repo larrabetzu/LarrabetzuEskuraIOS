@@ -95,6 +95,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     @available(iOS 9.0, *)
     func safariViewControllerDidFinish(controller: SFSafariViewController){
         controller.dismissViewControllerAnimated(true, completion: nil)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     }
     
     // MARK: - Functions
@@ -135,6 +136,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             let svc = SFSafariViewController(URL: NSURL(string: link)!)
             svc.view.tintColor = UIColor.darkGrayColor()
             svc.delegate = self
+            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
             self.presentViewController(svc, animated: true, completion: nil)
         } else {
             let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
