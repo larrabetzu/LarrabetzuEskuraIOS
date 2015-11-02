@@ -3,11 +3,11 @@ LarrabetzuEskuraIOS
 
 Larrabetzu Eskura IOS
 
-![APP Home](https://github.com/ercillagorka/LarrabetzukoAgenda/blob/master/argazkiak/abisuak.jpg?raw=true)
-![APP Home](https://github.com/ercillagorka/LarrabetzukoAgenda/blob/master/argazkiak/agenda.jpg?raw=true)
-![APP Home](https://github.com/ercillagorka/LarrabetzukoAgenda/blob/master/argazkiak/berriak.jpg?raw=true)
-![APP Home](https://github.com/ercillagorka/LarrabetzukoAgenda/blob/master/argazkiak/elkarteak.jpg?raw=true)
-![APP Home](https://github.com/ercillagorka/LarrabetzukoAgenda/blob/master/argazkiak/hobespenak.jpg?raw=true)
+![APP Home](https://github.com/larrabetzu/LarrabetzuEskuraIOS/blob/master/argazkiak/abisuak.jpg?raw=true)
+![APP Home](https://github.com/larrabetzu/LarrabetzuEskuraIOS/blob/master/argazkiak/agenda.jpg?raw=true)
+![APP Home](https://github.com/larrabetzu/LarrabetzuEskuraIOS/blob/master/argazkiak/berriak.jpg?raw=true)
+![APP Home](https://github.com/larrabetzu/LarrabetzuEskuraIOS/blob/master/argazkiak/elkarteak.jpg?raw=true)
+![APP Home](https://github.com/larrabetzu/LarrabetzuEskuraIOS/blob/master/argazkiak/hobespenak.jpg?raw=true)
 
 
 License
