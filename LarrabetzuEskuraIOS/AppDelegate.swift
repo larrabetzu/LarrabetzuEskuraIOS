@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         magic("didRegisterForRemoteNotificationsWithDeviceToken")
         
         let currentInstallation = PFInstallation.currentInstallation()
-        
         currentInstallation.setDeviceTokenFromData(deviceToken)
         currentInstallation.saveInBackground()
         
