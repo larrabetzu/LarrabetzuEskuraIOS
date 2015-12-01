@@ -58,6 +58,7 @@ public enum SirenVersionCheckType: Int {
 */
 public enum SirenLanguageType: String {
     case Arabic = "ar"
+    case Armenian = "hy"
     case Basque = "eu"
     case ChineseSimplified = "zh-Hans"
     case ChineseTraditional = "zh-Hant"
@@ -74,6 +75,7 @@ public enum SirenLanguageType: String {
     case Korean = "ko"
     case Latvian = "lv"
     case Lithuanian = "lt"
+    case Malay = "ms"
     case Polish = "pl"
     case PortugueseBrazil = "pt"
     case PortuguesePortugal = "pt-PT"
