@@ -69,7 +69,7 @@ class AbisuakViewController: GAITrackedViewController, UITableViewDataSource, UI
         query.findObjectsInBackgroundWithBlock {
             (objects:[PFObject]?, error:NSError?) -> Void in
             if error == nil {
-                magic("Successfully retrieved \(objects!.count) scores.")
+                magic("Successfully retrieved \(objects!.count) objects.")
                 self.abisuak = objects!
                 self.tableView.reloadData()
                 self.tableView.hidden = false

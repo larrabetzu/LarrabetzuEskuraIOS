@@ -31,8 +31,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         self.refreshControl.backgroundColor = grisaColor
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.insertSubview(refreshControl, aboveSubview: tableView)
-        
-        self.setBadge()
 
         let gesture = UITapGestureRecognizer()
         gesture.numberOfTapsRequired = 1
@@ -188,15 +186,5 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
             self.navigationController?.presentViewController(pageView, animated: true, completion: nil)
         }
     }
-    
-    private func setBadge(){
-        let currentInstallation = PFInstallation.currentInstallation()
-        if(currentInstallation.badge != 0){
-            (tabBarController!.tabBar.items![3]).badgeValue = String(currentInstallation.badge)
-        }else{
-            (tabBarController!.tabBar.items![3]).badgeValue = nil
-        }
-    }
-    
 }
 

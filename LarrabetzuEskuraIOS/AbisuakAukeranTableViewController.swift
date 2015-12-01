@@ -18,7 +18,7 @@ class AbisuakAukeranTableViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let channels = PFInstallation.currentInstallation().channels as? [String]{
+        if let channels = PFInstallation.currentInstallation().channels{
             magic("\(channels)")
             
             for item in channels{
