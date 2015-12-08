@@ -41,9 +41,7 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         
         
         if Internet.isConnectedToNetwork() {
-            berriakParseatu.getPostak()
-            self.tableView.reloadData()
-            self.hiddenEmptyCell()
+            self.getData()
             self.getMenukoArgazkia()
             
         } else {

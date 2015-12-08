@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F10D7641C16142B00DB0453 /* PushObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F10D7631C16142B00DB0453 /* PushObject.swift */; };
 		9F1545D61BC2F86B00F46F7F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1545D51BC2F86B00F46F7F /* WebViewController.swift */; };
+		9F17B1AD1C11AF3300C9D4AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17B1AC1C11AF3300C9D4AA /* LoginViewController.swift */; };
+		9F17B1B11C11C1C800C9D4AA /* PushTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17B1B01C11C1C800C9D4AA /* PushTableViewController.swift */; };
 		9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */; };
 		9F360E701BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */; };
 		9F3E43C41973D7FF0060B2FB /* EkintzakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */; };
@@ -38,7 +41,10 @@
 /* Begin PBXFileReference section */
 		1793CE20AD476C1C36135709 /* Pods-Larrabetzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Larrabetzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu.release.xcconfig"; sourceTree = "<group>"; };
 		61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Larrabetzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F10D7631C16142B00DB0453 /* PushObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushObject.swift; sourceTree = "<group>"; };
 		9F1545D51BC2F86B00F46F7F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		9F17B1AC1C11AF3300C9D4AA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9F17B1B01C11C1C800C9D4AA /* PushTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTableViewController.swift; sourceTree = "<group>"; };
 		9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakAukeranTableViewController.swift; sourceTree = "<group>"; };
 		9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogakAukeranTableViewController.swift; sourceTree = "<group>"; };
 		9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzakTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 				9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */,
 				9F360E6F1BB2A8C4000A2B40 /* BlogakAukeranTableViewController.swift */,
 				9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */,
+				9F17B1AC1C11AF3300C9D4AA /* LoginViewController.swift */,
+				9F17B1B01C11C1C800C9D4AA /* PushTableViewController.swift */,
+				9F10D7631C16142B00DB0453 /* PushObject.swift */,
 			);
 			name = Hobespenak;
 			sourceTree = "<group>";
@@ -115,11 +124,11 @@
 				9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */,
 				9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */,
 				9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */,
-				9F360E6E1BB29938000A2B40 /* Hobespenak */,
 				9F7EE79419768A8800485B79 /* EkintzaViewController.swift */,
 				9F1545D51BC2F86B00F46F7F /* WebViewController.swift */,
 				9F54139B19C9D8840075C6EA /* NortzukViewController.swift */,
 				9F403A441A98AF8B00155055 /* PageViewController.swift */,
+				9F360E6E1BB29938000A2B40 /* Hobespenak */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -340,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB3528419631BED00099645 /* Berriak.swift in Sources */,
+				9F17B1B11C11C1C800C9D4AA /* PushTableViewController.swift in Sources */,
 				9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */,
 				9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */,
 				9FC12A121BB3F67D00B93995 /* AbisuakTableViewCell.swift in Sources */,
@@ -349,12 +359,14 @@
 				9FB37E5619D2C63900CAF55F /* ElkarteakParseatu.swift in Sources */,
 				9F7EE79519768A8800485B79 /* EkintzaViewController.swift in Sources */,
 				9F54139C19C9D8840075C6EA /* NortzukViewController.swift in Sources */,
+				9F17B1AD1C11AF3300C9D4AA /* LoginViewController.swift in Sources */,
 				9F3E43C41973D7FF0060B2FB /* EkintzakTableViewCell.swift in Sources */,
 				9FA7B7481BCEA2D50098C4B4 /* NortzukTableViewCell.swift in Sources */,
 				9F403A431A98AF2700155055 /* PageItemController.swift in Sources */,
 				9F5834CB19D1CEA000D6FD51 /* ElkarteakViewController.swift in Sources */,
 				9FDBB59B195AE4D4003EFA9E /* AppDelegate.swift in Sources */,
 				9F403A451A98AF8B00155055 /* PageViewController.swift in Sources */,
+				9F10D7641C16142B00DB0453 /* PushObject.swift in Sources */,
 				9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */,
 				9FDBB59D195AE4D4003EFA9E /* BerriakViewController.swift in Sources */,
 				9FC12A141BB3F7A300B93995 /* AbisuakViewController.swift in Sources */,
@@ -413,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "99a3bd8c-7e4e-4a80-854e-85743f7ff7b4";
@@ -452,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "169917b8-ac60-40b0-be6d-ff8bc993a11f";
 				SDKROOT = iphoneos;
@@ -470,7 +482,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;
@@ -488,7 +500,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LarrabetzuEskuraIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eskura.Larrabetzu;
 				PRODUCT_NAME = Larrabetzu;

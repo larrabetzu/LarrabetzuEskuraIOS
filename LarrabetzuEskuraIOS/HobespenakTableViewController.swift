@@ -8,8 +8,9 @@ class HobespenakTableViewController: UITableViewController, MFMailComposeViewCon
     let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     @IBOutlet weak var bertsioaLabel: UILabel!
-    @IBOutlet weak var postNumeroaLabel: UILabel!
     @IBOutlet weak var abisuakIrakurriBarik: UILabel!
+    @IBOutlet weak var bertsioaCell: UITableViewCell!
+  
     
     // MARK: - lifeCycle
     override func viewDidLoad() {
@@ -24,10 +25,11 @@ class HobespenakTableViewController: UITableViewController, MFMailComposeViewCon
         if let appVersion = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
             bertsioaLabel.text = appVersion
         }
-        let postNumeroa: Int = NSUserDefaults.standardUserDefaults().integerForKey("postNumeroa")
-        if(postNumeroa != 0){
-            postNumeroaLabel.text = String(postNumeroa)
-        }
+        
+        let gesture = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+        gesture.minimumPressDuration = 2
+        self.bertsioaCell.addGestureRecognizer(gesture)
+        self.bertsioaCell.userInteractionEnabled = true
         
     }
     
@@ -56,9 +58,6 @@ class HobespenakTableViewController: UITableViewController, MFMailComposeViewCon
     // MARK: - Delegates
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if(indexPath.section == 1 && indexPath.row == 0){
-           setPostNumeroa() 
-        }
         if(indexPath.section == 2 && indexPath.row == 1){
             emailaBidali()
         }
@@ -72,48 +71,6 @@ class HobespenakTableViewController: UITableViewController, MFMailComposeViewCon
     
     
     // MARK: - Functions
-    private func setPostNumeroa(){
-        let alert = UIAlertController(
-            title: "Post Numeroa",
-            message: "Zenbat post nahi dozuz blog bakoitzeko?",
-            preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        alert.addAction(UIAlertAction(
-            title: "2",
-            style: UIAlertActionStyle.Default,
-            handler: { Void in
-                self.setPostNumeroaNS(2)
-        }))
-        alert.addAction(UIAlertAction(
-            title: "3",
-            style: UIAlertActionStyle.Default,
-            handler: { Void in
-                self.setPostNumeroaNS(3)
-        }))
-        alert.addAction(UIAlertAction(
-            title: "4",
-            style: UIAlertActionStyle.Default,
-            handler: { Void in
-                self.setPostNumeroaNS(4)
-        }))
-        alert.addAction(UIAlertAction(
-            title: "5",
-            style: UIAlertActionStyle.Default,
-            handler: { Void in
-                self.setPostNumeroaNS(5)
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    
-    private func setPostNumeroaNS(numeroa: Int){
-        let postNumeroaNS = NSUserDefaults.standardUserDefaults()
-        postNumeroaNS.setObject(numeroa, forKey:"postNumeroa")
-        postNumeroaNS.synchronize()
-        
-        postNumeroaLabel.text = String(numeroa)
-    }
-    
     private func emailaBidali(){
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
@@ -138,14 +95,28 @@ class HobespenakTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     private func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(
-            title: "Ezin da emailik bidali",
+        let sendMailErrorAlert = UIAlertController(
+            title: "Ezin da emailik bidali" ,
             message: "Mesedez egiaztatu email konfigurazio ondo dagoela eta saiatu berriro.",
-            delegate: self,
-            cancelButtonTitle: "OK")
-        sendMailErrorAlert.show()
+            preferredStyle: UIAlertControllerStyle.Alert)
+        sendMailErrorAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
     }
     
+    func longPressed(longPress: UIGestureRecognizer) {
+         if (longPress.state == UIGestureRecognizerState.Began) {
+            self.pushLogin()
+        }
+    }
     
+    func pushLogin(){
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.performSegueWithIdentifier("ShowPushSegue", sender: self)
+        } else {
+            self.performSegueWithIdentifier("ShowLoginSegue", sender: self)
+        }
+        
+    }
     
 }
