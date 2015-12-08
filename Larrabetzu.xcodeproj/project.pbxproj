@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F10D7641C16142B00DB0453 /* PushObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F10D7631C16142B00DB0453 /* PushObject.swift */; };
-		9F1545D61BC2F86B00F46F7F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1545D51BC2F86B00F46F7F /* WebViewController.swift */; };
 		9F17B1AD1C11AF3300C9D4AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17B1AC1C11AF3300C9D4AA /* LoginViewController.swift */; };
 		9F17B1B11C11C1C800C9D4AA /* PushTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17B1B01C11C1C800C9D4AA /* PushTableViewController.swift */; };
 		9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */; };
@@ -42,7 +41,6 @@
 		1793CE20AD476C1C36135709 /* Pods-Larrabetzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Larrabetzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu.release.xcconfig"; sourceTree = "<group>"; };
 		61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Larrabetzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F10D7631C16142B00DB0453 /* PushObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushObject.swift; sourceTree = "<group>"; };
-		9F1545D51BC2F86B00F46F7F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9F17B1AC1C11AF3300C9D4AA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F17B1B01C11C1C800C9D4AA /* PushTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTableViewController.swift; sourceTree = "<group>"; };
 		9F360E6C1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbisuakAukeranTableViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */,
 				9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */,
 				9F7EE79419768A8800485B79 /* EkintzaViewController.swift */,
-				9F1545D51BC2F86B00F46F7F /* WebViewController.swift */,
 				9F54139B19C9D8840075C6EA /* NortzukViewController.swift */,
 				9F403A441A98AF8B00155055 /* PageViewController.swift */,
 				9F360E6E1BB29938000A2B40 /* Hobespenak */,
@@ -353,7 +350,6 @@
 				9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */,
 				9F360E6D1BB2992F000A2B40 /* AbisuakAukeranTableViewController.swift in Sources */,
 				9FC12A121BB3F67D00B93995 /* AbisuakTableViewCell.swift in Sources */,
-				9F1545D61BC2F86B00F46F7F /* WebViewController.swift in Sources */,
 				9FDBB59F195AE4D4003EFA9E /* EkintzakViewController.swift in Sources */,
 				9FD7B5291975176C009DFFC0 /* EkintzakParseatu.swift in Sources */,
 				9FB37E5619D2C63900CAF55F /* ElkarteakParseatu.swift in Sources */,

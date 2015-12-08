@@ -128,19 +128,11 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     }
     
     private func openWeb(link: String){
-        if #available(iOS 9.0, *) {
-            let svc = SFSafariViewController(URL: NSURL(string: link)!)
-            svc.view.tintColor = UIColor.darkGrayColor()
-            svc.delegate = self
-            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-            self.presentViewController(svc, animated: true, completion: nil)
-        } else {
-            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-            webView.hidesBottomBarWhenPushed = true
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Berriak", style:.Plain, target:nil, action:nil)
-            self.navigationController?.pushViewController(webView, animated: true)
-            webView.postLink = link
-        }
+        let svc = SFSafariViewController(URL: NSURL(string: link)!)
+        svc.view.tintColor = UIColor.darkGrayColor()
+        svc.delegate = self
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        self.presentViewController(svc, animated: true, completion: nil)
     }
     
     private func getMenukoArgazkia(){

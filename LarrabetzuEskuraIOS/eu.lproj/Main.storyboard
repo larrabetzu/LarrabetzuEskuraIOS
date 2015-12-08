@@ -910,51 +910,6 @@
             </objects>
             <point key="canvasLocation" x="7177" y="5438"/>
         </scene>
-        <!--Web View Controller-->
-        <scene sceneID="x1Y-Qu-bkB">
-            <objects>
-                <viewController storyboardIdentifier="WebViewController" id="NLN-O3-IEg" customClass="WebViewController" customModule="Larrabetzu" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ssb-wR-QSS"/>
-                        <viewControllerLayoutGuide type="bottom" id="wxT-Ta-NdN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WsE-7A-EaW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcx-jr-gLW">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="NLN-O3-IEg" id="nsQ-3e-zW1"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="bottom" secondItem="wxT-Ta-NdN" secondAttribute="top" id="0Nl-Ia-wt9"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="leading" secondItem="WsE-7A-EaW" secondAttribute="leading" id="CPz-vF-D3u"/>
-                            <constraint firstAttribute="trailing" secondItem="mcx-jr-gLW" secondAttribute="trailing" id="fBu-5J-5w8"/>
-                            <constraint firstItem="mcx-jr-gLW" firstAttribute="top" secondItem="Ssb-wR-QSS" secondAttribute="top" id="gXL-U3-H2l"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="XfM-cu-rEb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="kYs-JF-r00" userLabel="Share">
-                            <connections>
-                                <action selector="share:" destination="NLN-O3-IEg" id="IIV-fs-Fwh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="webView" destination="mcx-jr-gLW" id="G3S-8W-VYP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cqg-HA-Wmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5485" y="80"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iwu-oa-PRt">
             <objects>
@@ -973,25 +928,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frr-qW-n2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4737" y="864"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KIB-hd-8hU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2gx-ND-IAY" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNT-xG-F3d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NLN-O3-IEg" kind="relationship" relationship="rootViewController" id="kif-eb-iqo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qHL-mm-KT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4673" y="80"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Ojd-M0-rEk">
