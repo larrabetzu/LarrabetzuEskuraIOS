@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Google Analytics
         GAI.sharedInstance().trackerWithTrackingId(valueForAPIKey(keyname: "GOOGLE_ANALYTICS-ID"))
         GAI.sharedInstance().trackUncaughtExceptions = true
-        GAI.sharedInstance().dispatchInterval = 20
+        GAI.sharedInstance().dispatchInterval = 10
         GAI.sharedInstance().defaultTracker.allowIDFACollection = true
         GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build() as [NSObject : AnyObject])
         
