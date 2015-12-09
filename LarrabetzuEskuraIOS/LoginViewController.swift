@@ -3,6 +3,9 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    // MARK: - Constants and Variables
+    @IBOutlet weak var erabiltzaileIzenaTextField: UITextField!
+    @IBOutlet weak var pasahitzaTextField: UITextField!
     
     @IBAction func irtenButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -20,15 +23,14 @@ class LoginViewController: UIViewController {
         self.pasahitzaReseatu()
     }
     
-    @IBOutlet weak var erabiltzaileIzenaTextField: UITextField!
-    @IBOutlet weak var pasahitzaTextField: UITextField!
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
 
+    // MARK: - Functions
     func showAlert(testua: String){
         let alert = UIAlertController(
             title: "",

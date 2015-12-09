@@ -3,6 +3,7 @@ import Parse
 
 class PushTableViewController: UITableViewController, UITextFieldDelegate {
 
+    // MARK: - Constants and Variables
     private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     let pushObject = PushObject()
     
@@ -22,6 +23,7 @@ class PushTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +45,7 @@ class PushTableViewController: UITableViewController, UITextFieldDelegate {
         
     }
 
+    // MARK: - Data source, Delegates
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if indexPath.section == 3 && indexPath.row == 0 {
@@ -51,7 +54,6 @@ class PushTableViewController: UITableViewController, UITextFieldDelegate {
             self.kanala()
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -80,6 +82,7 @@ class PushTableViewController: UITableViewController, UITextFieldDelegate {
         })
     }
 
+    // MARK: - Functions
     func orduLimitea(){
         let alert = UIAlertController(title: "Ordu Limitea", message: "Zenbat ordu jarri nahi dozuz limite moduan", preferredStyle: .ActionSheet)
         
