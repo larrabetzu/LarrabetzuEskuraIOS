@@ -88,7 +88,6 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
         
     }
     
-    @available(iOS 9.0, *)
     func safariViewControllerDidFinish(controller: SFSafariViewController){
         controller.dismissViewControllerAnimated(true, completion: nil)
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent

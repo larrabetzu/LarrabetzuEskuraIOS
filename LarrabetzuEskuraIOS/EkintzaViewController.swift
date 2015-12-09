@@ -1,7 +1,8 @@
 import UIKit
 import Magic
+import SafariServices
 
-class EkintzaViewController: GAITrackedViewController {
+class EkintzaViewController: GAITrackedViewController, SFSafariViewControllerDelegate {
     
     // MARK: Constants and Variables
     @IBOutlet var tituloaUI: UILabel!
@@ -16,11 +17,11 @@ class EkintzaViewController: GAITrackedViewController {
     
     @IBAction func tapLink() {
         if(!self.linkString.isEmpty){
-            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-            webView.hidesBottomBarWhenPushed = true
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Ekintza", style:.Plain, target:nil, action:nil)
-            self.navigationController?.pushViewController(webView, animated: true)
-            webView.postLink = self.linkString
+            let svc = SFSafariViewController(URL: NSURL(string: self.linkString)!)
+            svc.view.tintColor = UIColor.darkGrayColor()
+            svc.delegate = self
+            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+            self.presentViewController(svc, animated: true, completion: nil)
         }
     }
     
@@ -83,6 +84,13 @@ class EkintzaViewController: GAITrackedViewController {
         self.screenName = "Ekintza"
     }
 
+    // MARK: - Delegates
+    func safariViewControllerDidFinish(controller: SFSafariViewController){
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+    }
+    
+    
     // MARK: Functions
     func SetEkintza(ekintzaDic:[String : String]){
         self.tituloaString = ekintzaDic["tituloa"]!
