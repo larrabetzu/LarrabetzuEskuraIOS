@@ -1,7 +1,8 @@
 import UIKit
 import Magic
+import SafariServices
 
-class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate {
+class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
     
     // MARK: Constants and Variables
     @IBOutlet var tableView: UITableView!
@@ -96,6 +97,11 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func safariViewControllerDidFinish(controller: SFSafariViewController){
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+    }
+    
     // MARK: Functions
     private func hiddenEmptyCell(){
         let tblView =  UIView(frame: CGRectZero)
@@ -122,11 +128,12 @@ class ElkarteakViewController: GAITrackedViewController, UITableViewDataSource, 
         }
         let webAction = UIAlertAction(title: "web", style: UIAlertActionStyle.Default) {
             UIAlertAction in
-            let webView : WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
-            webView.hidesBottomBarWhenPushed = true
             
-            self.navigationController?.pushViewController(webView, animated: true)
-            webView.postLink = webgunea
+            let svc = SFSafariViewController(URL: NSURL(string: webgunea)!)
+            svc.view.tintColor = UIColor.darkGrayColor()
+            svc.delegate = self
+            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+            self.presentViewController(svc, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "Ezebez", style: .Cancel, handler: nil)
         
