@@ -13,16 +13,11 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let app = UIApplication.sharedApplication()
-        app.setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+
         createPageViewController()
         setupPageControl()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        let app = UIApplication.sharedApplication()
-        app.setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-    }
     
     
     private func createPageViewController() {
