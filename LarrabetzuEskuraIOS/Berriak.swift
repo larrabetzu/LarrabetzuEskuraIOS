@@ -8,7 +8,7 @@ class Berriak{
     
     // MARK: Methods
     func getPostak(){
-        var bloga: [String] = []
+        var blogak: [String] = []
 
         let blogLarrabetzutik: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzutik")
         let blogUdala: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogUdala")
@@ -16,27 +16,32 @@ class Berriak{
         let blogHoriBai: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogHoriBai")
         let blogLarrabetzuZeroZabor: Bool = NSUserDefaults.standardUserDefaults().boolForKey("blogLarrabetzuZeroZabor")
         
-        bloga.append("eskura")
+        blogak.append("eskura")
         
         if(blogLarrabetzutik){
-            bloga.append("larrabetzutik")
+            blogak.append("larrabetzutik")
         }
         if(blogUdala){
-            bloga.append("larrabetzukoUdala")
+            blogak.append("larrabetzukoUdala")
         }
         if(blogEskola){
-            bloga.append("larrabetzukoEskola")
+            blogak.append("larrabetzukoEskola")
         }
         if(blogHoriBai){
-            bloga.append("horiBai")
+            blogak.append("horiBai")
         }
         if(blogLarrabetzuZeroZabor){
-            bloga.append("larrabetzuZeroZabor")
+            blogak.append("larrabetzuZeroZabor")
         }
+        
+        if blogak.count <= 1{
+            blogak = ["eskura", "larrabetzutik", "larrabetzukoUdala", "larrabetzukoEskola", "horiBai", "larrabetzuZeroZabor"]
+        }
+        magic(blogak)
         
         let query = PFQuery(className:"Blogak")
         query.orderByAscending("pubDate")
-        query.whereKey("bloga", containedIn: bloga)
+        query.whereKey("bloga", containedIn: blogak)
         
         do {
             let objects:[PFObject]? = try query.findObjects()
