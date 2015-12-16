@@ -34,6 +34,7 @@
 		9FF101021BB1D9F100839CE5 /* HobespenakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF101011BB1D9F100839CE5 /* HobespenakTableViewController.swift */; };
 		9FF904341A73B912001E4891 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF904331A73B912001E4891 /* ApiKeys.plist */; };
 		9FF904361A73B991001E4891 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF904351A73B991001E4891 /* ApiKeys.swift */; };
+		9FFDC28C1C19881F00955DFA /* EkintzaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFDC28B1C19881F00955DFA /* EkintzaObject.swift */; };
 		BA2A04D4EC1FA1993260B4F6 /* Pods_Larrabetzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A8F4661ECE8C7BE38AD845 /* Pods_Larrabetzu.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		9FF904301A73B5A2001E4891 /* bridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridgingHeader.h; sourceTree = "<group>"; };
 		9FF904331A73B912001E4891 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		9FF904351A73B991001E4891 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		9FFDC28B1C19881F00955DFA /* EkintzaObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkintzaObject.swift; sourceTree = "<group>"; };
 		A314DA2C15E01F143B099B77 /* Pods-Larrabetzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Larrabetzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Larrabetzu/Pods-Larrabetzu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,11 +123,12 @@
 			children = (
 				9FDBB59C195AE4D4003EFA9E /* BerriakViewController.swift */,
 				9FDBB59E195AE4D4003EFA9E /* EkintzakViewController.swift */,
-				9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */,
 				9F7EE79419768A8800485B79 /* EkintzaViewController.swift */,
+				9F5834CA19D1CEA000D6FD51 /* ElkarteakViewController.swift */,
 				9F54139B19C9D8840075C6EA /* NortzukViewController.swift */,
 				9F403A441A98AF8B00155055 /* PageViewController.swift */,
 				9F360E6E1BB29938000A2B40 /* Hobespenak */,
+				9FFDC28B1C19881F00955DFA /* EkintzaObject.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				9F7EE79519768A8800485B79 /* EkintzaViewController.swift in Sources */,
 				9F54139C19C9D8840075C6EA /* NortzukViewController.swift in Sources */,
 				9F17B1AD1C11AF3300C9D4AA /* LoginViewController.swift in Sources */,
+				9FFDC28C1C19881F00955DFA /* EkintzaObject.swift in Sources */,
 				9F3E43C41973D7FF0060B2FB /* EkintzakTableViewCell.swift in Sources */,
 				9FA7B7481BCEA2D50098C4B4 /* NortzukTableViewCell.swift in Sources */,
 				9F403A431A98AF2700155055 /* PageItemController.swift in Sources */,

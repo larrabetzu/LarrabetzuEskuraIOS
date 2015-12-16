@@ -3,14 +3,26 @@ import Magic
 
 class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , UITableViewDataSource {
     
-    // MARK: Constants and Variables
+    // MARK: - Constants and Variables
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     private var refreshControl:UIRefreshControl!
     private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     private let ekintzakParseatu : Ekintzak = Ekintzak()
     
-    // MARK: lifeCycle
+    // MARK: - Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowEkintzaSegue"{
+            if let index = tableView.indexPathForSelectedRow?.row{
+                if let ekintza : EkintzaViewController = segue.destinationViewController as? EkintzaViewController{
+                    ekintza.ekintzaObject = ekintzakParseatu.getEkintzaInfo(index)
+                }
+ 
+            }
+       }
+    }
+    
+    // MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         magic("viewDidLoad")
@@ -37,7 +49,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
         self.screenName = "Agenda"
     }
 
-    // MARK: Delegates
+    // MARK: - Delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return ekintzakParseatu.getEkintzaNumeroa()
     }
@@ -54,11 +66,7 @@ class EkintzakViewController : GAITrackedViewController, UITableViewDelegate , U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
-        let ekintzaView : EkintzaViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EkintzaViewController") as! EkintzaViewController
-        ekintzaView.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(ekintzaView, animated: true)
-        ekintzaView.SetEkintza(ekintzakParseatu.getEkintzaInfo(indexPath.row))
+        self.performSegueWithIdentifier("ShowEkintzaSegue", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
     }

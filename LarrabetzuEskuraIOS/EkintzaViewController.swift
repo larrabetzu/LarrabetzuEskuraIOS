@@ -5,6 +5,10 @@ import SafariServices
 class EkintzaViewController: GAITrackedViewController, SFSafariViewControllerDelegate {
     
     // MARK: Constants and Variables
+    
+    var ekintzaObject: EkintzaObject?
+    private let grisaColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    
     @IBOutlet var tituloaUI: UILabel!
     @IBOutlet var hileaUI: UILabel!
     @IBOutlet var egunaUI: UILabel!
@@ -16,8 +20,8 @@ class EkintzaViewController: GAITrackedViewController, SFSafariViewControllerDel
     @IBOutlet weak var buttonLink: UIButton!
     
     @IBAction func tapLink() {
-        if(!self.linkString.isEmpty){
-            let svc = SFSafariViewController(URL: NSURL(string: self.linkString)!)
+        if let link = self.ekintzaObject!.link {
+            let svc = SFSafariViewController(URL: NSURL(string: link)!)
             svc.view.tintColor = UIColor.darkGrayColor()
             svc.delegate = self
             UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
@@ -26,8 +30,8 @@ class EkintzaViewController: GAITrackedViewController, SFSafariViewControllerDel
     }
     
     @IBAction func shareButton(sender: UIBarButtonItem) {
-        let someText:String = self.tituloaString
-        let url:NSURL = NSURL(string: self.slug)!
+        let someText:String = self.ekintzaObject!.tituloa
+        let url:NSURL = NSURL(string: self.ekintzaObject!.slug)!
         
         let activityViewController = UIActivityViewController(
             activityItems: [someText, url],
@@ -38,40 +42,28 @@ class EkintzaViewController: GAITrackedViewController, SFSafariViewControllerDel
 
     }
     
-    var tituloaString : String = ""
-    var hileaString :String = ""
-    var egunaString :String = ""
-    var orduaString :String = ""
-    var lekuaString :String = ""
-    var deskribapena :String = ""
-    var kartelaLink :String = ""
-    var linkString :String = ""
-    var slug :String = ""
-    
     // MARK: lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
-        self.tituloaUI.text = tituloaString
-        self.hileaUI.text = hileaString
-        self.egunaUI.text = egunaString
-        self.orduaUI.text = orduaString
-        self.lekuaUI.text = lekuaString
-        self.deskribapenaUI.text = deskribapena
         
-        if let rangeString = linkString.lowercaseString.rangeOfString("http://"){
-            let subString = linkString.substringFromIndex(rangeString.endIndex)
+        navigationController?.navigationBar.barTintColor = grisaColor
+        navigationItem.title = "Ekintza"
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        tabBarController?.tabBar.tintColor = UIColor.blackColor()
+        
+        self.setView()
+        
+        if let rangeString = self.ekintzaObject?.link?.lowercaseString.rangeOfString("http://"){
+            let subString = self.ekintzaObject?.link!.substringFromIndex(rangeString.endIndex)
             self.buttonLink.setTitle(subString, forState:UIControlState.Normal)
         }else{
-            self.buttonLink.setTitle(linkString, forState:UIControlState.Normal)
+            self.buttonLink.setTitle(self.ekintzaObject?.link, forState:UIControlState.Normal)
         }
-        
-        
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
+
         downloadImageBackground()
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+       
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -92,47 +84,44 @@ class EkintzaViewController: GAITrackedViewController, SFSafariViewControllerDel
     
     
     // MARK: Functions
-    func SetEkintza(ekintzaDic:[String : String]){
-        self.tituloaString = ekintzaDic["tituloa"]!
-        self.hileaString = ekintzaDic["hilea"]!
-        self.egunaString = ekintzaDic["eguna"]!
-        self.orduaString = ekintzaDic["ordua"]!
-        self.lekuaString = ekintzaDic["lekua"]!
-        self.deskribapena = ekintzaDic["deskribapena"]!
-        self.kartelaLink = ekintzaDic["kartela"]!
-        self.linkString = ekintzaDic["link"]!
-        self.slug = ekintzaDic["slug"]!
+    func setView(){
+        self.view.backgroundColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1)
+        self.tituloaUI.text = self.ekintzaObject?.tituloa
+        self.hileaUI.text = self.ekintzaObject?.getHilea()
+        self.egunaUI.text = self.ekintzaObject?.getEguna()
+        self.orduaUI.text = self.ekintzaObject?.getOrdua()
+        self.lekuaUI.text = self.ekintzaObject?.lekua
+        self.deskribapenaUI.text = self.ekintzaObject?.deskribapena
     }
+    
     
     private func downloadImageBackground(){
         self.activityIndicator.startAnimating()
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
             magic("gcd")
-            var urlString: NSString = self.kartelaLink
-            
-            if("peg" == urlString.substringFromIndex(urlString.length-3)){
-                let urlStringPath = urlString.substringToIndex(urlString.length-5) //http://larrabetzu.net/media/kartelanIzena
-                let urlStringFile = urlString.substringFromIndex(urlString.length-4) //jpeg
-                urlString =  urlStringPath + ".medium." + urlStringFile
-            }else{
-                let urlStringPath = urlString.substringToIndex(urlString.length-4) //http://larrabetzu.net/media/kartelanIzena
-                let urlStringFile = urlString.substringFromIndex(urlString.length-3) //jpg png
-                urlString =  urlStringPath + ".medium." + urlStringFile
-            }
-            let imgURL: NSURL = NSURL(string: urlString as String)!
-            let request: NSURLRequest = NSURLRequest(URL: imgURL)
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?,data: NSData?,error: NSError?) -> Void in
-                if !(error != nil) {
-                    let image: UIImage? = UIImage(data: data!)
-                    self.kartelaUI.image = image
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            if let urlString = self.ekintzaObject?.kartela{
+                let imgURL: NSURL = NSURL(string: urlString)!
+                let request: NSURLRequest = NSURLRequest(URL: imgURL)
+                let session = NSURLSession.sharedSession()
+                let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+                    if !(error != nil) {
+                        let image: UIImage? = UIImage(data: data!)
+                        self.kartelaUI.image = image
+                        
+                    }else {
+                        magic("Error: \(error!.localizedDescription)")
+                    }
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     self.activityIndicator.stopAnimating()
-                    
-                }else {
-                    magic("Error: \(error!.localizedDescription)")
                 }
-            })
-       })
+                task.resume()
+            }else{
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                self.activityIndicator.stopAnimating()
+            }
+          })
     }
     
 }
