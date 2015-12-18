@@ -136,7 +136,10 @@ class BerriakViewController: GAITrackedViewController, UITableViewDataSource, UI
     
     private func getMenukoArgazkia(){
         PFConfig.getConfigInBackgroundWithBlock {
-            (config: PFConfig?, error: NSError?) -> Void in
+            (var config: PFConfig?, error: NSError?) -> Void in
+            if error != nil {
+                config = PFConfig.currentConfig()
+            }
             let noizArte = config?["noizArte"] as? NSDate
             let oraingoData = NSDate()
             
