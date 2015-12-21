@@ -2,9 +2,9 @@ PODS:
   - Bolts/Tasks (1.5.0)
   - GoogleAnalytics (3.14.0)
   - Magic (2.0.0)
-  - Parse (1.10.0):
+  - Parse (1.11.0):
     - Bolts/Tasks (~> 1.5)
-  - Siren (0.6.2)
+  - Siren (0.6.3)
 
 DEPENDENCIES:
   - GoogleAnalytics
@@ -16,7 +16,7 @@ SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
   Magic: f05ea8d27da5413cd780266ff0152bb9c028bfa9
-  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
-  Siren: 19fc0251bbb3bc0f98063e84542ea25c29c59d3a
+  Parse: 886af46a0a677402f6374bb97ac212e795f70afe
+  Siren: fefd8833ba21f696118611dac0fedfd2375955c2
 
 COCOAPODS: 0.39.0
