@@ -104,9 +104,32 @@
 				9FC12A131BB3F7A300B93995 /* AbisuakViewController.swift */,
 				9F17B1AC1C11AF3300C9D4AA /* LoginViewController.swift */,
 				9F17B1B01C11C1C800C9D4AA /* PushTableViewController.swift */,
-				9F10D7631C16142B00DB0453 /* PushObject.swift */,
 			);
 			name = Hobespenak;
+			sourceTree = "<group>";
+		};
+		9F58352A1C28119C00FD547B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */,
+				9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */,
+				9FA7B7471BCEA2D50098C4B4 /* NortzukTableViewCell.swift */,
+				9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */,
+				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
+				9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9F58352B1C2812D500FD547B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FD7B52C1975192D009DFFC0 /* Parsers */,
+				9F93C06F1AE8DFF600DF004D /* Class */,
+				9F10D7631C16142B00DB0453 /* PushObject.swift */,
+				9FFDC28B1C19881F00955DFA /* EkintzaObject.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		9F93C06F1AE8DFF600DF004D /* Class */ = {
@@ -128,7 +151,6 @@
 				9F54139B19C9D8840075C6EA /* NortzukViewController.swift */,
 				9F403A441A98AF8B00155055 /* PageViewController.swift */,
 				9F360E6E1BB29938000A2B40 /* Hobespenak */,
-				9FFDC28B1C19881F00955DFA /* EkintzaObject.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -166,17 +188,11 @@
 			children = (
 				9FDBB59A195AE4D4003EFA9E /* AppDelegate.swift */,
 				9FF904351A73B991001E4891 /* ApiKeys.swift */,
-				9FF904301A73B5A2001E4891 /* bridgingHeader.h */,
-				9FD7B52A19751795009DFFC0 /* ViewController */,
-				9FD7B52C1975192D009DFFC0 /* Parsers */,
-				9F3E43C31973D7FF0060B2FB /* EkintzakTableViewCell.swift */,
-				9FC12A111BB3F67D00B93995 /* AbisuakTableViewCell.swift */,
-				9FA7B7471BCEA2D50098C4B4 /* NortzukTableViewCell.swift */,
-				9F93C06F1AE8DFF600DF004D /* Class */,
-				9FDBB5A0195AE4D4003EFA9E /* Main.storyboard */,
-				9FB577BE1A4C4917006137C0 /* Launch Screen.xib */,
 				9FF904331A73B912001E4891 /* ApiKeys.plist */,
-				9FDBB5A3195AE4D4003EFA9E /* Images.xcassets */,
+				9FF904301A73B5A2001E4891 /* bridgingHeader.h */,
+				9F58352B1C2812D500FD547B /* Models */,
+				9FD7B52A19751795009DFFC0 /* ViewController */,
+				9F58352A1C28119C00FD547B /* Views */,
 				9FDBB598195AE4D4003EFA9E /* Supporting Files */,
 			);
 			path = LarrabetzuEskuraIOS;
